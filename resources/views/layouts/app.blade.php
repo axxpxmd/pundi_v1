@@ -1,3 +1,6 @@
+@php
+    $logo = App\Models\Logo::select('preloader', 'logo_share')->first();
+@endphp
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -9,7 +12,15 @@
 
     <!-- Title -->
     <link rel="icon" href="{{ config('app.path_url').'logo-round.png' }}" type="image/x-icon">
-    <title>PUNDI</title>
+    <title>{{ config('app.name') }} @yield('title')</title>
+
+    <!-- Link Share -->
+    <meta property="og:image" content="https://davidwalsh.name/wp-content/themes/klass/img/facebooklogo.png"/>
+    <meta property="og:title" content="PUNDI.or.id - kanal pendidikan tajam dan mencerahkan"/>
+    <meta property="og:image" content="{{ config('app.path_url').'images/logo/'.$logo->logo_share }}" />
+    <meta property="og:url" content="http://pundi.or.id/"/>
+    <meta property="og:site_name" content="PUNDI"/>
+    <meta property="og:type" content="article"/>
 
     <!-- CSS -->
     @yield('css')

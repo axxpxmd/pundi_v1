@@ -1,5 +1,11 @@
 @php
-$image = App\Models\Images::select('id', 'footer', 'header', 'poster')->first();
+    $image = App\Models\Images::select('header')->first();
+    $header_news = App\Models\Articles::select('id', 'judul', 'status')->wherestatus(1)->orderBy('created_at', 'desc')->get();
+    $sub_headline = App\Store\index::subHeadline();
+    $sub_indepth = App\Store\index::subIndepth();
+    $sub_kebijakan  = App\Store\index::subKebijakan();
+    $sub_serbaSerbi = App\Store\index::subSerbaSerbi();
+    $sub_konsultasi = App\Store\index::subKebijakan();
 @endphp
 <header>
     <div class="header-area">
@@ -17,7 +23,7 @@ $image = App\Models\Images::select('id', 'footer', 'header', 'poster')->first();
                                 <ul id="js-news" class="js-hidden">
                                     @foreach ($header_news as $i)
                                     <li class="news-item">
-                                        <a style="color: black !important" href="{{ route('artikel') .'?post='.$i->id}}">{{ $i->judul }}</a>
+                                        <a style="color: black !important" href="#">{{ $i->judul }}</a>
                                     </li>
                                     @endforeach
                                 </ul>
@@ -53,14 +59,14 @@ $image = App\Models\Images::select('id', 'footer', 'header', 'poster')->first();
                         <div class="col-xl-2 col-lg-2 col-md-2">
                             <div class="logo -mt-10">
                                 <a href="{{ url('/') }}">
-                                    <img src="{{ config('app.path_url').$image->header }}" width="150px" alt="header">
+                                    <img src="{{ config('app.ftp_src').'images/'.$image->header }}" width="150px" alt="header">
                                 </a>
                             </div>
                         </div>
                         <div class="col-xl-10 col-lg-10 col-md-10">
                             <div class="header-banner f-right">
                                 <div class="main-menu d-none d-md-block">
-                                    @include('masterPages.headers.nav-menu')
+                                    @include('masterPages.headers.navMenu')
                                 </div>
                             </div>
                         </div>
@@ -74,7 +80,7 @@ $image = App\Models\Images::select('id', 'footer', 'header', 'poster')->first();
                         <div class="col-xl-2 col-lg-2 col-md-2">
                             <div class="sticky-logo">
                                 <a href="{{ url('/') }}">
-                                    <img src="{{ config('app.path_url').$image->header }}" width="150px" alt="header">
+                                    <img src="{{ config('app.ftp_src').'images/'.$image->header }}" width="150px" alt="header">
                                 </a>
                             </div>
                         </div>
@@ -83,7 +89,7 @@ $image = App\Models\Images::select('id', 'footer', 'header', 'poster')->first();
                                 <div class="header-banner f-right ">
                                     <div class="main-menu d-none d-md-block">
                                         <div>
-                                            @include('masterPages.headers.nav-menu-sticky')
+                                            @include('masterPages.headers.navMenuSticky')
                                         </div>
                                     </div>
                                 </div>
@@ -94,7 +100,7 @@ $image = App\Models\Images::select('id', 'footer', 'header', 'poster')->first();
                             <div class="mobile_menu d-block d-md-none color-gradient1">
                                 <div style="display: none">
                                     <div>
-                                        @include('masterPages.headers.nav-mobile')
+                                        @include('masterPages.headers.navMobile')
                                     </div>
                                 </div>
                             </div>
