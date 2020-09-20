@@ -149,7 +149,7 @@
                     </div>
                 </div>
             </div>
-            @include('pages.homePage.rightSidebarHome')
+            @include('pages.homePage.sideBar')
         </div>
         <hr width="100%" class="-mt-10" style="color: #ddd">
     </div>

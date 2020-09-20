@@ -370,3 +370,7 @@
     object-fit: cover;
     object-position: center
 }
+
+h3:hover {
+    color:#FEBD01;
+}

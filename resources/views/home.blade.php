@@ -8,4 +8,8 @@
     @include('pages.homePage.section2')
     <!-- Section 3 -->
     @include('pages.homePage.section3')
+    <!-- Section 4 -->
+    @include('pages.homePage.section4')
+    <!-- Footer -->
+    @include('masterPages.footer')
 @endsection

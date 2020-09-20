@@ -1,8 +1,8 @@
 @php
-    $image = App\Models\Images::select('header')->first();
-    $header_news = App\Models\Articles::select('id', 'judul', 'status')->wherestatus(1)->orderBy('created_at', 'desc')->get();
+    $logo = App\Models\Logo::select('header')->first();
+    $header_news  = App\Models\Articles::select('id', 'judul', 'status')->wherestatus(1)->orderBy('created_at', 'desc')->get();
     $sub_headline = App\Store\index::subHeadline();
-    $sub_indepth = App\Store\index::subIndepth();
+    $sub_indepth    = App\Store\index::subIndepth();
     $sub_kebijakan  = App\Store\index::subKebijakan();
     $sub_serbaSerbi = App\Store\index::subSerbaSerbi();
     $sub_konsultasi = App\Store\index::subKebijakan();
@@ -59,7 +59,7 @@
                         <div class="col-xl-2 col-lg-2 col-md-2">
                             <div class="logo -mt-10">
                                 <a href="{{ url('/') }}">
-                                    <img src="{{ config('app.ftp_src').'images/'.$image->header }}" width="150px" alt="header">
+                                    <img src="{{ config('app.ftp_src').'images/logo/'.$logo->header }}" width="150px" alt="header">
                                 </a>
                             </div>
                         </div>
@@ -80,7 +80,7 @@
                         <div class="col-xl-2 col-lg-2 col-md-2">
                             <div class="sticky-logo">
                                 <a href="{{ url('/') }}">
-                                    <img src="{{ config('app.ftp_src').'images/'.$image->header }}" width="150px" alt="header">
+                                    <img src="{{ config('app.ftp_src').'images/logo/'.$logo->header }}" width="150px" alt="header">
                                 </a>
                             </div>
                         </div>

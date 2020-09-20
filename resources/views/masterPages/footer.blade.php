@@ -1,0 +1,37 @@
+
+@php
+    $logo = App\Models\Logo::select('footer')->first();
+@endphp
+<footer>
+    <div class="footer-area footer-padding fix">
+        <div class="container">
+            <div class="text-center">
+                <img class="m-b-15" src="{{ config('app.ftp_src').'images/logo/'.$logo->footer }}" width="100" alt="footer">
+                <p class="f-wht">Tajam dan Mencerahkan</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom-area">
+        <div class="container">
+            <div class="footer-border">
+                <div class="row d-flex align-items-center justify-content-between">
+                    <div class="col-lg-6">
+                        <div class="footer-copy-right">
+                            <p>2020 PUNDI.or.id - kanal pendidikan tajam dan mencerahkan</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="footer-menu f-right -mt-20">
+                            <ul>
+                                <li><a href="#">Tentang Kami</a></li>
+                                <li><a href="#">Disclaimer</a></li>
+                                <li><a href="#">Redaksi</a></li>
+                                <li><a href="#">Media Siber</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

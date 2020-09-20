@@ -15,6 +15,7 @@
 namespace App\Http\Controllers;
 
 // Models
+use App\Models\Poster;
 use App\Models\Articles;
 use App\Models\Kategori;
 
@@ -49,7 +50,14 @@ class WelcomeController extends Controller
         $dua   = Kategori::whereid(2)->first();
         $tiga  = Kategori::whereid(3)->first();
         $empat = Kategori::whereid(4)->first();
-        $right_sideBar = Articles::select('id', 'judul', 'kategori_id', 'sub_kategori_id', 'gambar', 'penulis_id', 'created_at')->wherestatus(1)->orderBy('created_at', 'desc')->take(4)->get();
+        // SideBar
+        $sideBar = Articles::select('id', 'judul', 'kategori_id', 'sub_kategori_id', 'gambar', 'penulis_id', 'created_at')->wherestatus(1)->orderBy('created_at', 'desc')->take(4)->get();
+        $poster  = Poster::select('poster')->get();
+
+        /**
+         * Section 4 : Report
+         */
+        $report = Articles::orderBy('created_at', 'desc')->wherestatus(1)->take(6)->get();
 
         return view('home', compact(
             'trending_top',
@@ -66,7 +74,9 @@ class WelcomeController extends Controller
             'dua',
             'tiga',
             'empat',
-            'right_sideBar'
+            'sideBar',
+            'poster',
+            'report'
         ));
     }
 }
