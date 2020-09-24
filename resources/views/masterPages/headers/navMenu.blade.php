@@ -54,7 +54,7 @@
             <ul class="submenu">
                 <li><a href="">Kirim Tulisan</a></li>
                 <li><a href="">Ketentuan Tulisan</a></li>
-                <li><a href="">Login</a></li>
+                <li><a href="{{ route('login') }}">Login</a></li>
             </ul>
         </li>
         @endif

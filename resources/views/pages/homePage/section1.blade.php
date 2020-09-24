@@ -58,7 +58,7 @@
                             @foreach ($trending_bottom as $i)
                             <div class="col-lg-4">
                                 <div class="single-bottom mb-30">
-                                    <div class="trend-bottom-img mb-10">
+                                    <div class="trend-bottom-img mb-10 ">
                                         <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->gambar }}" width="223" height="159" alt="photo">
                                     </div>
                                     <div class="trend-bottom-cap">

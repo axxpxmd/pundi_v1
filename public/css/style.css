@@ -374,3 +374,11 @@
 h3:hover {
     color:#FEBD01;
 }
+
+h6:hover {
+    color:#FEBD01;
+}
+
+.judul-hover:hover{
+    color:#FEBD01 !important;
+}
