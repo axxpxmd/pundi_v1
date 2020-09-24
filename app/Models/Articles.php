@@ -14,12 +14,12 @@ class Articles extends Model
 
     public function kategori()
     {
-        return $this->belongsTo(Kategori::class, 'kategori_id');
+        return $this->belongsTo(Category::class, 'kategori_id');
     }
 
     public function sub_kategori()
     {
-        return $this->belongsTo(SubKategori::class, 'sub_kategori_id');
+        return $this->belongsTo(SubCategory::class, 'sub_kategori_id');
     }
 
     public function user()

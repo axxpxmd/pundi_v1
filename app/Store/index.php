@@ -15,7 +15,7 @@
 namespace App\Store;
 
 // Models
-use App\Models\SubKategori;
+use App\Models\SubCategory;
 
 class index
 {
@@ -24,31 +24,31 @@ class index
      */
     public static function subHeadline()
     {
-        $sub_headline = SubKategori::wherekategori_id(1)->get();
+        $sub_headline = SubCategory::wherekategori_id(1)->get();
         return $sub_headline;
     }
 
     public static function subIndepth()
     {
-        $sub_indept = SubKategori::wherekategori_id(2)->get();
+        $sub_indept = SubCategory::wherekategori_id(2)->get();
         return $sub_indept;
     }
 
     public static function subKebijakan()
     {
-        $sub_kebijakan = SubKategori::wherekategori_id(3)->get();
+        $sub_kebijakan = SubCategory::wherekategori_id(3)->get();
         return $sub_kebijakan;
     }
 
     public static function subSerbaSerbi()
     {
-        $sub_serbaSerbi = SubKategori::wherekategori_id(4)->get();
+        $sub_serbaSerbi = SubCategory::wherekategori_id(4)->get();
         return $sub_serbaSerbi;
     }
 
     public static function subKonsultasi()
     {
-        $sub_konsultasi = SubKategori::wherekategori_id(5)->get();
+        $sub_konsultasi = SubCategory::wherekategori_id(5)->get();
         return $sub_konsultasi;
     }
 }

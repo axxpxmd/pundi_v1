@@ -17,7 +17,7 @@ namespace App\Http\Controllers;
 // Models
 use App\Models\Poster;
 use App\Models\Articles;
-use App\Models\Kategori;
+use App\Models\Category;
 
 class WelcomeController extends Controller
 {
@@ -45,11 +45,11 @@ class WelcomeController extends Controller
         $kebijakan  = Articles::where('kategori_id', 3)->wherestatus(1)->take(4)->get();
         $serbaSerbi = Articles::where('kategori_id', 4)->wherestatus(1)->take(4)->get();
         $konsultasi = Articles::where('kategori_id', 5)->wherestatus(1)->take(4)->get();
-        // Kategori
-        $satu  = Kategori::whereid(1)->first();
-        $dua   = Kategori::whereid(2)->first();
-        $tiga  = Kategori::whereid(3)->first();
-        $empat = Kategori::whereid(4)->first();
+        // Category
+        $satu  = Category::whereid(1)->first();
+        $dua   = Category::whereid(2)->first();
+        $tiga  = Category::whereid(3)->first();
+        $empat = Category::whereid(4)->first();
         // SideBar
         $sideBar = Articles::select('id', 'judul', 'kategori_id', 'sub_kategori_id', 'gambar', 'penulis_id', 'created_at')->wherestatus(1)->orderBy('created_at', 'desc')->take(4)->get();
         $poster  = Poster::select('poster')->get();
