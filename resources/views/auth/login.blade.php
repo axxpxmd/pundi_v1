@@ -36,7 +36,7 @@
                                     <button class="genric-btn primary bdr-5" type="submit" value="Log in">Login <i class="fa fa-arrow-right"></i></button>
                                 </div>
                             </div>
-                            <hr style="z-index: 0 !important">
+                            <hr>
                             <p class="f-blk -mt-20">Belum punya akun? 
                                 <a href="{{ route('register') }}">
                                     <u class="f-orange">Daftar sekarang!</u>
