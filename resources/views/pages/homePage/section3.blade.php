@@ -67,7 +67,7 @@
                                         <div class="col-lg-6 col-md-6">
                                             <div class="single-what-news mb-100">
                                                 <div class="what-img">
-                                                    <img src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" height="300" alt="photo"">
+                                                    <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" height="300" alt="photo"">
                                                 </div>
                                                 <div class="what-cap">
                                                     <span class="bdr-5" style="background-color: #FEBD01; color: white">

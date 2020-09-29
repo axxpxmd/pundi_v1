@@ -34,8 +34,8 @@ $poster  = App\Models\Poster::select('poster')->get();
                         <span class="fs-13 text-uppercase">
                            <a class="f-orange" href="#">{{ $i->sub_category->n_sub_category }}</a> 
                         </span>
-                        <a class="title-hover" href="#">
-                            <h3>{{ $i->title }}</h3>
+                        <a class="judul-hover" href="#">
+                            <p class="font-weight-bold text-black">{{ $i->title }}</p>
                         </a>
                         <i class="fas fa-clock fa-sm text-grey"></i>
                         <span class="fs-13 text-grey ml-1">{{ substr($i->created_at, 0, 10) }}</span>
