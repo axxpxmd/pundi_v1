@@ -1,4 +1,3 @@
-
 @php
     $logo = App\Models\Logo::select('footer')->first();
 @endphp

@@ -40,18 +40,18 @@ class WelcomeController extends Controller
          * Section 3 : Berita Terbaru
          */
         $semua = Articles::orderBy('created_at', 'desc')->wherestatus(1)->take(6)->get();
-        $headline   = Articles::where('kategori_id', 1)->wherestatus(1)->take(4)->get();
-        $indepth    = Articles::where('kategori_id', 2)->wherestatus(1)->take(4)->get();
-        $kebijakan  = Articles::where('kategori_id', 3)->wherestatus(1)->take(4)->get();
-        $serbaSerbi = Articles::where('kategori_id', 4)->wherestatus(1)->take(4)->get();
-        $konsultasi = Articles::where('kategori_id', 5)->wherestatus(1)->take(4)->get();
+        $headline   = Articles::where('category_id', 1)->wherestatus(1)->take(4)->get();
+        $indepth    = Articles::where('category_id', 2)->wherestatus(1)->take(4)->get();
+        $kebijakan  = Articles::where('category_id', 3)->wherestatus(1)->take(4)->get();
+        $serbaSerbi = Articles::where('category_id', 4)->wherestatus(1)->take(4)->get();
+        $konsultasi = Articles::where('category_id', 5)->wherestatus(1)->take(4)->get();
         // Category
         $satu  = Category::whereid(1)->first();
         $dua   = Category::whereid(2)->first();
         $tiga  = Category::whereid(3)->first();
         $empat = Category::whereid(4)->first();
         // SideBar
-        $sideBar = Articles::select('id', 'judul', 'kategori_id', 'sub_kategori_id', 'gambar', 'penulis_id', 'created_at')->wherestatus(1)->orderBy('created_at', 'desc')->take(4)->get();
+        $sideBar = Articles::select('id', 'title', 'category_id', 'sub_category_id', 'image', 'author_id', 'created_at')->wherestatus(1)->orderBy('created_at', 'desc')->take(4)->get();
         $poster  = Poster::select('poster')->get();
 
         /**

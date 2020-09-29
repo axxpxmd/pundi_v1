@@ -1,6 +1,5 @@
 @php
-$image   = App\Models\Images::select('id', 'footer', 'header', 'poster')->first();
-$sideBar = App\Models\Articles::select('id', 'judul', 'kategori_id', 'sub_kategori_id', 'gambar', 'penulis_id', 'created_at')->wherestatus(1)->orderBy('created_at', 'desc')->take(4)->get();
+$sideBar = App\Models\Articles::select('id', 'title', 'category_id', 'sub_category_id', 'image', 'author_id', 'created_at')->wherestatus(1)->orderBy('created_at', 'desc')->take(4)->get();
 $poster  = App\Models\Poster::select('poster')->get();
 @endphp
 <div class="col-lg-4">
@@ -30,13 +29,13 @@ $poster  = App\Models\Poster::select('poster')->get();
             <aside class="single_sidebar_widget popular_post_widget bg-transparent">
                 @foreach ($sideBar as $i)
                 <div class="media post_item m-t-20">
-                    <img style="object-fit: cover; object-position: center" class="bdr-5" src="{{ config('app.ftp_src').'images/artikel/'.$i->gambar }}" width="120" height="90" alt="artikel">
+                    <img style="object-fit: cover; object-position: center" class="bdr-5" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" width="120" height="90" alt="artikel">
                     <div class="media-body">
                         <span class="fs-13 text-uppercase">
-                           <a class="f-orange" href="#">{{ $i->sub_kategori->n_sub_kategori }}</a> 
+                           <a class="f-orange" href="#">{{ $i->sub_kategori->n_sub_category }}</a> 
                         </span>
-                        <a class="judul-hover" href="#">
-                            <h3>{{ $i->judul }}</h3>
+                        <a class="title-hover" href="#">
+                            <h3>{{ $i->title }}</h3>
                         </a>
                         <i class="fas fa-clock fa-sm text-grey"></i>
                         <span class="fs-13 text-grey ml-1">{{ substr($i->created_at, 0, 10) }}</span>

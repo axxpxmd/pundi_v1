@@ -18,10 +18,10 @@
                             <nav>                                                                     
                                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                     <a class="nav-item nav-link active fs-14i text-uppercase" id="nav-home-tab" data-toggle="tab" href="#semua">Semua</a>
-                                    <a class="nav-item nav-link fs-14i text-uppercase" id="nav-profile-tab" data-toggle="tab" href="#card1">{{ $satu->n_kategori }}</a>
-                                    <a class="nav-item nav-link fs-14i text-uppercase" id="nav-contact-tab" data-toggle="tab" href="#card2">{{ $dua->n_kategori }}</a>
-                                    <a class="nav-item nav-link fs-14i text-uppercase" id="nav-last-tab" data-toggle="tab" href="#card3">{{ $tiga->n_kategori }}</a>
-                                    <a class="nav-item nav-link fs-14i text-uppercase" id="nav-Sports" data-toggle="tab" href="#card4">{{ $empat->n_kategori }}</a>
+                                    <a class="nav-item nav-link fs-14i text-uppercase" id="nav-profile-tab" data-toggle="tab" href="#card1">{{ $satu->n_category }}</a>
+                                    <a class="nav-item nav-link fs-14i text-uppercase" id="nav-contact-tab" data-toggle="tab" href="#card2">{{ $dua->n_category }}</a>
+                                    <a class="nav-item nav-link fs-14i text-uppercase" id="nav-last-tab" data-toggle="tab" href="#card3">{{ $tiga->n_category }}</a>
+                                    <a class="nav-item nav-link fs-14i text-uppercase" id="nav-Sports" data-toggle="tab" href="#card4">{{ $empat->n_category }}</a>
                                 </div>
                             </nav>
                         </div>
@@ -37,15 +37,15 @@
                                         <div class="col-lg-6 col-md-6">
                                             <div class="single-what-news m-b-30">
                                                 <div class="what-img">
-                                                    <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->gambar }}" height="300" alt="photo"">
+                                                    <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" height="300" alt="photo"">
                                                 </div>
                                                 <div class="what-cap">
                                                     <span class="bdr-5" style="background-color: #FEBD01; color: white">
-                                                        <a href="#">{{ $i->kategori->n_kategori }}</a>
+                                                        <a href="#">{{ $i->kategori->n_category }}</a>
                                                     </span>
                                                     <i class="fas fa-clock fa-xs m-l-10 text-grey"></i>
                                                     <span style="color: grey; margin-left: -10px">{{ substr($i->created_at, 0, 10) }}</span>
-                                                    <h4><a href="#">{{ $i->judul }}</a></h4>
+                                                    <h4><a href="#">{{ $i->title }}</a></h4>
                                                 </div>
                                             </div>
                                         </div>
@@ -60,15 +60,15 @@
                                         <div class="col-lg-6 col-md-6">
                                             <div class="single-what-news mb-100">
                                                 <div class="what-img">
-                                                    <img src="{{ config('app.ftp_src').'images/artikel/'.$i->gambar }}" height="300" alt="photo"">
+                                                    <img src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" height="300" alt="photo"">
                                                 </div>
                                                 <div class="what-cap">
                                                     <span class="bdr-5" style="background-color: #FEBD01; color: white">
-                                                        <a href="#">{{ $i->kategori->n_kategori }}</a>
+                                                        <a href="#">{{ $i->kategori->n_category }}</a>
                                                     </span>
                                                     <i class="fas fa-clock fa-xs m-l-10 text-grey"></i>
                                                     <span style="color: grey; margin-left: -10px">{{ substr($i->created_at, 0, 10) }}</span>
-                                                    <h4><a href="#">{{ $i->judul }}</a></h4>
+                                                    <h4><a href="#">{{ $i->title }}</a></h4>
                                                 </div>
                                             </div>
                                         </div>
@@ -83,15 +83,15 @@
                                         <div class="col-lg-6 col-md-6">
                                             <div class="single-what-news mb-100">
                                                 <div class="what-img">
-                                                    <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->gambar }}" height="300" alt="photo"">
+                                                    <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" height="300" alt="photo"">
                                                 </div>
                                                 <div class="what-cap">
                                                     <span class="bdr-5" style="background-color: #FEBD01; color: white">
-                                                        <a href="#">{{ $i->kategori->n_kategori }}</a>
+                                                        <a href="#">{{ $i->kategori->n_category }}</a>
                                                     </span>
                                                     <i class="fas fa-clock fa-xs m-l-10 text-grey"></i>
                                                     <span style="color: grey; margin-left: -10px">{{ substr($i->created_at, 0, 10) }}</span>
-                                                    <h4><a href="#">{{ $i->judul }}</a></h4>
+                                                    <h4><a href="#">{{ $i->title }}</a></h4>
                                                 </div>
                                             </div>
                                         </div>
@@ -106,15 +106,15 @@
                                         <div class="col-lg-6 col-md-6">
                                             <div class="single-what-news mb-100">
                                                 <div class="what-img">
-                                                    <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->gambar }}" height="300" alt="photo"">
+                                                    <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" height="300" alt="photo"">
                                                 </div>
                                                 <div class="what-cap">
                                                     <span class="bdr-5" style="background-color: #FEBD01; color: white">
-                                                        <a href="#">{{ $i->kategori->n_kategori }}</a>
+                                                        <a href="#">{{ $i->kategori->n_category }}</a>
                                                     </span>
                                                     <i class="fas fa-clock fa-xs m-l-10 text-grey"></i>
                                                     <span style="color: grey; margin-left: -10px">{{ substr($i->created_at, 0, 10) }}</span>
-                                                    <h4><a href="#">{{ $i->judul }}</a></h4>
+                                                    <h4><a href="#">{{ $i->title }}</a></h4>
                                                 </div>
                                             </div>
                                         </div>
@@ -129,15 +129,15 @@
                                         <div class="col-lg-6 col-md-6">
                                             <div class="single-what-news mb-100">
                                                 <div class="what-img">
-                                                    <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->gambar }}" height="300" alt="photo"">
+                                                    <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" height="300" alt="photo"">
                                                 </div>
                                                 <div class="what-cap">
                                                     <span class="bdr-5" style="background-color: #FEBD01; color: white">
-                                                        <a href="#">{{ $i->kategori->n_kategori }}</a>
+                                                        <a href="#">{{ $i->kategori->n_category }}</a>
                                                     </span>
                                                     <i class="fas fa-clock fa-xs m-l-10 text-grey"></i>
                                                     <span style="color: grey; margin-left: -10px">{{ substr($i->created_at, 0, 10) }}</span>
-                                                    <h4><a href="#">{{ $i->judul }}</a></h4>
+                                                    <h4><a href="#">{{ $i->title }}</a></h4>
                                                 </div>
                                             </div>
                                         </div>

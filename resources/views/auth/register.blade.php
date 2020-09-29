@@ -154,8 +154,8 @@
     })();
 
     // image preview
-    function tampilkanPreview(gambar, idpreview) {
-        var gb = gambar.files;
+    function tampilkanPreview(image, idpreview) {
+        var gb = image.files;
         for (var i = 0; i < gb.length; i++) {
             var gbPreview = gb[i];
             var imageType = /image.*/;
@@ -172,7 +172,7 @@
             } else {
                 Swal.fire(
                     'Tipe file tidak boleh',
-                    'Harus format gambar',
+                    'Harus format image',
                     'error'
                 )
             }

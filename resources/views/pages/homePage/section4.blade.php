@@ -19,17 +19,17 @@
                         @foreach ($report as $i)
                             <div class="weekly2-single">
                                 <div class="weekly2-img">
-                                    <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->gambar }}" height="200" alt="photo">
+                                    <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" height="200" alt="photo">
                                 </div>
                                 <div class="weekly2-caption">
                                     <span class="bdr-5" style="background-color: #FEBD01; color: white">
-                                        <a href="#">{{ $i->kategori->n_kategori }}</a>
+                                        <a href="#">{{ $i->kategori->n_category }}</a>
                                     </span><br>
                                     <div class="-mt-10">
                                         <i class="fas fa-clock fa-xs text-grey"></i>
                                         <span style="color: grey; margin-left: -10px">{{ substr($i->created_at, 0, 10) }}</span>
                                     </div>
-                                    <h4 class="-mt-15"><a href="#">{{ $i->judul }}</a></h4>
+                                    <h4 class="-mt-15"><a href="#">{{ $i->title }}</a></h4>
                                 </div>
                             </div> 
                         @endforeach

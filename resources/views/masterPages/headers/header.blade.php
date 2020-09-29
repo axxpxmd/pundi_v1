@@ -1,6 +1,6 @@
 @php
     $logo = App\Models\Logo::select('header')->first();
-    $header_news  = App\Models\Articles::select('id', 'judul', 'status')->wherestatus(1)->orderBy('created_at', 'desc')->get();
+    $header_news  = App\Models\Articles::select('id', 'title', 'status')->wherestatus(1)->orderBy('created_at', 'desc')->get();
     $sub_headline = App\Store\index::subHeadline();
     $sub_indepth    = App\Store\index::subIndepth();
     $sub_kebijakan  = App\Store\index::subKebijakan();
@@ -23,7 +23,7 @@
                                 <ul id="js-news" class="js-hidden">
                                     @foreach ($header_news as $i)
                                     <li class="news-item">
-                                        <a style="color: black !important" href="#">{{ $i->judul }}</a>
+                                        <a style="color: black !important" href="#">{{ $i->title }}</a>
                                     </li>
                                     @endforeach
                                 </ul>

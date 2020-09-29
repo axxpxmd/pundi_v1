@@ -9,21 +9,21 @@ use App\User;
 
 class Articles extends Model
 {
-    protected $table    = 'artikel';
-    protected $fillable = ['id', 'judul', 'kategori_id', 'editor_id', 'sub_kategori_id', 'penulis_id', 'gambar', 'isi', 'tag', 'artikel_view', 'status', 'created_at', 'updated_at'];
+    protected $table    = 'articles';
+    protected $fillable = ['id', 'category_id', 'sub_category_id', 'author_id', 'editor_id', 'title', 'images', 'source_image', 'contens', 'tag', 'article_views', 'status', 'created_at', 'updated_at'];
 
     public function kategori()
     {
-        return $this->belongsTo(Category::class, 'kategori_id');
+        return $this->belongsTo(Category::class, 'category_id');
     }
 
     public function sub_kategori()
     {
-        return $this->belongsTo(SubCategory::class, 'sub_kategori_id');
+        return $this->belongsTo(SubCategory::class, 'sub_category_id');
     }
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'penulis_id');
+        return $this->belongsTo(User::class, 'author_id');
     }
 }

@@ -16,16 +16,16 @@
                                     <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
                                         <div class="zoom-effect">
                                             <div class="kotak">
-                                                <img class="bdr-5" style="width: 730px; height: 530px; object-fit: cover; object-position: center;-o-object-fit: cover" src="{{ config('app.ftp_src').'images/artikel/'.$i->gambar }}">
+                                                <img class="bdr-5" style="width: 730px; height: 530px; object-fit: cover; object-position: center;-o-object-fit: cover" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}">
                                             </div>
                                             <div class="carousel-caption">
                                                 <div class="">
                                                     <span class="bdr-5 p-2 capital f-b ktg-trendingTop">
-                                                        <a href="#">{{ $i->sub_kategori->n_sub_kategori }}</a>
+                                                        <a href="#">{{ $i->sub_kategori->n_sub_category }}</a>
                                                     </span>
                                                     <h2 class="m-t-20">
                                                         <a class="f-b text-white" href="#">
-                                                            {{ $i->judul }}
+                                                            {{ $i->title }}
                                                         </a>
                                                     </h2>
                                                     <i class="fa fa-user info-trendingTop"></i>
@@ -59,15 +59,15 @@
                             <div class="col-lg-4">
                                 <div class="single-bottom mb-30">
                                     <div class="trend-bottom-img mb-10 ">
-                                        <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->gambar }}" width="223" height="159" alt="photo">
+                                        <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" width="223" height="159" alt="photo">
                                     </div>
                                     <div class="trend-bottom-cap">
                                         <p class="fs-13 capital">
-                                            <a class="f-orange" href="#">{{ $i->sub_kategori->n_sub_kategori }}</a>
+                                            <a class="f-orange" href="#">{{ $i->sub_kategori->n_sub_category }}</a>
                                         </p>
                                         <h4 class="-mt-15">
                                             <a href="#">
-                                                {{ $i->judul }}
+                                                {{ $i->title }}
                                             </a>
                                         </h4>
                                         <div class="-mt-5" style="color: gray; margin-left: -25px">
@@ -87,15 +87,15 @@
                     @foreach ($trending_right as $i)
                     <div class="trand-right-single d-flex">
                         <div class="trand-right-img">
-                            <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->gambar }}" width="150" height="100" alt="photo">
+                            <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" width="150" height="100" alt="photo">
                         </div>
                         <div class="trand-right-cap -mt-7">
                             <p class="fs-13 capital">
-                                <a class="f-orange" href="#">{{ $i->sub_kategori->n_sub_kategori }}</a>
+                                <a class="f-orange" href="#">{{ $i->sub_kategori->n_sub_category }}</a>
                             </p>
                             <h4 class="-mt-15">
                                 <a href="#">
-                                    {{ $i->judul }}
+                                    {{ $i->title }}
                                 </a>
                             </h4>
                             <div class="-mt-5" style="color: gray; margin-left: -25px">

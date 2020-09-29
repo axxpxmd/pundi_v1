@@ -4,7 +4,7 @@
             <a href="#" style="font-size: 13px !important">ULASAN <span class="fa fa-angle-down "></span></a>
             <ul class="submenu">
                 @foreach ($sub_headline as $i)
-                    <li><a href="#">{{ $i->n_sub_kategori }}</a></li>    
+                    <li><a href="#">{{ $i->n_sub_category }}</a></li>    
                 @endforeach
             </ul>
         </li>
@@ -12,7 +12,7 @@
             <a href="#" style="font-size: 13px !important">KAJIAN <span class="fa fa-angle-down "></a>
             <ul class="submenu">
                 @foreach ($sub_indepth as $i)
-                    <li><a href="#">{{ $i->n_sub_kategori }}</a></li>
+                    <li><a href="#">{{ $i->n_sub_category }}</a></li>
                 @endforeach
             </ul> 
         </li>
@@ -20,7 +20,7 @@
             <a href="#" style="font-size: 13px !important">KREATIVITAS <span class="fa fa-angle-down "></a>
             <ul class="submenu">
                 @foreach ($sub_kebijakan as $i)
-                    <li><a href="#">{{ $i->n_sub_kategori }}</a></li>
+                    <li><a href="#">{{ $i->n_sub_category }}</a></li>
                 @endforeach
             </ul>
         </li>
@@ -28,7 +28,7 @@
             <a href="#" style="font-size: 13px !important">SERBA SERBI <span class="fa fa-angle-down "></a>
             <ul class="submenu">
                 @foreach ($sub_serbaSerbi as $i)
-                    <li><a href="#">{{ $i->n_sub_kategori }}</a></li>
+                    <li><a href="#">{{ $i->n_sub_category }}</a></li>
                 @endforeach
             </ul>
         </li>

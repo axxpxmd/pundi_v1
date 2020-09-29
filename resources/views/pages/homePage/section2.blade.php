@@ -19,15 +19,15 @@
                         @foreach ($indepth_of_issues as $i)
                         <div class="weekly-single">
                             <div class="weekly-img">
-                                <img style="height: 300px; object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->gambar }}" height="300" alt="photo">
+                                <img style="height: 300px; object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" height="300" alt="photo">
                             </div>
                             <div class="weekly-caption">
                                 <span class="bdr-5" style="background-color: #FEBD01 !important; color: white !important">
-                                    <a href="#">{{ $i->sub_kategori->n_sub_kategori }}</a>
+                                    <a href="#">{{ $i->sub_kategori->n_sub_category }}</a>
                                 </span>
                                 <h4 class="-mt-10">
                                     <a href="#">
-                                        {{ $i->judul }}
+                                        {{ $i->title }}
                                     </a>
                                 </h4>
                                 <div>
