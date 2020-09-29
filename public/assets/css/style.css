@@ -3639,13 +3639,13 @@ hr {
 }
 
 .recent-articles .single-recent .what-cap {
-    padding: 25px 20px 10px 0;
+    padding: 10px 20px 10px 10px;
     background: #fff;
     position: absolute;
-    bottom: -63px;
+    bottom: 0;
     left: 0;
     width: 80%;
-    border-radius: 0 7px 0 0;
+    border-radius: 0 5px 0 0;
     -webkit-transition: all .4s ease-out 0s;
     -moz-transition: all .4s ease-out 0s;
     -ms-transition: all .4s ease-out 0s;
@@ -3665,7 +3665,7 @@ hr {
 }
 
 .recent-articles .single-recent .what-cap h4 {
-    font-size: 18px
+    font-size: 16px
 }
 
 @media (max-width: 767px) {
@@ -3684,7 +3684,7 @@ hr {
 }
 
 .recent-articles .single-recent:hover .what-cap {
-    bottom: -70px
+    bottom: -22px
 }
 
 .recent-articles .slick-arrow {

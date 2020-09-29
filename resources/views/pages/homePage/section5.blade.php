@@ -1,7 +1,6 @@
 <div class="recent-articles -mt-10">
     <div class="container">
         <div class="">
-            <!-- section Tittle -->
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-tittle mb-30">
@@ -15,25 +14,21 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-12">
+                <div class="col-12 -mt-10">
                     <div class="recent-active dot-style d-flex dot-style">
                         @foreach ($card4 as $i)
                         <div class="single-recent mb-100">
                             <div class="what-img">
                                 <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" height="300" alt="photo"">
                             </div>
-                            <div class="what-cap -mt-10">
-                                <span class="bdr-5" style="background-color: #FEBD01; color: white">
+                            <div class="what-cap">
+                                <span class="bdr-5 m-r-10" style="background-color: #FEBD01; color: white">
                                     <a href="#">{{ $i->sub_category->n_sub_category }}</a>
                                 </span>
-                                <i class="fas fa-clock fa-xs m-l-10 text-grey"></i>
-                                <span style="color: grey; margin-left: -10px">{{ substr($i->created_at, 0, 10) }}</span>
-                                <br>
-                                <div style="margin-top: -10px">
-                                    <i class="fas fa-user fa-xs text-grey"></i>
-                                    <span style="color: grey;margin-left: -10px">{{ $i->user->name }}</span>
-                                </div>
-                                <h4 style="margin-top: -15px">
+                                <i class="fas fa-clock fa-xs text-grey">
+                                    <span style="color: grey; margin-left: -10px">{{ substr($i->created_at, 0, 10) }}</span>
+                                </i>
+                                <h4>
                                     <a href="#">{{ $i->title }}</a>
                                 </h4>
                             </div>

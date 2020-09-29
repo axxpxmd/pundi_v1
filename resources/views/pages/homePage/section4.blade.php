@@ -14,7 +14,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 -mt-15">
+                <div class="col-12 -mt-10">
                     <div class="weekly2-news-active dot-style d-flex dot-style">
                         @foreach ($card3 as $i)
                             <div class="weekly2-single">

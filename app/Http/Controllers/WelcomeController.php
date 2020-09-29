@@ -72,7 +72,7 @@ class WelcomeController extends Controller
         /**
          * Section 5
          */
-        $card4 = Articles::wherestatus(1)->orderBy('artikel_views', 'DESC')->take(5)->get();
+        $card4 = Articles::wherestatus(1)->orderBy('views', 'DESC')->take(5)->get();
 
         return view('home', compact(
             'trendingTop',
