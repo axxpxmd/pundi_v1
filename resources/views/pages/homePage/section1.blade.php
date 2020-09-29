@@ -7,12 +7,12 @@
                         <div class="">
                             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                                 <ol class="carousel-indicators m-b-1">
-                                    @foreach( $trending_top as $i )
+                                    @foreach( $trendingTop as $i )
                                     <li data-target="#carouselExampleIndicators" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"></li>
                                     @endforeach
                                 </ol>
                                 <div class="carousel-inner" role="listbox">
-                                    @foreach( $trending_top as $i )
+                                    @foreach( $trendingTop as $i )
                                     <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
                                         <div class="zoom-effect">
                                             <div class="kotak">
@@ -21,7 +21,7 @@
                                             <div class="carousel-caption">
                                                 <div class="">
                                                     <span class="bdr-5 p-2 capital f-b ktg-trendingTop">
-                                                        <a href="#">{{ $i->sub_kategori->n_sub_category }}</a>
+                                                        <a href="#">{{ $i->sub_category->n_sub_category }}</a>
                                                     </span>
                                                     <h2 class="m-t-20">
                                                         <a class="f-b text-white" href="#">
@@ -55,25 +55,25 @@
                     </div>
                     <div class="trending-bottom">
                         <div class="row">
-                            @foreach ($trending_bottom as $i)
+                            @foreach ($trendingBottom as $i)
                             <div class="col-lg-4">
                                 <div class="single-bottom mb-30">
                                     <div class="trend-bottom-img mb-10 ">
-                                        <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" width="223" height="159" alt="photo">
+                                        <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->article->image }}" width="223" height="159" alt="photo">
                                     </div>
                                     <div class="trend-bottom-cap">
                                         <p class="fs-13 capital">
-                                            <a class="f-orange" href="#">{{ $i->sub_kategori->n_sub_category }}</a>
+                                            <a class="f-orange" href="#">{{ $i->article->sub_category->n_sub_category }}</a>
                                         </p>
                                         <h4 class="-mt-15">
                                             <a href="#">
-                                                {{ $i->title }}
+                                                {{ $i->article->title }}
                                             </a>
                                         </h4>
                                         <div class="-mt-5" style="color: gray; margin-left: -25px">
                                             <i class="fas fa-clock fa-xs m-l-25" style="background-color: transparent !important"></i>
                                             <a class="fs-13 m-l-5" style="background-color: transparent !important">
-                                                {{substr($i->created_at, 0, 10)}}
+                                                {{substr($i->article->created_at, 0, 10)}}
                                             </a>
                                         </div>
                                     </div>
@@ -84,24 +84,24 @@
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    @foreach ($trending_right as $i)
+                    @foreach ($trendingRight as $i)
                     <div class="trand-right-single d-flex">
                         <div class="trand-right-img">
-                            <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" width="150" height="100" alt="photo">
+                            <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->article->image }}" width="150" height="100" alt="photo">
                         </div>
                         <div class="trand-right-cap -mt-7">
                             <p class="fs-13 capital">
-                                <a class="f-orange" href="#">{{ $i->sub_kategori->n_sub_category }}</a>
+                                <a class="f-orange" href="#">{{ $i->article->sub_category->n_sub_category }}</a>
                             </p>
                             <h4 class="-mt-15">
                                 <a href="#">
-                                    {{ $i->title }}
+                                    {{ $i->article->title }}
                                 </a>
                             </h4>
                             <div class="-mt-5" style="color: gray; margin-left: -25px">
                                 <i class="fas fa-clock fa-xs m-l-25" style="background-color: transparent !important"></i>
                                 <a class="fs-13 m-l-5" style="background-color: transparent !important">
-                                    {{substr($i->created_at, 0, 10)}}
+                                    {{substr($i->article->created_at, 0, 10)}}
                                 </a>
                             </div>
                         </div>

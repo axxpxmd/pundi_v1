@@ -32,7 +32,7 @@ $poster  = App\Models\Poster::select('poster')->get();
                     <img style="object-fit: cover; object-position: center" class="bdr-5" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" width="120" height="90" alt="artikel">
                     <div class="media-body">
                         <span class="fs-13 text-uppercase">
-                           <a class="f-orange" href="#">{{ $i->sub_kategori->n_sub_category }}</a> 
+                           <a class="f-orange" href="#">{{ $i->sub_category->n_sub_category }}</a> 
                         </span>
                         <a class="title-hover" href="#">
                             <h3>{{ $i->title }}</h3>

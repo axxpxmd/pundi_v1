@@ -8,7 +8,7 @@
                             <i class="fas fa-angle-up fa-lg arrow"></i>
                         </div>
                         <span class="fs-18 m-l-15 title-card"> 
-                            REPORT
+                            {{ $titleCard->card3 }}
                         </span>
                     </div>
                 </div>
@@ -16,20 +16,20 @@
             <div class="row">
                 <div class="col-12 -mt-15">
                     <div class="weekly2-news-active dot-style d-flex dot-style">
-                        @foreach ($report as $i)
+                        @foreach ($card3 as $i)
                             <div class="weekly2-single">
                                 <div class="weekly2-img">
-                                    <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" height="200" alt="photo">
+                                    <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->article->image }}" height="200" alt="photo">
                                 </div>
                                 <div class="weekly2-caption">
                                     <span class="bdr-5" style="background-color: #FEBD01; color: white">
-                                        <a href="#">{{ $i->kategori->n_category }}</a>
+                                        <a href="#">{{ $i->article->sub_category->n_sub_category }}</a>
                                     </span><br>
                                     <div class="-mt-10">
                                         <i class="fas fa-clock fa-xs text-grey"></i>
-                                        <span style="color: grey; margin-left: -10px">{{ substr($i->created_at, 0, 10) }}</span>
+                                        <span style="color: grey; margin-left: -10px">{{ substr($i->article->created_at, 0, 10) }}</span>
                                     </div>
-                                    <h4 class="-mt-15"><a href="#">{{ $i->title }}</a></h4>
+                                    <h4 class="-mt-15"><a href="#">{{ $i->article->title }}</a></h4>
                                 </div>
                             </div> 
                         @endforeach
