@@ -51,10 +51,10 @@ class WelcomeController extends Controller
          */
         // Article By Category
         $all = Articles::orderBy('created_at', 'desc')->wherestatus(1)->take(6)->get();
-        $n_category1 = Articles::where('category_id', 1)->wherestatus(1)->take(4)->get();
-        $n_category2 = Articles::where('category_id', 2)->wherestatus(1)->take(4)->get();
-        $n_category3 = Articles::where('category_id', 3)->wherestatus(1)->take(4)->get();
-        $n_category4 = Articles::where('category_id', 4)->wherestatus(1)->take(4)->get();
+        $n_category1 = Articles::where('category_id', 1)->wherestatus(1)->orderBy('created_at', 'desc')->take(4)->get();
+        $n_category2 = Articles::where('category_id', 2)->wherestatus(1)->orderBy('created_at', 'desc')->take(4)->get();
+        $n_category3 = Articles::where('category_id', 3)->wherestatus(1)->orderBy('created_at', 'desc')->take(4)->get();
+        $n_category4 = Articles::where('category_id', 4)->wherestatus(1)->orderBy('created_at', 'desc')->take(4)->get();
         // Category
         $category1 = Category::whereid(1)->first();
         $category2 = Category::whereid(2)->first();
