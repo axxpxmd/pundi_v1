@@ -36,6 +36,7 @@
                     </div>
                 </div>
             </div>
+            <hr width="100%" class="mt-10" style="color: #ddd">
         </div>
     </div>
 </div>

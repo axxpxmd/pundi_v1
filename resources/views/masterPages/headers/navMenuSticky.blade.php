@@ -1,7 +1,7 @@
 <nav>
     <ul>
         <li>
-            <a href="#" style="font-size: 13px !important">{{ $category1->n_category }} <span class="fa fa-angle-down "></span></a>
+            <a href="#" style="font-size: 13px !important" class="text-uppercase">{{ $category1->n_category }} <span class="fa fa-angle-down "></span></a>
             <ul class="submenu">
                 @foreach ($subCategory1 as $i)
                     <li><a href="#">{{ $i->n_sub_category }}</a></li>    
@@ -9,7 +9,7 @@
             </ul>
         </li>
         <li>
-            <a href="#" style="font-size: 13px !important">{{ $category2->n_category }} <span class="fa fa-angle-down "></a>
+            <a href="#" style="font-size: 13px !important" class="text-uppercase">{{ $category2->n_category }} <span class="fa fa-angle-down "></a>
             <ul class="submenu">
                 @foreach ($subCategory2 as $i)
                     <li><a href="#">{{ $i->n_sub_category }}</a></li>
@@ -17,7 +17,7 @@
             </ul> 
         </li>
         <li>
-            <a href="#" style="font-size: 13px !important">{{ $category3->n_category }} <span class="fa fa-angle-down "></a>
+            <a href="#" style="font-size: 13px !important" class="text-uppercase">{{ $category3->n_category }} <span class="fa fa-angle-down "></a>
             <ul class="submenu">
                 @foreach ($subCategory3 as $i)
                     <li><a href="#">{{ $i->n_sub_category }}</a></li>
@@ -25,7 +25,7 @@
             </ul>
         </li>
         <li>
-            <a href="#" style="font-size: 13px !important">{{ $category4->n_category }} <span class="fa fa-angle-down "></a>
+            <a href="#" style="font-size: 13px !important" class="text-uppercase">{{ $category4->n_category }} <span class="fa fa-angle-down "></a>
             <ul class="submenu">
                 @foreach ($subCategory4 as $i)
                     <li><a href="#">{{ $i->n_sub_category }}</a></li>
@@ -33,7 +33,7 @@
             </ul>
         </li>
         <li>
-            <a href="#" style="font-size: 13px !important">{{ $category5->n_category }}</a>
+            <a href="#" style="font-size: 13px !important" class="text-uppercase">{{ $category5->n_category }}</a>
         </li>
         @if (Auth::user() != null)
         <li>

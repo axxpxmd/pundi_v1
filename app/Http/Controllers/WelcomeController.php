@@ -49,6 +49,7 @@ class WelcomeController extends Controller
         /**
          * Section 3 
          */
+        // Article By Category
         $all = Articles::orderBy('created_at', 'desc')->wherestatus(1)->take(6)->get();
         $n_category1 = Articles::where('category_id', 1)->wherestatus(1)->take(4)->get();
         $n_category2 = Articles::where('category_id', 2)->wherestatus(1)->take(4)->get();
@@ -68,6 +69,11 @@ class WelcomeController extends Controller
          */
         $card3 = HomePageCard3::with('article')->take(6)->get();
 
+        /**
+         * Section 5
+         */
+        $card4 = Articles::wherestatus(1)->orderBy('artikel_views', 'DESC')->take(5)->get();
+
         return view('home', compact(
             'trendingTop',
             'trendingBottom',
@@ -85,7 +91,8 @@ class WelcomeController extends Controller
             'sideBar',
             'poster',
             'card3',
-            'titleCard'
+            'titleCard',
+            'card4'
         ));
     }
 }
