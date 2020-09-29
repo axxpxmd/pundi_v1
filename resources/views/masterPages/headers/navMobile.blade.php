@@ -1,39 +1,39 @@
 <nav>                  
     <ul id="navigation">    
         <li>
-            <a href="#">Ulasan</a>
+            <a href="#">{{ $category1->n_category }}</a>
             <ul class="submenu">
-                @foreach ($sub_headline as $i)
+                @foreach ($subCategory1 as $i)
                     <li><a href="#">{{ $i->n_sub_category }}</a></li>    
                 @endforeach
             </ul>
         </li>
         <li>
-            <a href="#">Kajian</a>
+            <a href="#">{{ $category2->n_category }}</a>
             <ul class="submenu">
-                @foreach ($sub_indepth as $i)
+                @foreach ($subCategory2 as $i)
                     <li><a href="#">{{ $i->n_sub_category }}</a></li>
                 @endforeach
             </ul>
         </li>
         <li>
-            <a href="#">Kreativitas</a>
+            <a href="#">{{ $category3->n_category }}</a>
             <ul class="submenu">
-                @foreach ($sub_kebijakan as $i)
+                @foreach ($subCategory3 as $i)
                     <li><a href="#">{{ $i->n_sub_category }}</a></li>
                 @endforeach
             </ul>
         </li>
         <li>
-            <a href="#">Serba serbi</a>
+            <a href="#">{{ $category4->n_category }}</a>
             <ul class="submenu">
-                @foreach ($sub_serbaSerbi as $i)
+                @foreach ($subCategory4 as $i)
                     <li><a href="#">{{ $i->n_sub_category }}</a></li>
                 @endforeach
             </ul>
         </li>
         <li>
-            <a href="#">Konsultasi</a>
+            <a href="#">{{ $category5->n_category }}</a>
         </li>
         @if (Auth::user() != null)
         <li>

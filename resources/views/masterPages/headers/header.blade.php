@@ -1,11 +1,16 @@
 @php
     $logo = App\Models\Logo::select('header')->first();
-    $header_news  = App\Models\Articles::select('id', 'title', 'status')->wherestatus(1)->orderBy('created_at', 'desc')->take(5)->get();
-    $sub_headline = App\Store\index::subHeadline();
-    $sub_indepth    = App\Store\index::subIndepth();
-    $sub_kebijakan  = App\Store\index::subKebijakan();
-    $sub_serbaSerbi = App\Store\index::subSerbaSerbi();
-    $sub_konsultasi = App\Store\index::subKebijakan();
+    $headerNews   = App\Models\Articles::select('id', 'title', 'status')->wherestatus(1)->orderBy('created_at', 'desc')->take(5)->get();
+    $subCategory1 = App\Store\index::subHeadline();
+    $subCategory2 = App\Store\index::subIndepth();
+    $subCategory3 = App\Store\index::subKebijakan();
+    $subCategory4 = App\Store\index::subSerbaSerbi();
+    // Category Name
+    $category1 = App\Models\Category::whereid(1)->first();
+    $category2 = App\Models\Category::whereid(2)->first();
+    $category3 = App\Models\Category::whereid(3)->first();
+    $category4 = App\Models\Category::whereid(4)->first();
+    $category5 = App\Models\Category::whereid(5)->first();
 @endphp
 <header>
     <div class="header-area">
@@ -21,7 +26,7 @@
                                     <span class="vertical-line"></span>
                                 </div>
                                 <ul id="js-news" class="js-hidden">
-                                    @foreach ($header_news as $i)
+                                    @foreach ($headerNews as $i)
                                     <li class="news-item">
                                         <a style="color: black !important" href="#">{{ $i->title }}</a>
                                     </li>

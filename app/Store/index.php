@@ -24,8 +24,8 @@ class index
      */
     public static function subHeadline()
     {
-        $sub_headline = SubCategory::wherecategory_id(1)->get();
-        return $sub_headline;
+        $subCategory1 = SubCategory::wherecategory_id(1)->get();
+        return $subCategory1;
     }
 
     public static function subIndepth()
@@ -36,19 +36,13 @@ class index
 
     public static function subKebijakan()
     {
-        $sub_kebijakan = SubCategory::wherecategory_id(3)->get();
-        return $sub_kebijakan;
+        $subCategory3 = SubCategory::wherecategory_id(3)->get();
+        return $subCategory3;
     }
 
     public static function subSerbaSerbi()
     {
-        $sub_serbaSerbi = SubCategory::wherecategory_id(4)->get();
-        return $sub_serbaSerbi;
-    }
-
-    public static function subKonsultasi()
-    {
-        $sub_konsultasi = SubCategory::wherecategory_id(5)->get();
-        return $sub_konsultasi;
+        $subCategory4 = SubCategory::wherecategory_id(4)->get();
+        return $subCategory4;
     }
 }

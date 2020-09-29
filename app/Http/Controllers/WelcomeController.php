@@ -21,9 +21,9 @@ use App\Models\Category;
 use App\Models\HomePageCard2;
 use App\Models\HomePageCard3;
 use App\Models\HomePageTitle;
-use App\Models\HomePageCard1Bottom;
-use App\Models\HomePageCard1Right;
 use App\Models\HomePageSideBar;
+use App\Models\HomePageCard1Right;
+use App\Models\HomePageCard1Bottom;
 
 class WelcomeController extends Controller
 {
@@ -35,7 +35,7 @@ class WelcomeController extends Controller
         $titleCard = HomePageTitle::first();
 
         /**
-         * Section 1 : Trending
+         * Section 1 
          */
         $trendingTop    = Articles::wherestatus(1)->orderBy('created_at', 'desc')->take(5)->get();
         $trendingBottom = HomePageCard1Bottom::with('article')->take(3)->get();
@@ -47,7 +47,7 @@ class WelcomeController extends Controller
         $card2 = HomePageCard2::with('article')->take(5)->get();
 
         /**
-         * Section 3 : Berita Terbaru
+         * Section 3 
          */
         $all = Articles::orderBy('created_at', 'desc')->wherestatus(1)->take(6)->get();
         $n_category1 = Articles::where('category_id', 1)->wherestatus(1)->take(4)->get();
@@ -64,7 +64,7 @@ class WelcomeController extends Controller
         $poster  = Poster::select('poster')->get();
 
         /**
-         * Section 4 : Report
+         * Section 4
          */
         $card3 = HomePageCard3::with('article')->take(6)->get();
 

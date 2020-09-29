@@ -1,42 +1,39 @@
-@php
-    
-@endphp
 <nav>                  
     <ul>    
         <li>
-            <a href="#" style="font-size: 13px !important">ULASAN <span class="fa fa-angle-down "></span></a>
+            <a href="#" style="font-size: 13px !important" class="text-uppercase">{{ $category1->n_category }} <span class="fa fa-angle-down "></span></a>
             <ul class="submenu">
-                @foreach ($sub_headline as $i)
+                @foreach ($subCategory1 as $i)
                     <li><a href="#">{{ $i->n_sub_category }}</a></li>    
                 @endforeach
             </ul>
         </li>
         <li>
-            <a href="#" style="font-size: 13px !important">KAJIAN <span class="fa fa-angle-down "></a>
+            <a href="#" style="font-size: 13px !important" class="text-uppercase">{{ $category2->n_category }} <span class="fa fa-angle-down "></a>
             <ul class="submenu">
-                @foreach ($sub_indepth as $i)
+                @foreach ($subCategory2 as $i)
                     <li><a href="#">{{ $i->n_sub_category }}</a></li>
                 @endforeach
             </ul> 
         </li>
         <li>
-            <a href="#" style="font-size: 13px !important">KREATIVITAS <span class="fa fa-angle-down "></a>
+            <a href="#" style="font-size: 13px !important" class="text-uppercase">{{ $category3->n_category }} <span class="fa fa-angle-down "></a>
             <ul class="submenu">
-                @foreach ($sub_kebijakan as $i)
+                @foreach ($subCategory3 as $i)
                     <li><a href="#">{{ $i->n_sub_category }}</a></li>
                 @endforeach
             </ul>
         </li>
         <li>
-            <a href="#" style="font-size: 13px !important">SERBA SERBI <span class="fa fa-angle-down "></a>
+            <a href="#" style="font-size: 13px !important" class="text-uppercase">{{ $category4->n_category }} <span class="fa fa-angle-down "></a>
             <ul class="submenu">
-                @foreach ($sub_serbaSerbi as $i)
+                @foreach ($subCategory4 as $i)
                     <li><a href="#">{{ $i->n_sub_category }}</a></li>
                 @endforeach
             </ul>
         </li>
         <li>
-            <a href="#" style="font-size: 13px !important">KONSULTASI</a>
+            <a href="#" style="font-size: 13px !important" class="text-uppercase">{{ $category5->n_category }}</a>
         </li>
         @if (Auth::user() != null)
         <li>
