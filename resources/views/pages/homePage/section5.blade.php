@@ -22,7 +22,7 @@
                             <div class="what-img">
                                 <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" height="300" alt="photo"">
                             </div>
-                            <div class="what-cap">
+                            <div class="what-cap -mt-10">
                                 <span class="bdr-5" style="background-color: #FEBD01; color: white">
                                     <a href="#">{{ $i->sub_category->n_sub_category }}</a>
                                 </span>
