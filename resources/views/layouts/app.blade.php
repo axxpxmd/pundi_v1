@@ -18,7 +18,7 @@
     <meta property="og:image" content="https://davidwalsh.name/wp-content/themes/klass/img/facebooklogo.png"/>
     <meta property="og:title" content="PUNDI.or.id - kanal pendidikan tajam dan mencerahkan"/>
     <meta property="og:image" content="{{ config('app.path_url').'images/logo/'.$logo->logo_share }}" />
-    <meta property="og:url" content="http://pundi.or.id/"/>
+    <meta property="og:url" content="http://pundi-dev.pundi.or.id"/>
     <meta property="og:site_name" content="PUNDI"/>
     <meta property="og:type" content="article"/>
 
