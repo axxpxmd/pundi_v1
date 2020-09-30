@@ -34,3 +34,8 @@ Route::get('/redaksi', function () {
 Route::get('/media-siber', function () {
     return view('pages.mediaSaber');
 });
+
+Route::group(['middleware' => ['auth']], function () {
+    // Profil
+    Route::get('profil', 'ProfileController@index')->name('profil');
+});

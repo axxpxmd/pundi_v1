@@ -37,24 +37,24 @@
         </li>
         @if (Auth::user() != null)
         <li>
-            <a href="#" style="font-size: 13px !important">AKUN <span class="fa fa-angle-down"></a>
+            <a href="#" style="font-size: 13px !important"">AKUN <span class="fa fa-angle-down "></a>
             <ul class="submenu">
-                <li><a href="#">Edit Profil</a></li>
-                <li><a href="#">Kirim Tulisan</a></li>
-                <li><a href="#">Ketentuan Tulisan</a></li>
-                <li><a href="" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Log Out</a></li>
+                <li><a href="{{ route('profil') }}"><i class="fa fa-user-edit mr-2"></i>Edit Profil</a></li>
+                <li><a href=""><i class="fa fa-file-alt mr-2"></i>Kirim Tulisan</a></li>
+                <li><a href=""><i class="fa fa-file-alt mr-2"></i>Ketentuan Tulisan</a></li>
+                <li><a href="" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="fa fa-sign-out-alt mr-2"></i>Log Out</a></li>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
                 </form>
             </ul>
         </li>
         @else
-        <li>
-            <a href="#" style="font-size: 13px !important">AKUN <span class="fa fa-angle-down "></a>
+       <li>
+            <a href="#" style="font-size: 13px !important"">AKUN <span class="fa fa-angle-down "></a>
             <ul class="submenu">
-                <li><a href="#">Kirim Tulisan</a></li>
-                <li><a href="#">Ketentuan Tulisan</a></li>
-                <li><a href="#">Login</a></li>
+                <li><a href=""><i class="fa fa-file-alt mr-2"></i>Kirim Tulisan</a>Kirim Tulisan</a></li>
+                <li><a href=""><i class="fa fa-file-alt mr-2"></i>Ketentuan Tulisan</a></li>
+                <li><a href="{{ route('login') }}"><i class="fa fa-sign-in-alt mr-2"></i>Login</a></li>
             </ul>
         </li>
         @endif
