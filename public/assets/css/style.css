@@ -237,10 +237,6 @@ a {
     color: #635c5c
 }
 
-a:hover {
-    color: #fff
-}
-
 a:focus,
 a:hover,
 .portfolio-cat a:hover,
@@ -4052,14 +4048,7 @@ hr {
     transition: .4s
 }
 
-.blog_area a:hover,
-.blog_area a :hover {
-    background: -webkit-linear-gradient(131deg, #000000 0%, #000000 99%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-decoration: none;
-    transition: .4s
-}
+
 
 .single-blog {
     overflow: hidden;

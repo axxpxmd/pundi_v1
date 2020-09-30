@@ -118,19 +118,19 @@
                         <div class="form-group row">
                             <label for="facebook" class="col-sm-4 f-b col-form-label">FACEBOOK</label>
                             <div class="col-sm-8">
-                                <input type="text" name="facebook" id="facebook" class="form-control input single-input-primary" value="{{ old('facebook') }}">
+                                <input type="text" name="facebook" id="facebook" class="form-control input single-input-primary" placeholder="username facebook" value="{{ old('facebook') }}">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="twitter" class="col-sm-4 f-b col-form-label">TWITTER</label>
                             <div class="col-sm-8">
-                                <input type="text" name="twitter" id="twitter" class="form-control input single-input-primary" value="{{ old('twitter') }}">
+                                <input type="text" name="twitter" id="twitter" class="form-control input single-input-primary" placeholder="username twitter" value="{{ old('twitter') }}">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="instagram" class="col-sm-4 f-b col-form-label">INSTAGRAM</label>
                             <div class="col-sm-8">
-                                <input type="text" name="instagram" id="instagram" class="form-control input single-input-primary" value="{{ old('instagram') }}">
+                                <input type="text" name="instagram" id="instagram" class="form-control input single-input-primary" placeholder="username instagram" value="{{ old('instagram') }}">
                             </div>
                         </div>
                         <div class="row">
@@ -148,7 +148,7 @@
                     </form>
                 </div>
             </div>
-            @include('masterPages.SideBar')
+            @include('masterPages.sideBar')
         </div>
     </div>
 </section>

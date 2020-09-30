@@ -299,6 +299,13 @@
     text-transform: uppercase
 }
 
+.pengaturan-card {
+    background-color: #F6F8FC !important;
+    color: white !important;
+    padding: 8px 15px 8px 15px;
+    border: 1px solid #EEEEEE;
+}
+
 .kategori-title {
     color: #FEBD01 !important;
     font-weight: 700 !important;

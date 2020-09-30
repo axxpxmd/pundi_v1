@@ -13,7 +13,7 @@
                             <div class="form-group row">
                                 <label class="col-sm-2 f-b col-form-label" for="email">E-MAIL</label>
                                 <div class="col-sm-10">
-                                    <input type="email" class="input single-input-primary @error('email') is-invalid @enderror" name="email" placeholder="E-mail"/>
+                                    <input type="email" class="input single-input-primary @error('email') is-invalid @enderror" name="email" placeholder="example@email.com"/>
                                     @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>Email / Password salah</strong>

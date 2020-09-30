@@ -52,7 +52,7 @@
         <li>
             <a href="#" style="font-size: 13px !important"">AKUN <span class="fa fa-angle-down "></a>
             <ul class="submenu">
-                <li><a href=""><i class="fa fa-file-alt mr-2"></i>Kirim Tulisan</a>Kirim Tulisan</a></li>
+                <li><a href=""><i class="fa fa-file-alt mr-2"></i>Kirim Tulisan</a></li>
                 <li><a href=""><i class="fa fa-file-alt mr-2"></i>Ketentuan Tulisan</a></li>
                 <li><a href="{{ route('login') }}"><i class="fa fa-sign-in-alt mr-2"></i>Login</a></li>
             </ul>
