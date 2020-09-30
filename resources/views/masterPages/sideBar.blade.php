@@ -53,7 +53,7 @@ $poster  = App\Models\Poster::select('poster')->get();
                 <div class="mt-2 ml-3">
                     <p class="text-black">PUNDI.OR.ID - Tajam dan Mencerahkan</p>
                     <p class="text-black">Jl. Kebun Raya, RT. 18/RW 6, Gg. Melati, Rejosari KG. I, Yogyakarta, 55171</p>
-                    <p><a class="text-black" href="">Tentang Kami</a></p>
+                    <p><a class="text-black" href="{{ config('app.url'). '/tentang-kami' }}">Tentang Kami</a></p>
                     <p><a class="text-black" href="">Disclaimer</a></p>
                     <p><a class="text-black" href="">Redaksi</a></p>
                     <p><a class="text-black" href="">Media Siber</a></p>

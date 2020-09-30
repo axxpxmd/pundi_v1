@@ -1,5 +1,5 @@
 @php
-    $logo = App\Models\Logo::select('preloader', 'logo_share', 'logo_title')->first();
+    $logo = App\Models\Logo::select('preloader', 'share', 'title')->first();
 @endphp
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -11,12 +11,12 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Title -->
-    <link rel="icon" href="{{ config('app.ftp_src').'images/logo/'.$logo->logo_title }}" type="image/x-icon">
+    <link rel="icon" href="{{ config('app.ftp_src').'images/logo/'.$logo->title }}" type="image/x-icon">
     <title>{{ config('app.name') }} @yield('title')</title>
 
     <!-- Link Share -->
     <meta property="og:title" content="PUNDI.or.id - kanal pendidikan tajam dan mencerahkan"/>
-    <meta property="og:image" content="{{ config('app.ftp_src').'images/logo/'.$logo->logo_share }}" />
+    <meta property="og:image" content="{{ config('app.ftp_src').'images/logo/'.$logo->share }}" />
     <meta property="og:url" content="http://pundi-dev.pundi.or.id"/>
     <meta property="og:site_name" content="PUNDI"/>
     <meta property="og:type" content="article"/>

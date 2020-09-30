@@ -22,7 +22,7 @@
                     <div class="col-lg-6">
                         <div class="footer-menu f-right -mt-20">
                             <ul>
-                                <li><a href="#">Tentang Kami</a></li>
+                                <li><a href="{{ config('app.url'). '/tentang-kami' }}">Tentang Kami</a></li>
                                 <li><a href="#">Disclaimer</a></li>
                                 <li><a href="#">Redaksi</a></li>
                                 <li><a href="#">Media Siber</a></li>

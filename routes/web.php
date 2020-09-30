@@ -18,3 +18,7 @@ Auth::routes();
 
 Route::get('/', 'WelcomeController@index')->name('/');
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/tentang-kami', function () {
+    return view('pages.tentangKami');
+});
