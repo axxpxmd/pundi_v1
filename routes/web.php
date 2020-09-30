@@ -22,3 +22,15 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/tentang-kami', function () {
     return view('pages.tentangKami');
 });
+
+Route::get('/disclaimer', function () {
+    return view('pages.disclaimer');
+});
+
+Route::get('/redaksi', function () {
+    return view('pages.redaksi');
+});
+
+Route::get('/media-siber', function () {
+    return view('pages.mediaSaber');
+});
