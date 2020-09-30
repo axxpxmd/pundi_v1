@@ -10,7 +10,7 @@
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
                             <p class="text-center fs-30 f-b f-blk m-b-30">Login</p>
-                            <div class="mt-10 form-group row">
+                            <div class="form-group row">
                                 <label class="col-sm-2 f-b col-form-label" for="email">E-MAIL</label>
                                 <div class="col-sm-10">
                                     <input type="email" class="input single-input-primary @error('email') is-invalid @enderror" name="email" placeholder="E-mail"/>
@@ -21,7 +21,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="mt-10 form-group row">
+                            <div class="form-group row">
                                 <label class="col-sm-2 f-b col-form-label" for="password">PASSWORD</label>
                                 <div class="col-sm-10">
                                     <input type="password" class="input single-input-primary @error('password') is-invalid @enderror" name="password" placeholder="Password"/>
