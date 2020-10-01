@@ -46,7 +46,7 @@
                         <p class="fs-30 f-b f-blk">Personal Data Kontributor</p>
                         <p class="fs-12 -mt-10">Data berikut digunakan untuk menampilkan Profil Kontributor</p>
                         <hr class="-mt-10">
-                        <div class="form-group row">
+                        {{-- <div class="form-group row">
                             <label for="username" class="col-sm-4 f-b col-form-label">USERNAME<span class="text-danger ml-1">*</span></label>
                             <div class="col-sm-8">
                                 <input type="text" name="username" id="username" class="form-control input single-input-primary" value="{{ old('username') }}" required>
@@ -54,7 +54,7 @@
                                     <strong>Username tidak boleh kosong!</strong>
                                 </span>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="form-group row">
                             <label for="name" class="col-sm-4 f-b col-form-label">NAMA<span class="text-danger ml-1">*</span></label>
                             <div class="col-sm-8">

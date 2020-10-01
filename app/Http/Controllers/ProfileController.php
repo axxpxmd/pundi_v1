@@ -25,4 +25,13 @@ class ProfileController extends Controller
             'article'
         ));
     }
+
+    public function edit()
+    {
+        $user = Auth::user();
+
+        return view($this->view . 'edit', compact(
+            'user'
+        ));
+    }
 }

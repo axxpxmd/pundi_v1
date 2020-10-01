@@ -3228,7 +3228,7 @@ hr {
 .whats-news-area .whats-news-caption .single-what-news .what-cap,
 .about-area .whats-news-caption .single-what-news .what-cap,
 .contact-section .whats-news-caption .single-what-news .what-cap {
-    padding: 10px 20px 10px 0;
+    padding: 10px 20px 10px 10px;
     background: #fff;
     position: absolute;
     bottom: 0px;

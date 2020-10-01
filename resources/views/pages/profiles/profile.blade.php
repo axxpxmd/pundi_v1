@@ -1,12 +1,12 @@
 @extends('layouts.app')
 @section('content')
 @include('masterPages.headers.header')
-<section class="blog_area section-padding">
+<section class="blog_area section-padding" style="background-color: #F7F7F7">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mb-5 mb-lg-0">
                 <div class="blog_left_sidebar">
-                    <div class="card">
+                    <div class="card no-b">
                         <div class="card-body">
                             <div class="text-center">
                                 <img class="rounded-circle img-circular" src="{{ config('app.ftp_src').'images/ava/'.Auth::user()->photo }}" height="70" width="70"  alt="Photo profile">
@@ -24,7 +24,7 @@
                                     </a>
                                 </div>
                                 <span class="bdr-5 fs-12 pengaturan-card">
-                                    <a href="" class="text-black font-weight-bold fs-14">Pengaturan</a>
+                                    <a href="{{ route('profil.edit') }}" class="text-black font-weight-bold fs-14">Pengaturan</a>
                                 </span>
                             </div>
                             <div class="mt-5">
@@ -69,10 +69,10 @@
                                     </div>
                                     <div class="tab-pane fade" id="profile" role="tabpanel">
                                         <div class="col-md-12 mt-2">
-                                            <div class="row">
+                                            {{-- <div class="row">
                                                 <label class="col-md-3 s-12"><strong>Username</strong></label>
                                                 <label class="col-md-8 s-12">{{ Auth::user()->username }}</label>
-                                            </div>
+                                            </div> --}}
                                             <div class="row">
                                                 <label class="col-md-3 s-12"><strong>Email</strong></label>
                                                 <label class="col-md-8 s-12">{{ Auth::user()->email }}</label>

@@ -38,4 +38,5 @@ Route::get('/media-siber', function () {
 Route::group(['middleware' => ['auth']], function () {
     // Profil
     Route::get('profil', 'ProfileController@index')->name('profil');
+    Route::get('profil/edit', 'ProfileController@edit')->name('profil.edit');
 });
