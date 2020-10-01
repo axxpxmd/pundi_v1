@@ -41,14 +41,16 @@
                                                 </div>
                                                 <div class="what-cap">
                                                     <span class="bdr-5" style="background-color: #FEBD01; color: white">
-                                                        <a href="#">{{ $i->sub_category->n_sub_category }}</a>
+                                                        <a href="#" class="hover-blk">{{ $i->sub_category->n_sub_category }}</a>
                                                     </span>
                                                     <i class="fas fa-clock fa-xs m-l-10 text-grey"></i>
                                                     <span style="color: grey; margin-left: -10px">{{ substr($i->created_at, 0, 10) }}</span>
                                                     <br>
                                                     <div style="margin-top: -10px">
                                                         <i class="fas fa-user fa-xs text-grey"></i>
-                                                        <span style="color: grey;margin-left: -10px">{{ $i->user->name }}</span>
+                                                        <a class="judul-hover" href="{{ route('other-user', str_slug($i->user->name)) }}">
+                                                            <span class="judul-hover" style="color: grey;margin-left: -10px">{{ $i->user->name }}</span>
+                                                        </a>
                                                     </div>
                                                     <h4 style="margin-top: -15px">
                                                         <a href="#">{{ $i->title }}</a>
@@ -71,14 +73,16 @@
                                                 </div>
                                                 <div class="what-cap">
                                                     <span class="bdr-5" style="background-color: #FEBD01; color: white">
-                                                        <a href="#">{{ $i->sub_category->n_sub_category }}</a>
+                                                        <a href="#" class="hover-blk">{{ $i->sub_category->n_sub_category }}</a>
                                                     </span>
                                                     <i class="fas fa-clock fa-xs m-l-10 text-grey"></i>
                                                     <span style="color: grey; margin-left: -10px">{{ substr($i->created_at, 0, 10) }}</span>
                                                     <br>
                                                     <div style="margin-top: -10px">
                                                         <i class="fas fa-user fa-xs text-grey"></i>
-                                                        <span style="color: grey;margin-left: -10px">{{ $i->user->name }}</span>
+                                                        <a class="judul-hover" href="{{ route('other-user', str_slug($i->user->name)) }}">
+                                                            <span class="judul-hover" style="color: grey;margin-left: -10px">{{ $i->user->name }}</span>
+                                                        </a>
                                                     </div>
                                                     <h4 style="margin-top: -15px">
                                                         <a href="#">{{ $i->title }}</a>
@@ -101,14 +105,16 @@
                                                 </div>
                                                 <div class="what-cap">
                                                     <span class="bdr-5" style="background-color: #FEBD01; color: white">
-                                                        <a href="#">{{ $i->sub_category->n_sub_category }}</a>
+                                                        <a href="#" class="hover-blk">{{ $i->sub_category->n_sub_category }}</a>
                                                     </span>
                                                     <i class="fas fa-clock fa-xs m-l-10 text-grey"></i>
                                                     <span style="color: grey; margin-left: -10px">{{ substr($i->created_at, 0, 10) }}</span>
                                                     <br>
                                                     <div style="margin-top: -10px">
                                                         <i class="fas fa-user fa-xs text-grey"></i>
-                                                        <span style="color: grey;margin-left: -10px">{{ $i->user->name }}</span>
+                                                        <a class="judul-hover" href="{{ route('other-user', str_slug($i->user->name)) }}">
+                                                            <span class="judul-hover" style="color: grey;margin-left: -10px">{{ $i->user->name }}</span>
+                                                        </a>
                                                     </div>
                                                     <h4 style="margin-top: -15px">
                                                         <a href="#">{{ $i->title }}</a>
@@ -131,14 +137,16 @@
                                                 </div>
                                                 <div class="what-cap">
                                                     <span class="bdr-5" style="background-color: #FEBD01; color: white">
-                                                        <a href="#">{{ $i->sub_category->n_sub_category }}</a>
+                                                        <a href="#" class="hover-blk">{{ $i->sub_category->n_sub_category }}</a>
                                                     </span>
                                                     <i class="fas fa-clock fa-xs m-l-10 text-grey"></i>
                                                     <span style="color: grey; margin-left: -10px">{{ substr($i->created_at, 0, 10) }}</span>
                                                     <br>
                                                     <div style="margin-top: -10px">
                                                         <i class="fas fa-user fa-xs text-grey"></i>
-                                                        <span style="color: grey;margin-left: -10px">{{ $i->user->name }}</span>
+                                                        <a class="judul-hover" href="{{ route('other-user', str_slug($i->user->name)) }}">
+                                                            <span class="judul-hover" style="color: grey;margin-left: -10px">{{ $i->user->name }}</span>
+                                                        </a>
                                                     </div>
                                                     <h4 style="margin-top: -15px">
                                                         <a href="#">{{ $i->title }}</a>
@@ -161,14 +169,16 @@
                                                 </div>
                                                 <div class="what-cap">
                                                     <span class="bdr-5" style="background-color: #FEBD01; color: white">
-                                                        <a href="#">{{ $i->sub_category->n_sub_category }}</a>
+                                                        <a href="#" class="hover-blk">{{ $i->sub_category->n_sub_category }}</a>
                                                     </span>
                                                     <i class="fas fa-clock fa-xs m-l-10 text-grey"></i>
                                                     <span style="color: grey; margin-left: -10px">{{ substr($i->created_at, 0, 10) }}</span>
                                                     <br>
                                                     <div style="margin-top: -10px">
                                                         <i class="fas fa-user fa-xs text-grey"></i>
-                                                        <span style="color: grey;margin-left: -10px">{{ $i->user->name }}</span>
+                                                        <a class="judul-hover" href="{{ route('other-user', str_slug($i->user->name)) }}">
+                                                            <span class="judul-hover" style="color: grey;margin-left: -10px">{{ $i->user->name }}</span>
+                                                        </a>
                                                     </div>
                                                     <h4 style="margin-top: -15px">
                                                         <a href="#">{{ $i->title }}</a>

@@ -35,10 +35,11 @@ Route::get('/media-siber', function () {
     return view('pages.mediaSaber');
 });
 
+// Other Profile User
+Route::get('profil/{name}', 'ProfileOtherUserController@index')->name('other-user');
+
 Route::group(['middleware' => ['auth']], function () {
     // Profil
     Route::get('profil', 'ProfileController@index')->name('profil');
     Route::get('profil/edit', 'ProfileController@edit')->name('profil.edit');
-    // Other Profile User
-    Route::get('profil/{name}', 'ProfileOtherUserController@index')->name('other-user');
 });

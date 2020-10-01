@@ -39,7 +39,7 @@
         <li>
             <a href="#">Akun</a>
             <ul class="submenu">
-                <li><a href="#"><i class="fa fa-user-edit mr-2"></i>Edit Profil</a></li>
+                <li><a href="{{ route('profil') }}"><i class="fa fa-user-edit mr-2"></i>Edit Profil</a></li>
                 <li><a href="#"><i class="fa fa-file-alt mr-2"></i>Kirim Tulisan</a></li>
                 <li><a href="#"><i class="fa fa-file-alt mr-2"></i>Ketentuan Tulisan</a></li>
                 <li><a href="" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="fa fa-sign-out-alt mr-2"></i>Log Out</a></li>

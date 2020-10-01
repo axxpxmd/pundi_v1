@@ -21,10 +21,10 @@
                                             <div class="carousel-caption">
                                                 <div class="">
                                                     <span class="bdr-5 p-2 capital f-b ktg-trendingTop">
-                                                        <a href="#">{{ $i->sub_category->n_sub_category }}</a>
+                                                        <a class="hover-blk" href="#">{{ $i->sub_category->n_sub_category }}</a>
                                                     </span>
                                                     <h2 class="m-t-20">
-                                                        <a class="f-b text-white" href="#">
+                                                        <a class="f-b text-white judul-hover" href="#">
                                                             {{ $i->title }}
                                                         </a>
                                                     </h2>
@@ -63,7 +63,7 @@
                                     </div>
                                     <div class="trend-bottom-cap">
                                         <p class="fs-13 capital">
-                                            <a class="f-orange" href="#">{{ $i->article->sub_category->n_sub_category }}</a>
+                                            <a class="f-orange hover-blk" href="#">{{ $i->article->sub_category->n_sub_category }}</a>
                                         </p>
                                         <h4 class="-mt-15">
                                             <a href="#">
@@ -91,7 +91,7 @@
                         </div>
                         <div class="trand-right-cap -mt-7">
                             <p class="fs-13 capital">
-                                <a class="f-orange" href="#">{{ $i->article->sub_category->n_sub_category }}</a>
+                                <a class="f-orange hover-blk" href="#">{{ $i->article->sub_category->n_sub_category }}</a>
                             </p>
                             <h4 class="-mt-15">
                                 <a href="#">

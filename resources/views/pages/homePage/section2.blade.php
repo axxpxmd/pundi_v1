@@ -23,7 +23,7 @@
                             </div>
                             <div class="weekly-caption">
                                 <span class="bdr-5" style="background-color: #FEBD01 !important; color: white !important">
-                                    <a href="#">{{ $i->article->sub_category->n_sub_category }}</a>
+                                    <a class="hover-blk" href="#">{{ $i->article->sub_category->n_sub_category }}</a>
                                 </span>
                                 <h4 class="-mt-10">
                                     <a href="#">
@@ -32,7 +32,7 @@
                                 </h4>
                                 <div>
                                     <i class="fa fa-user text-grey"></i>
-                                    <a href="#" class="fs-13 m-l-5 text-grey judul-hover">
+                                    <a href="{{ route('other-user', str_slug($i->article->user->name)) }}" class="fs-13 m-l-5 text-grey judul-hover">
                                         {{ $i->article->user->name }}
                                     </a>
                                     <i class="fas fa-clock m-l-10 text-grey"></i>
