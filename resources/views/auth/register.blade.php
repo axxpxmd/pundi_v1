@@ -142,7 +142,7 @@
                         <hr>
                         <p class="m-t-20 f-blk -mt-10">Sudah punya akun? 
                             <a href="{{ route('login') }}">
-                                <u class="f-orange">Login!</u>
+                                <u class="f-orange hover-blk">Login!</u>
                             </a>
                         </p>
                     </form>

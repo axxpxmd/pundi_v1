@@ -7,13 +7,13 @@
             <div class="col-lg-8 mb-5 mb-lg-0">
                 <div class="blog_left_sidebar">
                     <div class="container">
-                        <form method="POST" action="{{ route('login') }}">
+                        <form class="needs-validation" novalidate method="POST" action="{{ route('login') }}">
                             @csrf
                             <p class="text-center fs-30 f-b f-blk m-b-30">Login</p>
                             <div class="form-group row">
                                 <label class="col-sm-2 f-b col-form-label" for="email">E-MAIL</label>
                                 <div class="col-sm-10">
-                                    <input type="email" class="input single-input-primary @error('email') is-invalid @enderror" name="email" placeholder="example@email.com"/>
+                                    <input type="email" name="email" id="email" class="form-control input single-input-primary @error('email') is-invalid @enderror" placeholder="example@email.com"/>
                                     @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>Email / Password salah</strong>
@@ -24,7 +24,7 @@
                             <div class="form-group row">
                                 <label class="col-sm-2 f-b col-form-label" for="password">PASSWORD</label>
                                 <div class="col-sm-10">
-                                    <input type="password" class="input single-input-primary @error('password') is-invalid @enderror" name="password" placeholder="Password"/>
+                                    <input type="password"  name="password" id="password" class="input single-input-primary @error('password') is-invalid @enderror" placeholder="Password"/>
                                     <a href="{{ route('password.request') }}">
                                         <p class="f-blk text-right fs-15 f-red mt-2">Lupa password?</p>
                                     </a>
@@ -39,7 +39,7 @@
                             <hr>
                             <p class="f-blk -mt-20">Belum punya akun? 
                                 <a href="{{ route('register') }}">
-                                    <u class="f-orange">Daftar sekarang!</u>
+                                    <u class="f-orange hover-blk">Daftar sekarang!</u>
                                 </a>
                             </p>
                         </form>
