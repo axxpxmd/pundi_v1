@@ -34,9 +34,9 @@ $poster  = App\Models\Poster::select('poster')->get();
                         <span class="fs-13 text-uppercase">
                            <a class="f-orange" href="#">{{ $i->sub_category->n_sub_category }}</a> 
                         </span>
-                        <a class="judul-hover" href="#">
-                            <p class="font-weight-bold text-black">{{ $i->title }}</p>
-                        </a>
+                        <p>
+                            <a class="font-weight-bold text-black judul-hover" href="">{{ $i->title }}</a>
+                        </p>
                         <i class="fas fa-clock fa-sm text-grey"></i>
                         <span class="fs-13 text-grey ml-1">{{ substr($i->created_at, 0, 10) }}</span>
                     </div>
@@ -53,10 +53,10 @@ $poster  = App\Models\Poster::select('poster')->get();
                 <div class="mt-2 ml-3">
                     <p class="text-black">PUNDI.OR.ID - Tajam dan Mencerahkan</p>
                     <p class="text-black">Jl. Kebun Raya, RT. 18/RW 6, Gg. Melati, Rejosari KG. I, Yogyakarta, 55171</p>
-                    <p><a class="text-black" href="{{ config('app.url'). '/tentang-kami' }}">Tentang Kami</a></p>
-                    <p><a class="text-black" href="{{ config('app.url'). '/disclaimer' }}">Disclaimer</a></p>
-                    <p><a class="text-black" href="{{ config('app.url'). '/redaksi' }}">Redaksi</a></p>
-                    <p><a class="text-black" href="{{ config('app.url'). '/media-siber' }}">Media Siber</a></p>
+                    <p><a class="text-black judul-hover" href="{{ config('app.url'). '/tentang-kami' }}">Tentang Kami</a></p>
+                    <p><a class="text-black judul-hover" href="{{ config('app.url'). '/disclaimer' }}">Disclaimer</a></p>
+                    <p><a class="text-black judul-hover" href="{{ config('app.url'). '/redaksi' }}">Redaksi</a></p>
+                    <p><a class="text-black judul-hover" href="{{ config('app.url'). '/media-siber' }}">Media Siber</a></p>
                 </div>
             </aside>
         </div>

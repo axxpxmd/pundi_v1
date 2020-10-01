@@ -29,7 +29,7 @@
                                                         </a>
                                                     </h2>
                                                     <i class="fa fa-user info-trendingTop"></i>
-                                                    <a href="#" class="f-b fs-13 m-l-5 info-trendingTop">
+                                                    <a href="{{ route('other-user', str_slug($i->user->name)) }}" class="judul-hover f-b fs-13 m-l-5 info-trendingTop">
                                                         {{ $i->user->name }}
                                                     </a>
                                                     <i class="fas fa-clock m-l-25 info-trendingTop"></i>
