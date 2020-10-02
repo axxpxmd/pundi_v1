@@ -32,10 +32,10 @@ $poster  = App\Models\Poster::select('poster')->get();
                     <img style="object-fit: cover; object-position: center" class="bdr-5" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" width="120" height="90" alt="artikel">
                     <div class="media-body">
                         <span class="fs-13 text-uppercase">
-                           <a class="f-orange hover-blk" href="#">{{ $i->sub_category->n_sub_category }}</a> 
+                           <a class="f-orange hover-blk" href="sub-kategori">{{ $i->sub_category->n_sub_category }}</a> 
                         </span>
                         <p>
-                            <a class="font-weight-bold text-black judul-hover" href="">{{ $i->title }}</a>
+                            <a class="font-weight-bold text-black judul-hover" href="artikel">{{ $i->title }}</a>
                         </p>
                         <i class="fas fa-clock fa-sm text-grey"></i>
                         <span class="fs-13 text-grey ml-1">{{ substr($i->created_at, 0, 10) }}</span>

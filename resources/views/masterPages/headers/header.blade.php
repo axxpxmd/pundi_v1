@@ -28,7 +28,7 @@
                                 <ul id="js-news" class="js-hidden">
                                     @foreach ($headerNews as $i)
                                     <li class="news-item">
-                                        <a style="color: black !important" href="#">{{ $i->title }}</a>
+                                        <a style="color: black !important" href="artikel">{{ $i->title }}</a>
                                     </li>
                                     @endforeach
                                 </ul>

@@ -35,6 +35,10 @@ Route::get('/media-siber', function () {
     return view('pages.mediaSaber');
 });
 
+Route::get('/ketentuan-tulisan', function () {
+    return view('pages.ketentuanTulisan');
+});
+
 // Other Profile User
 Route::get('profil/{name}', 'Profiles\ProfileOtherUserController@index')->name('other-user');
 

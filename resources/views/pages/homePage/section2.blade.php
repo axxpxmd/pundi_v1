@@ -23,10 +23,10 @@
                             </div>
                             <div class="weekly-caption">
                                 <span class="bdr-5" style="background-color: #FEBD01 !important; color: white !important">
-                                    <a class="hover-blk" href="#">{{ $i->article->sub_category->n_sub_category }}</a>
+                                    <a class="hover-blk" href="sub-kategori">{{ $i->article->sub_category->n_sub_category }}</a>
                                 </span>
                                 <h4 class="-mt-10">
-                                    <a href="#">
+                                    <a href="artikel">
                                         {{ $i->article->title }}
                                     </a>
                                 </h4>
