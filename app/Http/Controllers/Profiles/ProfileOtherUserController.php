@@ -1,6 +1,20 @@
 <?php
 
-namespace App\Http\Controllers;
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ * Description of welcome
+ *
+ * @author Asip Hamdi
+ * Github : axxpxmd
+ */
+
+namespace App\Http\Controllers\Profiles;
+
+use App\Http\Controllers\Controller;
 
 // Models
 use App\User;
