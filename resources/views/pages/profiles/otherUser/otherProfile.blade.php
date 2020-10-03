@@ -9,8 +9,16 @@
                     <div class="card no-b">
                         <div class="card-body">
                             <div class="text-center">
-                                <img class="rounded-circle img-circular" src="{{ config('app.ftp_src').'images/ava/'.$user->photo }}" height="70" width="70"  alt="Photo profile">
-                                <p class="fs-22 font-weight-bold text-black mt-3">{{ $user->name }}</p>
+                                <img class="rounded-circle img-circular" src="{{ config('app.ftp_src').'images/ava/'.$user->photo }}" height="100" width="100"  alt="Photo profile">
+                                <p class="fs-22 font-weight-bold text-black mt-3">{{ $user->name }}
+                                    @if ($countArticle < 5)
+                                    <i style="color: #945d41" class="fa fa-medal ml-1"></i>
+                                    @elseif($countArticle >= 5 && $countArticle <= 10)
+                                    <i style="color: #C0C0C0" class="fa fa-medal ml-1"></i>
+                                    @elseif($countArticle >= 10)
+                                    <i style="color: #ffc60b" class="fa fa-medal ml-1"></i>
+                                    @endif
+                                </p>
                                 <p class="text-black -mt-10">“ {{ $user->bio }} ”</p>
                                 <div class="mb-2 mt-n2">
                                     @if ($user->facebook != null)

@@ -32,11 +32,13 @@ class ProfileController extends Controller
         $user    = User::where('id', Auth::user()->id)->first();
         $article = Articles::where('author_id', Auth::user()->id)->with('user')->orderBy('views', 'DESC')->paginate(10);
         $comment = Comment::where('user_id', Auth::user()->id)->with('article')->get();
+        $countArticle = Articles::where('author_id', Auth::user()->id)->count();
 
         return view($this->view . 'profile', compact(
             'article',
             'comment',
-            'user'
+            'user',
+            'countArticle'
         ));
     }
 

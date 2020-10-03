@@ -62,7 +62,7 @@ class RegisterController extends Controller
             'last_name'  => ['required', 'string', 'max:50'],
             'photo'   => ['required', 'image', 'mimes:jpeg,png,jpg', 'max:1024'],
             'bio'     => ['required', 'string', 'max:150'],
-            'no_telp' => ['required', 'string', 'max:13', 'digits:12']
+            // 'no_telp' => ['required', 'string', 'max:13', 'digits:12']
         ]);
     }
 
@@ -89,7 +89,7 @@ class RegisterController extends Controller
             'last_name'  => $data['last_name'],
             'photo'   => $fileName,
             'bio'     => $data['bio'],
-            'no_telp' => $data['no_telp'],
+            // 'no_telp' => $data['no_telp'],
             'facebook'  => $data['facebook'],
             'twitter'   => $data['twitter'],
             'instagram' => $data['instagram']

@@ -87,12 +87,12 @@
                             <div class="col-sm-8">
                                 <input type="file" name="photo" id="file" class="input-file" onchange="tampilkanPreview(this,'preview')"/>
                                 <label for="file" class="form-control input single-input-primary bdr-5 js-labelFile col-md-12">
-                                    <div class="text-center">
+                                    <div class="text-center mt-n1">
                                         <i class="icon fa fa-image"></i>
                                         <span class="js-fileName fs-12">Pilih File</span>
                                     </div>
                                 </label>
-                                <img width="300" class="rounded img-fluid d-block mb-1" id="preview"/>
+                                <img class="rounded-circle img-circular mb-2 mx-auto d-block" id="preview" width="100" height="100"/>
                                 <hr class="m-0">
                                 <i class="fs-12 ">Bisa berupa foto, logo, atau symbol icon. Maksimal 1 Mb.</i>
                             </div>
@@ -106,7 +106,7 @@
                                 </span>
                             </div>
                         </div>
-                        <div class="form-group row">
+                        {{-- <div class="form-group row">
                             <label for="no_telp" class="col-sm-4 f-b col-form-label">NOMOR HANDPHONE<span class="text-danger ml-1">*</span></label>
                             <div class="col-sm-8">
                                 <input type="text" name="no_telp" id="no_telp" class="form-control input single-input-primary" value="{{ old('no_telp') }}" required>
@@ -114,7 +114,7 @@
                                     <strong>Nomor Handphone tidak boleh kosong!</strong>
                                 </span>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="form-group row">
                             <label for="facebook" class="col-sm-4 f-b col-form-label">FACEBOOK</label>
                             <div class="col-sm-8">

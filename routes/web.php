@@ -44,7 +44,7 @@ Route::get('profil/{name}', 'Profiles\ProfileOtherUserController@index')->name('
 
 Route::group(['middleware' => ['auth']], function () {
     // Profil
-    Route::prefix('profile')->namespace('Profiles')->group(function () {
+    Route::namespace('Profiles')->group(function () {
         Route::get('profile', 'ProfileController@index')->name('profil');
         Route::get('profile/edit', 'ProfileController@edit')->name('profil.edit');
     });
