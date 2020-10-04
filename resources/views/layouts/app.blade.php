@@ -40,6 +40,9 @@
     <link rel="stylesheet" href="{{ asset('assets/css/slick.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/nice-select.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+
+    <!-- CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
    
     <!-- Icon -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
@@ -85,4 +88,5 @@
     <script src="{{ asset('./assets/js/plugins.js') }}"></script>
     <script src="{{ asset('./assets/js/main.js') }}"></script>
     <script src="{{ asset('./js/myScript.js') }}"></script>
+    <script src="{{ asset('./js/jquery-confirm.min') }}"></script>
 </html>

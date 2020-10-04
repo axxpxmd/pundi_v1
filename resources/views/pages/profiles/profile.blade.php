@@ -15,12 +15,12 @@
                                     <i style="color: #945d41" class="fa fa-medal ml-1"></i>
                                     @elseif($countArticle >= 5 && $countArticle <= 10)
                                     <i style="color: #C0C0C0" class="fa fa-medal ml-1"></i>
-                                    @elseif(10 <= $countArticle)
+                                    @elseif($countArticle >= 10)
                                     <i style="color: #ffc60b" class="fa fa-medal ml-1"></i>
                                     @endif
                                 </p>
                                 <p class="text-black -mt-10">“ {{ $user->bio }} ”</p>
-                                <div class="mb-2 mt-n2">
+                                <div class="mb-3 mt-n2">
                                     @if ($user->facebook != null)
                                     <a class="f-blk judul-hover" href="https://web.facebook.com/{{ $user->facebook }}" target="blank">
                                         <i class="fa fa-facebook-square fa-lg mr-2"></i>
@@ -38,7 +38,7 @@
                                     @endif
                                 </div>
                                 <span class="bdr-5 fs-12 pengaturan-card">
-                                    <a href="{{ route('profil.edit') }}" class="text-black font-weight-bold fs-14">Pengaturan</a>
+                                    <a href="{{ route('profil.edit') }}" class="text-black font-weight-bold fs-14 judul-hover">Pengaturan</a>
                                 </span>
                             </div>
                             <div class="mt-5">
@@ -135,4 +135,9 @@
     </div>
 </section>
 @include('masterPages.footer')
+@endsection
+@section('script')
+<script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+<script type="text/javascript">
+</script>
 @endsection

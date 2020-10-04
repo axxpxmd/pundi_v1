@@ -6,15 +6,17 @@
         <div class="row">
             <div class="col-lg-8 mb-5 mb-lg-0">
                 <div class="blog_left_sidebar">
-                    <form class="needs-validation" novalidate action="" method="POST">
+                    @include('masterPages.alerts')
+                    <form class="needs-validation" novalidate action="{{ route('profil.update') }}" method="POST" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         {{ method_field('POST') }}
+                        <input type="hidden" name="id" value="{{ $user->id }}">
                         <div class="card no-b">
                             <div class="card-body">
                                 <div class="text-center">
-                                    <img class="rounded-circle img-circular" id="preview" src="{{ config('app.ftp_src').'images/ava/'.$user->photo }}" height="100" width="100"  alt="Photo profile">
+                                    <img class="rounded-circle img-circular" id="preview" src="{{ config('app.ftp_src').'images/ava/'.$user->photo }}" height="100" width="100" >
                                     <div class="container col-md-4 mt-2">
-                                        <input type="file" name="photo" id="file" class="input-file" onchange="tampilkanPreview(this,'preview')"/>
+                                        <input type="file" name="photo" id="file" class="input-file" value="{{ $user->photo }} " onchange="tampilkanPreview(this,'preview')"/>
                                         <label for="file" class="form-control input single-input-primary bdr-5 js-labelFile col-md-12">
                                             <div class="text-center mt-n1">
                                                 <i class="icon fa fa-image"></i>
@@ -91,18 +93,18 @@
                                     <div class="form-group row">
                                         <label for="no_telp" class="col-sm-4 f-b col-form-label">NOMOR HANDPHONE</label>
                                         <div class="col-sm-8">
-                                            <input type="text" name="no_telp" id="no_telp" class="form-control input single-input-primary">
+                                            <input type="text" name="no_telp" id="no_telp" value="{{ $user->no_telp }}" class="form-control input single-input-primary">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="no_telp" class="col-sm-4 f-b col-form-label">NOMOR HANDPHONE</label>
+                                        <label for="no_telp" class="col-sm-4 f-b col-form-label">JENIS KELAMIN</label>
                                         <div class="col-sm-8 row mt-2">
                                             <div class="col-md-4 row ml-1">
-                                                <input type="radio" name="gender" id="laki" value="Laki Laki" class="form-control primary-radio">
+                                                <input type="radio" {{ $user->gender == 'Laki Laki' ? 'checked' : '' }} name="gender" id="laki" value="Laki Laki" class="primary-radio">
                                                 <label for="laki" style="margin-top: -3px; margin-left: 10px">Laki-laki</label>
                                             </div>
                                             <div class="col-md-4 row ml-1">
-                                                <input type="radio" name="gender" id="perempuan" value="Perempuan" class="form-control primary-radio">
+                                                <input type="radio" {{ $user->gender == 'Perempuan' ? 'checked' : '' }} name="gender" id="perempuan" value="Perempuan" class="primary-radio">
                                                 <label for="perempuan" style="margin-top: -3px; margin-left: 10px">Perempuan</label>
                                             </div>
                                         </div>

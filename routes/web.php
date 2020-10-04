@@ -47,5 +47,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::namespace('Profiles')->group(function () {
         Route::get('profile', 'ProfileController@index')->name('profil');
         Route::get('profile/edit', 'ProfileController@edit')->name('profil.edit');
+        Route::post('profile/update', 'ProfileController@update')->name('profil.update');
     });
 });
