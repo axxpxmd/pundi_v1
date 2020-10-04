@@ -24,7 +24,7 @@
                                             </div>
                                         </label>
                                     </div>
-                                    <i class="fs-12 mt-n2">Max File 1MB</i>
+                                    <i class="fs-12 mt-n2">Maksimal File 1MB</i>
                                 </div>
                                 <hr>
                                 <div class="mb-5">
@@ -113,7 +113,7 @@
                                 <div class="row">
                                     <div class="col-sm-4"></div>
                                     <div class="col-sm-8">
-                                        <button class="genric-btn primary bdr-5" type="submit">Simpan Perubahan</button>
+                                        <button class="genric-btn primary btn-block bdr-5" type="submit">Simpan Perubahan</button>
                                     </div>
                                 </div>
                             </div>
