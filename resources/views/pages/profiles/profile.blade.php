@@ -102,6 +102,14 @@
                                                 <label class="col-md-3 s-12"><strong>No Telp</strong></label>
                                                 <label class="col-md-8 s-12">{{ $user->no_telp }}</label>
                                             </div>
+                                            <div class="row">
+                                                <label class="col-md-3 s-12"><strong>Kelamin</strong></label>
+                                                <label class="col-md-8 s-12">{{ $user->gender }}</label>
+                                            </div>
+                                            <div class="row">
+                                                <label class="col-md-3 s-12"><strong>Tangga Lahir</strong></label>
+                                                <label class="col-md-8 s-12">{{ $user->birth_date }}</label>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="komentar" role="tabpanel">
