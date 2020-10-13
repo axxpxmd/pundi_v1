@@ -15,7 +15,7 @@
     <title>{{ config('app.name') }} @yield('title')</title>
 
     <!-- Link Share -->
-    <meta property="og:title" content="PUNDI.or.id"/>
+    <meta property="og:title" content="PUNDI.OR.ID - Kanal Pendidikan Tajam dan Mencerahkan"/>
     <meta property="og:image" content="{{ config('app.ftp_src').'images/logo/'.$logo->share }}" />
     <meta property="og:url" content="http://pundi-dev.pundi.or.id"/>
     <meta property="og:site_name" content="PUNDI"/>
