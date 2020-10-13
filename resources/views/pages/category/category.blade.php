@@ -23,7 +23,7 @@
     <div class="m-t-15">   
         @foreach ($subCategory as $i)
         <span class="bdr-5 fs-11 f-b m-r-10 sub-kategori-card">
-            <a href="{{ route('sub-category', str_slug($i->sub_category->n_sub_category)) }}" class="hover-blk">{{ $i->n_sub_category}}</a>
+            <a href="{{ route('sub-category', str_slug($i->n_sub_category)) }}" class="hover-blk">{{ $i->n_sub_category}}</a>
         </span>
         @endforeach
     </div>
