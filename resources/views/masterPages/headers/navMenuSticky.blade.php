@@ -59,10 +59,10 @@
         </li>
         @endif
         <li style="margin-left: -40px">
-            <form class="form-row d-flex justify-content-center md-form form-sm mt-0" action="#" method="GET">
-                <input type="text" class="row bdr-5 single-input-primary2 ml-5 w-75" name="hasil_search" style="margin-top: -8px; height: 30px;" placeholder="Search">
-                <div class="input-group-prepend bdr-5">
-                    <button type="submit" style="border: none; background:black; height: 30px; margin-top: -8px; border-radius: 0px 5px 5px 0px">
+            <form class="form-row d-flex justify-content-center md-form form-sm mt-0" action="{{ route('search') }}" method="GET">
+                <input type="text" class="row bdr-5 single-input-primary2 ml-5 w-75" name="n_article" style="margin-top: -8px; height: 30px;" placeholder="Search">
+                <div class="input-group-prepend">
+                    <button type="submit" style="border: none; background: black; height: 30px; margin-top: -8px; border-radius: 0px 5px 5px 0px">
                         <i class="fa fa-search" style="color: white"></i> 
                     </button>
                 </div>

@@ -59,9 +59,9 @@
         </li>
         @endif
         <li>
-            <form class="form-row d-flex justify-content-center md-form form-sm mt-1" action="#" method="GET">
+            <form class="form-row d-flex justify-content-center md-form form-sm mt-1" action="{{ route('search') }}" method="GET">
                 <div class="input-group input-group-lg" style="margin-left: 6%">
-                    <input type="text" class="single-input-primary2" name="hasil_search" style="width: 82%"  placeholder="Search Keyword">
+                    <input type="text" class="single-input-primary2" name="n_article" style="width: 82%"  placeholder="Search Keyword">
                     <div class="input-group-prepend" style="background: #FEBD01;">
                         <button type="submit" style="border: none; background: #FEBD01; width: 50px">
                             <i class="fa fa-search" style="color: white"></i> 

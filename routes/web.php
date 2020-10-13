@@ -42,6 +42,9 @@ Route::get('/ketentuan-tulisan', function () {
 // Other Profile User
 Route::get('profil/{name}', 'Profiles\ProfileOtherUserController@index')->name('other-user');
 
+// Search
+Route::get('search', 'SearchController@index')->name('search');
+
 Route::namespace('Category')->group(function () {
     // Category
     Route::get('category/{n_category}', 'CategoryController@index')->name('category');
