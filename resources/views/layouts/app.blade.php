@@ -88,5 +88,5 @@
     <script src="{{ asset('./assets/js/plugins.js') }}"></script>
     <script src="{{ asset('./assets/js/main.js') }}"></script>
     <script src="{{ asset('./js/myScript.js') }}"></script>
-    <script src="{{ asset('./js/jquery-confirm.min') }}"></script>
+    <script src="{{ asset('./js/jquery-confirm.min.js') }}"></script>
 </html>

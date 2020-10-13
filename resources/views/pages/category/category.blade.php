@@ -36,7 +36,7 @@
                     @foreach ($articles as $i)
                     <div class="row m-b-30">
                         <div class="col-sm-6">
-                            <img class="bdr-5 m-b-10 img-circular" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" width="350" alt="photo">
+                            <img class="bdr-5 m-b-10 img-circular" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" width="350" height="350" alt="photo">
                         </div>
                         <div class="col-sm-6">
                             <span class="bdr-5 fs-11 f-b sub-kategori-card">
@@ -53,8 +53,8 @@
                                 <i class="fas fa-clock mr-1 ml-3"></i>
                                 <span class="fs-13">{{ substr($i->created_at,0,10) }}</span>
                             </div>
-                            <div class="text-justify">
-                                {!! substr($i->contens, 0, 500) !!}
+                            <div class="text-justify mt-2">
+                                {{  substr(strip_tags(str_replace(["&nbsp;", "&rdquo;", "&ldquo;", "&rsquo;", "&hellip;"],' ',$i->contens)),0,400) }} […]
                             </div>
                             <a href="artikel" class="f-blk fs-13 f-b m-t-5 judul-hover">
                                 <span>READ MORE</span>

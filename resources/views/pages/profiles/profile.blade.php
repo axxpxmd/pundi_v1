@@ -137,7 +137,6 @@
 @include('masterPages.footer')
 @endsection
 @section('script')
-<script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
 <script type="text/javascript">
 </script>
 @endsection
