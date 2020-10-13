@@ -23,7 +23,7 @@
                             </div>
                             <div class="what-cap">
                                 <span class="bdr-5 m-r-10" style="background-color: #FEBD01; color: white">
-                                    <a class="hover-blk" href="sub-kategori">{{ $i->sub_category->n_sub_category }}</a>
+                                    <a class="hover-blk" href="{{ route('sub-category', str_slug($i->sub_category->n_sub_category)) }}">{{ $i->sub_category->n_sub_category }}</a>
                                 </span>
                                 <i class="fas fa-clock fa-xs text-grey">
                                     <span style="color: grey; margin-left: -10px">{{ substr($i->created_at, 0, 10) }}</span>

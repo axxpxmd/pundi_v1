@@ -28,7 +28,7 @@
                     <img style="object-fit: cover; object-position: center" class="bdr-5" src="{{ config('app.ftp_src').'images/artikel/'.$i->article->image }}" width="120" height="90" alt="artikel">
                     <div class="media-body">
                         <span class="fs-13 text-uppercase">
-                           <a class="f-orange hover-blk" href="sub-kategori">{{ $i->article->sub_category->n_sub_category }}</a> 
+                           <a class="f-orange hover-blk" href="{{ route('sub-category', str_slug($i->article->sub_category->n_sub_category)) }}">{{ $i->article->sub_category->n_sub_category }}</a> 
                         </span>
                         <a href="artikel">
                             <h3>{{ $i->article->title }}</h3>

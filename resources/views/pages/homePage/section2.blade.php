@@ -23,7 +23,7 @@
                             </div>
                             <div class="weekly-caption">
                                 <span class="bdr-5" style="background-color: #FEBD01 !important; color: white !important">
-                                    <a class="hover-blk" href="sub-kategori">{{ $i->article->sub_category->n_sub_category }}</a>
+                                    <a class="hover-blk" href="{{ route('sub-category', str_slug($i->article->sub_category->n_sub_category)) }}">{{ $i->article->sub_category->n_sub_category }}</a>
                                 </span>
                                 <h4 class="-mt-10">
                                     <a href="artikel">

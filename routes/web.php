@@ -45,6 +45,8 @@ Route::get('profil/{name}', 'Profiles\ProfileOtherUserController@index')->name('
 Route::namespace('Category')->group(function () {
     // Category
     Route::get('category/{n_category}', 'CategoryController@index')->name('category');
+    // Sub Category
+    Route::get('sub-category/{n_sub_category}', 'SubCategoryController@index')->name('sub-category');
 });
 
 Route::group(['middleware' => ['auth']], function () {

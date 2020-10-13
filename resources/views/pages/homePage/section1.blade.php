@@ -21,7 +21,7 @@
                                             <div class="carousel-caption">
                                                 <div class="">
                                                     <span class="bdr-5 p-2 capital f-b ktg-trendingTop">
-                                                        <a class="hover-blk" href="sub-kategori">{{ $i->sub_category->n_sub_category }}</a>
+                                                        <a class="hover-blk" href="{{ route('sub-category', str_slug($i->sub_category->n_sub_category)) }}">{{ $i->sub_category->n_sub_category }}</a>
                                                     </span>
                                                     <h2 class="m-t-20">
                                                         <a class="f-b text-white judul-hover" href="artikel">
@@ -63,7 +63,7 @@
                                     </div>
                                     <div class="trend-bottom-cap">
                                         <p class="fs-13 capital">
-                                            <a class="f-orange hover-blk" href="sub-kategori">{{ $i->article->sub_category->n_sub_category }}</a>
+                                            <a class="f-orange hover-blk" href="{{ route('sub-category', str_slug($i->article->sub_category->n_sub_category)) }}">{{ $i->article->sub_category->n_sub_category }}</a>
                                         </p>
                                         <h4 class="-mt-15">
                                             <a href="artikel">
@@ -91,7 +91,7 @@
                         </div>
                         <div class="trand-right-cap -mt-7">
                             <p class="fs-13 capital">
-                                <a class="f-orange hover-blk" href="sub-kategori">{{ $i->article->sub_category->n_sub_category }}</a>
+                                <a class="f-orange hover-blk" href="{{ route('sub-category', str_slug($i->article->sub_category->n_sub_category)) }}">{{ $i->article->sub_category->n_sub_category }}</a>
                             </p>
                             <h4 class="-mt-15">
                                 <a href="artikel">

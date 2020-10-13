@@ -29,10 +29,13 @@ class CategoryController extends Controller
 
     public function index($n_category)
     {
-        $params   = str_replace('-', ' ', $n_category);
-        $category = Category::where('n_category', $params)->first();
+        $path   = $this->path;
+        $params = str_replace('-', ' ', $n_category);
+
+        $category    = Category::where('n_category', $params)->first();
         $subCategory = SubCategory::where('category_id', $category->id)->get();
-        $articles    = Articles::where('category_id', $category->id)
+
+        $articles = Articles::where('category_id', $category->id)
             ->where('status', 1)
             ->orderBy('created_at', 'DESC')
             ->paginate(10);
@@ -40,7 +43,8 @@ class CategoryController extends Controller
         return view($this->view . 'category', compact(
             'category',
             'subCategory',
-            'articles'
+            'articles',
+            'path'
         ));
     }
 }

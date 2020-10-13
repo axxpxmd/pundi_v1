@@ -8,8 +8,12 @@
             <span>Home</span>
         </a>
         <i class="fa fa-angle-right"></i>
-        <a class="m-l-8 m-r-8 f-red fs-14 non-hover f-orange hover-blk" href="{{ route('category',str_slug($category->n_category)) }}">
-            <span>{{ $category->n_category }}</span>
+        <a class="m-l-8 m-r-8 f-red fs-14 non-hover f-orange hover-blk" href="{{ route('category',str_slug($subCategory->category->n_category)) }}">
+            <span>{{ $subCategory->category->n_category }}</span>
+        </a>
+        <i class="fa fa-angle-right"></i>
+        <a class="m-l-8 m-r-8 f-red fs-14 non-hover f-orange hover-blk" href="{{ route('sub-category',str_slug($subCategory->n_sub_category)) }}">
+            <span>{{ $subCategory->n_sub_category }}</span>
         </a>
     </div>
     <div class="m-t-10">
@@ -17,15 +21,8 @@
             <i class="fas fa-angle-up fa-lg arrow"></i>
         </div>
         <span class="fs-18 m-l-15 kategori-title"> 
-            KATEGORI : {{ $category->n_category }}
+            KATEGORI : {{ $subCategory->n_sub_category }}
         </span>
-    </div>
-    <div class="m-t-15">   
-        @foreach ($subCategory as $i)
-        <span class="bdr-5 fs-11 f-b m-r-10 sub-kategori-card">
-            <a href="{{ route('sub-category', str_slug($i->sub_category->n_sub_category)) }}" class="hover-blk">{{ $i->n_sub_category}}</a>
-        </span>
-        @endforeach
     </div>
 </div>
 <section class="blog_area section-padding">
