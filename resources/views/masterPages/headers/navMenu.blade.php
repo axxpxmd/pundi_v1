@@ -1,7 +1,7 @@
 <nav>                  
     <ul>    
         <li>
-            <a href="kategori" style="font-size: 13px !important" class="text-uppercase">{{ $category1->n_category }} <span class="fa fa-angle-down "></span></a>
+            <a href="{{ route('category',str_slug($category1->n_category)) }}" style="font-size: 13px !important" class="text-uppercase">{{ $category1->n_category }} <span class="fa fa-angle-down "></span></a>
             <ul class="submenu">
                 @foreach ($subCategory1 as $i)
                     <li><a href="sub-kategori">{{ $i->n_sub_category }}</a></li>    
@@ -9,7 +9,7 @@
             </ul>
         </li>
         <li>
-            <a href="kategori" style="font-size: 13px !important" class="text-uppercase">{{ $category2->n_category }} <span class="fa fa-angle-down "></a>
+            <a href="{{ route('category',str_slug($category2->n_category)) }}" style="font-size: 13px !important" class="text-uppercase">{{ $category2->n_category }} <span class="fa fa-angle-down "></a>
             <ul class="submenu">
                 @foreach ($subCategory2 as $i)
                     <li><a href="sub-kategori">{{ $i->n_sub_category }}</a></li>
@@ -17,7 +17,7 @@
             </ul> 
         </li>
         <li>
-            <a href="kategori" style="font-size: 13px !important" class="text-uppercase">{{ $category3->n_category }} <span class="fa fa-angle-down "></a>
+            <a href="{{ route('category',str_slug($category3->n_category)) }}" style="font-size: 13px !important" class="text-uppercase">{{ $category3->n_category }} <span class="fa fa-angle-down "></a>
             <ul class="submenu">
                 @foreach ($subCategory3 as $i)
                     <li><a href="sub-kategori">{{ $i->n_sub_category }}</a></li>
@@ -25,7 +25,7 @@
             </ul>
         </li>
         <li>
-            <a href="kategori" style="font-size: 13px !important" class="text-uppercase">{{ $category4->n_category }} <span class="fa fa-angle-down "></a>
+            <a href="{{ route('category',str_slug($category4->n_category)) }}" style="font-size: 13px !important" class="text-uppercase">{{ $category4->n_category }} <span class="fa fa-angle-down "></a>
             <ul class="submenu">
                 @foreach ($subCategory4 as $i)
                     <li><a href="sub-kategori">{{ $i->n_sub_category }}</a></li>

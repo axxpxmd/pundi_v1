@@ -42,6 +42,11 @@ Route::get('/ketentuan-tulisan', function () {
 // Other Profile User
 Route::get('profil/{name}', 'Profiles\ProfileOtherUserController@index')->name('other-user');
 
+Route::namespace('Category')->group(function () {
+    // Category
+    Route::get('category/{n_category}', 'CategoryController@index')->name('category');
+});
+
 Route::group(['middleware' => ['auth']], function () {
     // Profil
     Route::namespace('Profiles')->group(function () {
