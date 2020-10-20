@@ -24,13 +24,20 @@
                             <div class="form-group row">
                                 <label class="col-sm-2 f-b col-form-label" for="password">PASSWORD</label>
                                 <div class="col-sm-10">
-                                    <input type="password"  name="password" id="password" class="input single-input-primary @error('password') is-invalid @enderror" placeholder="Password"/>
-                                    <a href="{{ route('password.request') }}">
-                                        <p class="f-blk text-right fs-15 f-red mt-2">Lupa password?</p>
-                                    </a>
+                                    <input type="password" name="password" id="password" class="input single-input-primary @error('password') is-invalid @enderror" placeholder="Password"/>
+                                    <div class="form-group row mt-3">
+                                        <div class="col-6">
+                                            <input class="mr-2" type="checkbox" onclick="myFunction()">Tampilkan
+                                        </div>
+                                        <div class="col-6 text-right">
+                                            <a class="f-blk" href="{{ route('password.request') }}">
+                                                Lupa password ?
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row mt-n2">
                                 <div class="col-sm-2"></div>
                                 <div class="col-sm-10">
                                     <button class="genric-btn primary bdr-5" type="submit" value="Log in">Login <i class="fa fa-arrow-right"></i></button>
@@ -51,4 +58,16 @@
     </div>
 </section>
 @include('masterPages.footer')
+@endsection
+@section('script')
+<script type="text/javascript">
+    function myFunction() {
+        var x = document.getElementById("password");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+</script>
 @endsection

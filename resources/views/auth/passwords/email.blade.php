@@ -23,7 +23,7 @@
                         <div class="mt-10 form-group row">
                             <label class="col-sm-2 f-b col-form-label" for="email">EMAIL</label>
                             <div class="col-sm-10">
-                                <input type="email" name="email" class="form-control input single-input-primary @error('email') is-invalid @enderror" required/>
+                                <input type="email" name="email" class="form-control input single-input-primary @error('email') is-invalid @enderror" placeholder="example@email.com" required/>
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>E-mail belum terdaftar</strong>

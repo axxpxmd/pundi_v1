@@ -34,7 +34,7 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="password_confirmation" class="col-sm-4 f-b col-form-label">PASSWORD<span class="text-danger ml-1">*</span></label>
+                                <label for="password_confirmation" class="col-sm-4 f-b col-form-label">KONFIRMASI PASSWORD<span class="text-danger ml-1">*</span></label>
                                 <div class="col-sm-8">
                                     <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input single-input-primary" required>
                                     <span class="invalid-feedback" role="alert">
