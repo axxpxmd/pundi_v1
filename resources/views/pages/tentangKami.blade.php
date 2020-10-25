@@ -22,7 +22,7 @@
                     <span class="text-black">Youtube &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Official Pundi</span>
                 </div>
             </div>
-            @include('masterPages.sidebar')
+            @include('masterPages.sideBar')
         </div>
     </div>
 </section>
