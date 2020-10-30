@@ -8,7 +8,7 @@
                 <div class="blog_left_sidebar">
                     @include('masterPages.alerts')
                     <div>
-                        <form action="#" method="POST" enctype="multipart/form-data" >
+                        <form action="{{ route($route.'store') }}" method="POST" enctype="multipart/form-data" >
                             {{ csrf_field() }}
                             {{ method_field('POST') }}
                             <p class="fs-30 f-b f-blk mb-n3">Kirim Tulisan</p>
