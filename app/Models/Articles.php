@@ -10,7 +10,7 @@ use App\User;
 class Articles extends Model
 {
     protected $table    = 'articles';
-    protected $fillable = ['id', 'category_id', 'sub_category_id', 'author_id', 'editor_id', 'title', 'images', 'source_image', 'contens', 'tag', 'views', 'status', 'created_at', 'updated_at'];
+    protected $fillable = ['id', 'category_id', 'sub_category_id', 'author_id', 'editor_id', 'title', 'images', 'source_image', 'content', 'tag', 'views', 'status', 'created_at', 'updated_at'];
 
     public function category()
     {

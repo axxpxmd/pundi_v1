@@ -51,7 +51,7 @@
                                 <span class="fs-13">{{ substr($i->created_at,0,10) }}</span>
                             </div>
                             <div class="text-justify mt-2">
-                                {{  substr(strip_tags(str_replace(["&nbsp;", "&rdquo;", "&ldquo;", "&rsquo;", "&hellip;"],' ',$i->contens)),0,400) }} […]
+                                {{  substr(strip_tags(str_replace(["&nbsp;", "&rdquo;", "&ldquo;", "&rsquo;", "&hellip;"],' ',$i->content)),0,400) }} […]
                             </div>
                             <a href="artikel" class="f-blk fs-13 f-b m-t-5 judul-hover">
                                 <span>READ MORE</span>

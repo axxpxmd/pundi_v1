@@ -11,10 +11,12 @@
                         <form action="#" method="POST" enctype="multipart/form-data" >
                             {{ csrf_field() }}
                             {{ method_field('POST') }}
-                            <p class="fs-30 f-b f-blk mb-n3">Kirim Tulisan</p><hr>
-                            <div class="m-t-30">
+                            <p class="fs-30 f-b f-blk mb-n3">Kirim Tulisan</p>
+                            <hr>
+                            <p class="mt-n4 fs-13">Baca ketentuan tulisan <a class="f-orange hover-blk" href="{{ config('app.url'). '/ketentuan-tulisan' }}">disini</a></p>
+                            <div class="m-t-20">
                                 <label class="f-b col-form-label">JUDUL ARTIKEL<span class="text-danger ml-1">*</span></label>
-                                <input type="text" class="input single-input-primary border bdr-5 col-md-12" name="judul" id="judul" value="{{ old('judul') }}" required="" oninvalid="this.setCustomValidity('Judul artikel tidak boleh kosong')" oninput="setCustomValidity('')"/>
+                                <input type="text" class="input single-input-primary border bdr-5 col-md-12" name="title" id="title" value="{{ old('title') }}" required="" oninvalid="this.setCustomValidity('Judul artikel tidak boleh kosong')" oninput="setCustomValidity('')"/>
                             </div>
                             <div class="mt-3">
                                 <label class="f-b col-form-label">KATEGORI <span class="text-danger ml-1">*</span></label><br>
@@ -33,7 +35,7 @@
                             </div>
                             <div class="mt-3">
                                 <label class="f-b col-form-label">GAMBAR <span class="text-danger ml-1">*</span></label><br>
-                                <input type="file" name="gambar" id="file" class="input-file" onchange="tampilkanPreview(this,'preview')">
+                                <input type="file" name="image" id="file" class="input-file" onchange="tampilkanPreview(this,'preview')">
                                 <label for="file" class="input single-input-primary border bdr-5 col-md-12 js-labelFile">
                                     <div class="text-center">
                                         <i class="icon fa fa-image"></i>
@@ -49,14 +51,15 @@
                             </div>
                             <div class="mt-3">
                                 <label class="f-b col-form-label">ARTIKEL <span class="text-danger ml-1">*</span></label>
-                                <textarea name="contens" id="editor"></textarea>
+                                <textarea name="content" id="editor">{{ old('content') }}</textarea>
                             </div>
                             <div class="mt-3">
                                 <label class="f-b col-form-label">TAGS <span class="text-danger ml-1">*</span></label>
-                                <input type="text" class="input single-input-primary border bdr-5 col-md-12" value="{{ old('tag') }}" name="tag" id="tag"/>
+                                <input type="text" class="input single-input-primary border bdr-5 col-md-12" value="{{ old('tag') }}" name="tag" id="tag" required="" oninvalid="this.setCustomValidity('Tag tidak boleh kosong')" oninput="setCustomValidity('')"/>
                                 <i class="fs-12 f-red">Pisahkan dengan koma ( , )</i>
                             </div>
-                            <button class="genric-btn primary bdr-5 m-t-20 " type="submit"  value="Log in">KirimTulisan</button>
+                            <hr>
+                            <button class="genric-btn primary bdr-5 btn-block mt-n4 " type="submit"  value="Log in">KirimTulisan<i class="fa fa-share-square ml-2"></i></button>
                         </form>
                     </div>
                 </div>
