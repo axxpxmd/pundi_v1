@@ -59,4 +59,9 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('profile/edit', 'ProfileController@edit')->name('profil.edit');
         Route::post('profile/update', 'ProfileController@update')->name('profil.update');
     });
+    // Article
+    Route::namespace('Articles')->name('article.')->group(function () {
+        Route::resource('post', 'PostArticleController');
+        Route::get('post/subCategoryByCategory/{id}', 'PostArticleController@subCategoryByCategory')->name('post.subCategoryByCategory');
+    });
 });
