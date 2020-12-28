@@ -52,6 +52,11 @@ Route::namespace('Category')->group(function () {
     Route::get('sub-category/{n_sub_category}', 'SubCategoryController@index')->name('sub-category');
 });
 
+// Article
+Route::namespace('Articles')->group(function () {
+    Route::get('article/{n_article}', 'ArticleController@index')->name('article');
+});
+
 Route::group(['middleware' => ['auth']], function () {
     // Profil
     Route::namespace('Profiles')->group(function () {

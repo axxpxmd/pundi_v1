@@ -12,11 +12,11 @@
                                 <img class="rounded-circle img-circular" src="{{ config('app.ftp_src').'images/ava/'.$user->photo }}" height="100" width="100"  alt="Photo profile">
                                 <p class="fs-22 font-weight-bold text-black mt-3">{{ $user->name }}
                                     @if ($countArticle < 5)
-                                    <i style="color: #945d41" class="fa fa-medal ml-1"></i>
+                                    <i style="color: #945d41" title="Artikel < 5" class="fa fa-medal ml-1"></i>
                                     @elseif($countArticle >= 5 && $countArticle <= 10)
-                                    <i style="color: #C0C0C0" class="fa fa-medal ml-1"></i>
+                                    <i style="color: #C0C0C0" title="Artikel > 5" class="fa fa-medal ml-1"></i>
                                     @elseif($countArticle >= 10)
-                                    <i style="color: #ffc60b" class="fa fa-medal ml-1"></i>
+                                    <i style="color: #ffc60b" title="Artikel 10+" class="fa fa-medal ml-1"></i>
                                     @endif
                                 </p>
                                 <p class="text-black -mt-10">“ {{ $user->bio }} ”</p>

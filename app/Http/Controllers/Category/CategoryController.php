@@ -21,11 +21,12 @@ use App\Http\Controllers\Controller;
 use App\Models\Articles;
 use App\Models\Category;
 use App\Models\SubCategory;
+use Illuminate\Support\Facades\Storage;
 
 class CategoryController extends Controller
 {
     protected $view = 'pages.category.';
-    protected $path = '/images/artikel/';
+    protected $path = 'images/artikel/';
 
     public function index($n_category)
     {

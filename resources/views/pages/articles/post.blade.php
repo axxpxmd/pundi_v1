@@ -82,10 +82,12 @@
         height: 300,
         toolbar: [
             ['style', ['style']],
-            ['font', ['bold', 'underline', 'clear']],
+            ['font', ['bold', 'underline', 'clear', 'italic']],
+            ['fontsize', ['fontsize']],
+            ['fontname', ['fontname']],
             ['color', ['color']],
-            ['para', ['ul', 'ol', 'paragraph']],
-            ['view', ['fullscreen']]
+            ['paragraph', ['ul', 'ol', 'paragraph', 'height']],
+            ['view', ['fullscreen', 'codeview']]
         ]
     });
 
