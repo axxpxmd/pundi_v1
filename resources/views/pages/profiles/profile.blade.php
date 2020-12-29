@@ -121,7 +121,7 @@
                                                     <span class="ml-1">mengomentari</span>
                                                     <span class="font-weight-bold fs-14 ml-1">{{ $i->article->title }}</span>
                                                     <br>
-                                                    <span class="">{{ $i->content }}</span>
+                                                    <span>{{ $i->content }}</span>
                                                 </div>
                                             </div>
                                             @endforeach
