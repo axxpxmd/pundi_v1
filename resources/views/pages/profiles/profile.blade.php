@@ -38,7 +38,7 @@
                                     @endif
                                 </div>
                                 <span class="bdr-5 fs-12 pengaturan-card">
-                                    <a href="{{ route('profil.edit') }}" class="text-black font-weight-bold fs-14 judul-hover">Pengaturan</a>
+                                    <a href="{{ route('profil.edit') }}" class="text-black font-weight-bold fs-14 judul-hover">Edit Profil</a>
                                 </span>
                             </div>
                             <div class="mt-5">

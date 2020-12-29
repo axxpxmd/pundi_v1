@@ -13,6 +13,7 @@
                         <input type="hidden" name="id" value="{{ $user->id }}">
                         <div class="card no-b">
                             <div class="card-body">
+                                <a class="text-black font-weight-bold fs-14 judul-hover" href="{{ route('profil') }}"><i class="fa fa-arrow-left mr-1"></i>Kembali</a>
                                 <div class="text-center">
                                     <img class="rounded-circle img-circular" id="preview" src="{{ config('app.ftp_src').'images/ava/'.$user->photo }}" height="100" width="100" >
                                     <div class="container col-md-4 mt-2">

@@ -38,8 +38,12 @@
                             <span class="fs-14">{{ $article->views }}</span>
                         </div>
                         <div class="m-b-25 mt-3">
-                            <img class="img-fluid bdr-5" width="800" src="{{ config('app.ftp_src').'images/article/'.$article->image }}" alt="photo">
-                            <p class="text-grey fs-12">{{ $article->source_image }}</p>
+                            @if (Storage::disk('ftp')->exists('images/artikel/' . $article->image) == true)
+                            <img class="img-fluid bdr-5" width="800" src="{{ config('app.ftp_src').'images/artikel/'.$article->image }}" alt="photo">
+                            @else
+                            <img class="img-fluid bdr-5" width="800" src="{{ asset('images/404.png') }}" alt="photo">
+                            @endif
+                            <p class="text-grey fs-12">Foto: {{ $article->source_image }}</p>
                         </div>
                         <div class="mt-n3">
                             {!! str_replace(["&nbsp;", "&rdquo;", "&ldquo;", "&rsquo;", "&hellip;"],' ',$article->content) !!}
