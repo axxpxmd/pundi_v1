@@ -320,6 +320,8 @@
     position: relative;
 }
 
+#more {display: none;}
+
 .tag-card {
     background-color: white !important;
     color: #AAAAAA !important;

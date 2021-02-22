@@ -66,7 +66,7 @@
                                             <a class="f-orange hover-blk" href="{{ route('sub-category', str_slug($i->article->sub_category->n_sub_category)) }}">{{ $i->article->sub_category->n_sub_category }}</a>
                                         </p>
                                         <h4 class="-mt-15">
-                                            <a href="artikel">
+                                            <a href={{ route('article', str_slug($i->article->title)) }}>
                                                 {{ $i->article->title }}
                                             </a>
                                         </h4>
@@ -94,7 +94,7 @@
                                 <a class="f-orange hover-blk" href="{{ route('sub-category', str_slug($i->article->sub_category->n_sub_category)) }}">{{ $i->article->sub_category->n_sub_category }}</a>
                             </p>
                             <h4 class="-mt-15">
-                                <a href="artikel">
+                                <a href={{ route('article', str_slug($i->article->title)) }}>
                                     {{ $i->article->title }}
                                 </a>
                             </h4>
