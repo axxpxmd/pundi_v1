@@ -1,4 +1,4 @@
-<div>
+<div class="">
     <p class="fs-20 f-b f-blk" style="margin-top: -20px">{{ $comment->count() }} Komentar</p>
     <input type="hidden" id="count" value="{{ $comment->count() }}">
     <div class="container p-0">

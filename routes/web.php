@@ -59,6 +59,8 @@ Route::namespace('Articles')->group(function () {
     Route::prefix('comment')->name('comment.')->group(function () {
         Route::post('save-comment', 'CommentController@saveComment')->name('saveComment');
         Route::post('save-sub-comment', 'CommentController@saveSubComment')->name('saveSubComment');
+        Route::get('delete-comment/{id}', 'CommentController@deleteComment')->name('deleteComment');
+        Route::get('delete-sub-comment/{id}', 'CommentController@deleteSubComment')->name('deleteSubComment');
     });
 });
 

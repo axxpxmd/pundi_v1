@@ -10,7 +10,7 @@ use App\User;
 class Comment extends Model
 {
     protected $table    = 'comments1';
-    protected $fillable = ['id', 'article_id', 'user_id', 'content', 'created_at', 'updated_at'];
+    protected $fillable = ['id', 'article_id', 'user_id', 'content', 'status', 'created_at', 'updated_at'];
 
     public function user()
     {

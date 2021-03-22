@@ -54,4 +54,36 @@ class CommentController extends Controller
 
         return redirect()->route('article', $params);
     }
+
+    public function deleteComment($id)
+    {
+        $comment = Comment::find($id);
+
+        $article_id = $comment->article_id;
+        $comment->update([
+            'status' => 1
+        ]);
+
+        // get id article
+        $article = Articles::select('id', 'title')->where('id', $article_id)->first();
+        $params = str_replace(' ', '-', $article->title);
+
+        return redirect()->route('article', $params);
+    }
+
+    public function deleteSubComment($id)
+    {
+        $subComment = SubComment::find($id);
+
+        $article_id = $subComment->article_id;
+        $subComment->update([
+            'status' => 1
+        ]);
+
+        // get id article
+        $article = Articles::select('id', 'title')->where('id', $article_id)->first();
+        $params = str_replace(' ', '-', $article->title);
+
+        return redirect()->route('article', $params);
+    }
 }
