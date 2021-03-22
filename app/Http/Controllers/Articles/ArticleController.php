@@ -9,9 +9,9 @@ use App\Http\Controllers\Controller;
 
 // Models
 use App\Models\Comment;
+use App\Models\checkIP;
 use App\Models\Articles;
 use App\Models\AdminDetails;
-use App\Models\checkIP;
 
 class ArticleController extends Controller
 {
@@ -30,17 +30,18 @@ class ArticleController extends Controller
 
         // Get data
         $article = Articles::where('title', $params)->first();
-        // dd(\strip_tags($article->content));
-        $content = \strip_tags($article->content);
         $comment = Comment::where('article_id', $article->id)->get();
         $editor = AdminDetails::select('id', 'admin_id', 'nama')->where('admin_id', $article->editor_id)->first();
+
+        // Related article
+        $relateds = Articles::where('sub_category_id', $article->sub_category_id)->whereNotIn('id', [$article->id])->inRandomOrder()->get()->take(5);
 
         return view($this->view . 'article', compact(
             'route',
             'article',
             'comment',
             'editor',
-            'content'
+            'relateds'
         ));
     }
 

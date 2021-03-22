@@ -57,21 +57,6 @@ function tampilkanPreview(gambar, idpreview) {
     }
 }
 
-$('#editor').summernote({
-    placeholder: 'Tulis disini ...',
-    tabsize: 2,
-    height: 300,
-    toolbar: [
-        ['style', ['style']],
-        ['font', ['bold', 'underline', 'clear', 'italic']],
-        ['fontsize', ['fontsize']],
-        ['fontname', ['fontname']],
-        ['color', ['color']],
-        ['paragraph', ['ul', 'ol', 'paragraph', 'height']],
-        ['view', ['fullscreen', 'codeview']]
-    ]
-});
-
 function reload(){
     $.confirm({
         title: '',

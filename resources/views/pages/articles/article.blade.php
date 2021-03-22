@@ -1,9 +1,6 @@
 @extends('layouts.app')
 @section('content')
 @include('masterPages.headers.header')
-<style>
-    #more {display: none;}
-</style>
 <div class="container m-t-15">
     <div class="m-0">
         <i class="fa fa-home"></i>
@@ -49,19 +46,126 @@
                             <p class="text-grey fs-12">Foto: {{ $article->source_image == null ? '-' : $article->source_image }}</p>
                         </div>
                         <div class="mt-3">
-                            {{-- <article id="less">
-                                {!! str_replace(["&nbsp;"],' ',$article->content) !!}
-                            </article>
+                            <article>{!! substr($article->content, 0, 500) !!}</article>
                             <div id="less1" class="blur-text"></div>
-                            <article id="more" style="display: none">{!! $article->content !!}</article> --}}
-                            <article>{{ $content }}</article>
+                            <article id="more" style="display: none">{!! $article->content !!}</article>
                         </div>
                     </div>
-                    <div>
-                        <div class="m-t-20 m-b-20 text-center">
+                    <div class="mt-1">
+                        <div class="text-center">
                             <button class="genric-btn warning bdr-5 m-r-5" id="tombol_show">Lebih Sedikit</button>
                             <button class="genric-btn primary bdr-5" id="tombol_hide">Baca Selengkapnya</button><br>
                         </div>
+                    </div>
+                    <div class="mt-3">
+                        <div>
+                            <span class="f-b f-blk">
+                                <label>Editor : </label>
+                                <label class="f-orange">
+                                    <a class="f-orange text-uppercase">{{ $editor->nama }}</a>
+                                </label>    
+                            </span>
+                        </div>
+                        <div class="mt-2">
+                            <div class="media post_item">
+                                <span class="bdr-20 fs-17 tag-card1">
+                                    Tags :
+                                </span>
+                                <div class="media-body mt-1">
+                                    @if ($article->tag != null)
+                                        @foreach (explode(',', $article->tag) as $tags)
+                                        <span class="bdr-20 fs-17 tag-card ml-2">
+                                            <span class="mt-2">{{ $tags }}</span>
+                                        </span>
+                                        @endforeach
+                                    @else 
+                                    <span class="ml-2">-</span>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container mt-4">
+                            <div class="row">
+                                <div class="col-6 pl-0">
+                                    <a class="mr-1" href="http://www.facebook.com/sharer.php?u=http://pundi.or.id/pundi/public/artikel?post={{$article->id}}" target="_blank">
+                                        <img src="{{ asset('images/facebook.png') }}" width="40" alt="Facebook" />
+                                    </a>
+                                    <a class="mr-1" href="https://twitter.com/share?url=http://pundi.or.id/pundi/public/artikel?post={{$article->id}}&text={{$article->judul}}" target="_blank">
+                                        <img src="{{ asset('images/twitter.png') }}" width="40" alt="Twitter" />
+                                    </a>
+                                    <a class="mr-1" href="whatsapp://send?text={{$article->judul}}%0Ahttp://pundi.or.id/pundi/public/artikel?post={{$article->id}}" target="blank" data-action="share/whatsapp/share">
+                                        <img src="{{ asset('images/whatsapp.png') }}" width="40" alt="Whatsapp" />
+                                    </a>
+                                    {{-- <a href="#">
+                                        <img src="{{ asset('images/copy.png') }}" width="40" alt="Copy" />
+                                    </a> --}}
+                                </div>
+                                <div class="col-6 text-right">
+                                    <img src="{{ asset('images/comment.png') }}" width="50" alt="">
+                                    <span class="fs-17">{{ $comment->count() }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="mb-n1">
+                    <div class="blog-author mb-1 mt-1">
+                        <div class="media align-items-center">
+                            <img class="rounded-circle img-circular" src="{{ config('app.ftp_src').'images/ava/'.$article->user->photo }}" height="70" width="70" alt="photo">
+                            <div class="media-body m-l-40 m-t-20">
+                                <a href="#">
+                                    <span class="fs-15 f-b non-hover f-blk">{{ $article->user->name }}</span>
+                                </a>
+                                <p>{{ $article->user->bio }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="mt-n1">
+                    <div class="">
+                        <p class="fs-20 f-b f-blk" style="margin-top: -20px">Artikel Terkait</p>
+                        <div class="container p-0">
+                            @foreach ($relateds as $i)
+                            <div class="media post_item mt-2">
+                                @if (Storage::disk('ftp')->exists('images/artikel/' . $i->image) == true)
+                                <img class="bdr-5 img-circular" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" width="100" height="70" alt="artikel">
+                                @else
+                                <img class="bdr-5 img-circular" src="{{ asset('images/404.png') }}" width="100" height="70" alt="artikel">
+                                @endif
+                                <div class="media-body ml-4">
+                                    <a class="text-black font-weight-bold judul-hover" href="artikel">{{ $i->title }}</a>
+                                    <br>
+                                    <i class="fas fa-user fa-xs text-grey mr-1"></i>
+                                    <a class="judul-hover" href="{{ route('other-user', str_slug($i->user->name)) }}">
+                                        <span class="judul-hover" style="color: grey">{{ $i->user->name }}</span>
+                                    </a>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+                    <hr>
+                    @include('pages.articles.comment')
+                    <hr>
+                    <div class="">
+                        <p class="fs-20 f-b f-blk" style="margin-top: -20px">Tinggalkan Balasan</p>
+                        {{-- <i>Ruas yang wajib ditandai *</i> --}}
+                        <form class="needs-validation mt-3" novalidate action="{{ route('comment.saveComment') }}" method="post">
+                            {{ csrf_field() }}
+                            <input type="hidden" name="article_id" value="{{ $article->id }}">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <textarea class="form-control input single-input-primary border" name="comment" rows="3" placeholder="Tulis Komentar..." required></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-n2">
+                                @if (Auth::user() == null)
+                                <button type="button" class="genric-btn primary bdr-5 medium pl-2 pr-2" onclick="mustLogin()">kirim <i class="fa fa-send ml-1"></i></button>
+                                @else
+                                <button type="submit" class="genric-btn primary bdr-5 medium pl-2 pr-2">kirim <i class="fa fa-send ml-1"></i></button>
+                                @endif
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -72,10 +176,9 @@
 @include('masterPages.footer')
 @endsection
 @section('script')
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script>
-    
-
+<script type="text/javascript">
     $(document).ready(function () {
         $("#tombol_hide").click(function () {
             $("#more").show();
@@ -89,6 +192,13 @@
             $("#less1").show();
         })
     });
-  
+
+    function mustLogin() {
+        Swal.fire(
+            '',
+            'Silahkan login untuk memberi komentar.',
+            'warning'
+        )
+    }
 </script>
 @endsection

@@ -22,7 +22,7 @@
                                 <label class="f-b col-form-label">KATEGORI <span class="text-danger ml-1">*</span></label><br>
                                 <div class="row">
                                     <select name="category_id" id="category_id" value="{{ old('category_id') }}" class="kategori input single-input-primary border select" required="" oninvalid="this.setCustomValidity('Kategori tidak boleh kosong')" oninput="setCustomValidity('')">
-                                        <option value="">Pilih Kategori</option>
+                                        <option value="99">Pilih Kategori</option>
                                         @foreach ($category as $i)
                                             <option value="{{ $i->id }}" @if ($category_id == $i->id) selected="selected"@endif>
                                                 {{ $i->n_category }}

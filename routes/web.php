@@ -55,6 +55,11 @@ Route::namespace('Category')->group(function () {
 // Article
 Route::namespace('Articles')->group(function () {
     Route::get('article/{n_article}', 'ArticleController@index')->name('article');
+    // Comment 
+    Route::prefix('comment')->name('comment.')->group(function () {
+        Route::post('save-comment', 'CommentController@saveComment')->name('saveComment');
+        Route::post('save-sub-comment', 'CommentController@saveSubComment')->name('saveSubComment');
+    });
 });
 
 Route::group(['middleware' => ['auth']], function () {
