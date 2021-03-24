@@ -33,7 +33,7 @@
                             <i class="fas fa-clock m-l-15 text-grey"></i>
                             <span class="fs-14">{{ substr($article->created_at, 0, 40) }}</span>
                             <i class="fa fa-comments m-l-15 text-grey"></i>
-                            <span class="fs-14">{{ $comment->count() }} Komentar</span>
+                            <span class="fs-14">{{ $countComment }} Komentar</span>
                             <i class="fa fa-eye m-l-15 f-orange"></i>
                             <span class="fs-14">{{ $article->views }}</span>
                         </div>
@@ -66,17 +66,13 @@
                                 </label>    
                             </span>
                         </div>
+                        <!-- Tags -->
                         <div class="mt-2">
                             <div class="media post_item">
-                                <span class="bdr-20 fs-17 tag-card1">
-                                    Tags :
-                                </span>
-                                <div class="media-body mt-1">
+                                <div class="media-body">
                                     @if ($article->tag != null)
                                         @foreach (explode(',', $article->tag) as $tags)
-                                        <span class="bdr-20 fs-17 tag-card ml-2">
-                                            <span class="mt-2">{{ $tags }}</span>
-                                        </span>
+                                        <button class="genric-btn warning-border circle medium mt-1">{{ $tags }}</button>
                                         @endforeach
                                     @else 
                                     <span class="ml-2">-</span>
@@ -102,7 +98,7 @@
                                 </div>
                                 <div class="col-6 text-right">
                                     <img src="{{ asset('images/comment.png') }}" width="50" alt="">
-                                    <span class="fs-17">{{ $comment->count() }}</span>
+                                    <span class="fs-17">{{ $countComment }}</span>
                                 </div>
                             </div>
                         </div>

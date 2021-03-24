@@ -39,7 +39,7 @@ class ArticleController extends Controller
         $countComment = $comment->count() + $subComment->count();
 
         // Related article
-        $relateds = Articles::where('sub_category_id', $article->sub_category_id)->whereNotIn('id', [$article->id])->inRandomOrder()->get()->take(5);
+        $relateds = Articles::where('sub_category_id', $article->sub_category_id)->where('status', 1)->whereNotIn('id', [$article->id])->inRandomOrder()->get()->take(5);
 
         return view($this->view . 'article', compact(
             'route',

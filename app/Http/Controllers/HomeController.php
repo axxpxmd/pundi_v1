@@ -21,7 +21,6 @@ use App\Models\Category;
 use App\Models\HomePageCard2;
 use App\Models\HomePageCard3;
 use App\Models\HomePageTitle;
-use App\Models\HomePageSideBar;
 use App\Models\HomePageCard1Right;
 use App\Models\HomePageCard1Bottom;
 
@@ -66,7 +65,7 @@ class HomeController extends Controller
         $category3 = Category::whereid(3)->first();
         $category4 = Category::whereid(4)->first();
         // SideBar
-        $sideBar = HomePageSideBar::with('article')->take(4)->get();
+        $sideBar = Articles::wherestatus(1)->inRandomOrder()->get()->take(4);
         $poster  = Poster::select('poster')->get();
 
         /**
