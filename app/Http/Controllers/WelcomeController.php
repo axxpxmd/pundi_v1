@@ -21,8 +21,6 @@ use App\Models\Category;
 use App\Models\HomePageCard2;
 use App\Models\HomePageCard3;
 use App\Models\HomePageTitle;
-use App\Models\HomePageCard1Right;
-use App\Models\HomePageCard1Bottom;
 
 class WelcomeController extends Controller
 {
@@ -37,8 +35,15 @@ class WelcomeController extends Controller
          * Section 1 
          */
         $trendingTop    = Articles::wherestatus(1)->orderBy('created_at', 'desc')->take(5)->get();
-        $trendingBottom = HomePageCard1Bottom::with('article')->take(3)->get();
-        $trendingRight  = HomePageCard1Right::with('article')->take(5)->get();
+        foreach ($trendingTop as $i) {
+            $notIn[] = $i->id;
+        }
+        $trendingBottom = Articles::whereNotIn('id', $notIn)->wherestatus(1)->orderBy('created_at', 'desc')->take(3)->get();
+        foreach ($trendingBottom as $i) {
+            $notIn1[] = $i->id;
+        }
+        $data = array_merge($notIn, $notIn1);
+        $trendingRight  = Articles::whereNotIn('id', $data)->wherestatus(1)->orderBy('created_at', 'desc')->take(5)->get();
 
         /**
          * Section 2

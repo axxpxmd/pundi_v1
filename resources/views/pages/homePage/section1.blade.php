@@ -59,21 +59,21 @@
                             <div class="col-lg-4">
                                 <div class="single-bottom mb-30">
                                     <div class="trend-bottom-img mb-10 ">
-                                        <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->article->image }}" width="223" height="159" alt="photo">
+                                        <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" width="223" height="159" alt="photo">
                                     </div>
                                     <div class="trend-bottom-cap">
                                         <p class="fs-13 capital">
-                                            <a class="f-orange hover-blk" href="{{ route('sub-category', str_slug($i->article->sub_category->n_sub_category)) }}">{{ $i->article->sub_category->n_sub_category }}</a>
+                                            <a class="f-orange hover-blk" href="{{ route('sub-category', str_slug($i->sub_category->n_sub_category)) }}">{{ $i->sub_category->n_sub_category }}</a>
                                         </p>
                                         <h4 class="-mt-15">
-                                            <a href={{ route('article', str_slug($i->article->title)) }}>
-                                                {{ $i->article->title }}
+                                            <a href={{ route('article', str_slug($i->title)) }}>
+                                                {{ $i->title }}
                                             </a>
                                         </h4>
                                         <div class="-mt-5" style="color: gray; margin-left: -25px">
                                             <i class="fas fa-clock fa-xs m-l-25" style="background-color: transparent !important"></i>
                                             <a class="fs-13 m-l-5" style="background-color: transparent !important">
-                                                {{substr($i->article->created_at, 0, 10)}}
+                                                {{substr($i->created_at, 0, 10)}}
                                             </a>
                                         </div>
                                     </div>
@@ -87,21 +87,21 @@
                     @foreach ($trendingRight as $i)
                     <div class="trand-right-single d-flex">
                         <div class="trand-right-img">
-                            <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->article->image }}" width="150" height="100" alt="photo">
+                            <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" width="150" height="100" alt="photo">
                         </div>
                         <div class="trand-right-cap -mt-7">
                             <p class="fs-13 capital">
-                                <a class="f-orange hover-blk" href="{{ route('sub-category', str_slug($i->article->sub_category->n_sub_category)) }}">{{ $i->article->sub_category->n_sub_category }}</a>
+                                <a class="f-orange hover-blk" href="{{ route('sub-category', str_slug($i->sub_category->n_sub_category)) }}">{{ $i->sub_category->n_sub_category }}</a>
                             </p>
                             <h4 class="-mt-15">
-                                <a href={{ route('article', str_slug($i->article->title)) }}>
-                                    {{ $i->article->title }}
+                                <a href={{ route('article', str_slug($i->title)) }}>
+                                    {{ $i->title }}
                                 </a>
                             </h4>
                             <div class="-mt-5" style="color: gray; margin-left: -25px">
                                 <i class="fas fa-clock fa-xs m-l-25" style="background-color: transparent !important"></i>
                                 <a class="fs-13 m-l-5" style="background-color: transparent !important">
-                                    {{substr($i->article->created_at, 0, 10)}}
+                                    {{substr($i->created_at, 0, 10)}}
                                 </a>
                             </div>
                         </div>
