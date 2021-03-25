@@ -1,5 +1,17 @@
 <?php
 
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ * Description of welcome
+ *
+ * @author Asip Hamdi
+ * Github : axxpxmd
+ */
+
 namespace App\Http\Controllers\Articles;
 
 use Auth;
@@ -62,16 +74,17 @@ class PostArticleController extends Controller
         $fileName = time() . "." . $file->getClientOriginalName();
         $request->file('image')->storeAs($this->path, $fileName, 'ftp', 'public');
 
-        $artikel = new Articles();
-        $artikel->title   = $title;
-        $artikel->content = $content;
-        $artikel->tag     = $tag;
-        $artikel->image   = $fileName;
-        $artikel->category_id     = $category_id;
-        $artikel->sub_category_id = $sub_category_id;
-        $artikel->source_image    = $source_image;
-        $artikel->author_id       = $author_id;
-        $artikel->save();
+        $article = new Articles();
+        $article->title      = $title;
+        $article->title_slug = str_slug($title);
+        $article->content = $content;
+        $article->tag     = $tag;
+        $article->image   = $fileName;
+        $article->category_id     = $category_id;
+        $article->sub_category_id = $sub_category_id;
+        $article->source_image    = $source_image;
+        $article->author_id       = $author_id;
+        $article->save();
 
         return redirect()
             ->route($this->route . 'index', Auth::user()->id)

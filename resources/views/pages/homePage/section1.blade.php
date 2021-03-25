@@ -11,6 +11,7 @@
                                     <li data-target="#carouselExampleIndicators" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"></li>
                                     @endforeach
                                 </ol>
+                                
                                 <div class="carousel-inner" role="listbox">
                                     @foreach( $trendingTop as $i )
                                     <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
@@ -24,7 +25,7 @@
                                                         <a class="hover-blk" href="{{ route('sub-category', str_slug($i->sub_category->n_sub_category)) }}">{{ $i->sub_category->n_sub_category }}</a>
                                                     </span>
                                                     <h2 class="m-t-20">
-                                                        <a class="f-b text-white judul-hover" href="{{ route('article', str_slug($i->title)) }}">
+                                                        <a class="f-b text-white judul-hover" href="{{ route('article', str_slug($i->title_slug)) }}">
                                                             {{ $i->title }}
                                                         </a>
                                                     </h2>
@@ -66,7 +67,7 @@
                                             <a class="f-orange hover-blk" href="{{ route('sub-category', str_slug($i->sub_category->n_sub_category)) }}">{{ $i->sub_category->n_sub_category }}</a>
                                         </p>
                                         <h4 class="-mt-15">
-                                            <a href={{ route('article', str_slug($i->title)) }}>
+                                            <a  href="{{ route('article', str_slug($i->title_slug)) }}">
                                                 {{ $i->title }}
                                             </a>
                                         </h4>
@@ -94,7 +95,7 @@
                                 <a class="f-orange hover-blk" href="{{ route('sub-category', str_slug($i->sub_category->n_sub_category)) }}">{{ $i->sub_category->n_sub_category }}</a>
                             </p>
                             <h4 class="-mt-15">
-                                <a href={{ route('article', str_slug($i->title)) }}>
+                                <a href="{{ route('article', str_slug($i->title_slug)) }}">
                                     {{ $i->title }}
                                 </a>
                             </h4>

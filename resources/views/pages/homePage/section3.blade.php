@@ -53,7 +53,7 @@
                                                         </a>
                                                     </div>
                                                     <h4 style="margin-top: -15px">
-                                                        <a href="artikel">{{ $i->title }}</a>
+                                                        <a href="{{ route('article', str_slug($i->title_slug)) }}">{{ $i->title }}</a>
                                                     </h4>
                                                 </div>
                                             </div>
@@ -85,7 +85,7 @@
                                                         </a>
                                                     </div>
                                                     <h4 style="margin-top: -15px">
-                                                        <a href="artikel">{{ $i->title }}</a>
+                                                        <a href="{{ route('article', str_slug($i->title_slug)) }}">{{ $i->title }}</a>
                                                     </h4>
                                                 </div>
                                             </div>
@@ -117,7 +117,7 @@
                                                         </a>
                                                     </div>
                                                     <h4 style="margin-top: -15px">
-                                                        <a href="artikel">{{ $i->title }}</a>
+                                                        <a href="{{ route('article', str_slug($i->title_slug)) }}">{{ $i->title }}</a>
                                                     </h4>
                                                 </div>
                                             </div>
@@ -149,7 +149,7 @@
                                                         </a>
                                                     </div>
                                                     <h4 style="margin-top: -15px">
-                                                        <a href="artikel">{{ $i->title }}</a>
+                                                        <a href="{{ route('article', str_slug($i->title_slug)) }}">{{ $i->title }}</a>
                                                     </h4>
                                                 </div>
                                             </div>
@@ -181,7 +181,7 @@
                                                         </a>
                                                     </div>
                                                     <h4 style="margin-top: -15px">
-                                                        <a href="artikel">{{ $i->title }}</a>
+                                                        <a href="{{ route('article', str_slug($i->title_slug)) }}">{{ $i->title }}</a>
                                                     </h4>
                                                 </div>
                                             </div>

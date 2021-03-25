@@ -29,7 +29,7 @@
                                         <i class="fas fa-clock fa-xs text-grey"></i>
                                         <span style="color: grey; margin-left: -10px">{{ substr($i->article->created_at, 0, 10) }}</span>
                                     </div>
-                                    <h4 class="-mt-15"><a href="artikel">{{ $i->article->title }}</a></h4>
+                                    <h4 class="-mt-15"><a href="{{ route('article', str_slug($i->article->title_slug)) }}">{{ $i->article->title }}</a></h4>
                                 </div>
                             </div> 
                         @endforeach

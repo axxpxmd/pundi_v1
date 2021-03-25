@@ -44,7 +44,7 @@
                                 <a href="{{ route('sub-category', str_slug($i->sub_category->n_sub_category)) }}" class="hover-blk">{{ $i->sub_category->n_sub_category }}</a>
                             </span>
                             <p class="fs-19 f-b f-blk m-t-10">
-                                <a href="artikel" class="text-black judul-hover">{{ $i->title }}</a>
+                                <a href="{{ route('article', str_slug($i->title_slug)) }}" class="text-black judul-hover">{{ $i->title }}</a>
                             </p>
                             <div class="-mt-10 text-grey">
                                 <i class="fa fa-user mr-1"></i>
@@ -57,7 +57,7 @@
                             <div class="text-justify mt-2">
                                 {{  substr(strip_tags(str_replace(["&nbsp;", "&mdash;", "&rdquo;", "&ldquo;", "&rsquo;", "&hellip;"],' ',$i->content)),0,400) }} […]
                             </div>
-                            <a href="artikel" class="f-blk fs-13 f-b m-t-5 judul-hover">
+                            <a href="{{ route('article', str_slug($i->title_slug)) }}" class="f-blk fs-13 f-b m-t-5 judul-hover">
                                 <span>READ MORE</span>
                                 <i class="fas fa-arrow-right"></i>
                             </a>

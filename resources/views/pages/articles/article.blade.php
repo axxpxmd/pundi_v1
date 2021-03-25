@@ -129,7 +129,7 @@
                                 <img class="bdr-5 img-circular" src="{{ asset('images/404.png') }}" width="100" height="70" alt="artikel">
                                 @endif
                                 <div class="media-body ml-4">
-                                    <a class="text-black font-weight-bold judul-hover" href="artikel">{{ $i->title }}</a>
+                                    <a class="text-black font-weight-bold judul-hover" href="{{ route('article', str_slug($i->title_slug)) }}">{{ $i->title }}</a>
                                     <br>
                                     <i class="fas fa-user fa-xs text-grey mr-1"></i>
                                     <a class="judul-hover" href="{{ route('other-user', str_slug($i->user->name)) }}">

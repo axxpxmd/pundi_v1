@@ -30,7 +30,7 @@
                         <span class="fs-13 text-uppercase">
                            <a class="f-orange hover-blk" href="{{ route('sub-category', str_slug($i->sub_category->n_sub_category)) }}">{{ $i->sub_category->n_sub_category }}</a> 
                         </span>
-                        <a href="artikel">
+                        <a href="{{ route('article', str_slug($i->title_slug)) }}">
                             <h3>{{ $i->title }}</h3>
                         </a>
                         <i class="fas fa-clock fa-sm text-grey"></i>

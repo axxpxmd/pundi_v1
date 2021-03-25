@@ -114,7 +114,7 @@
                                 <div class="row">
                                     <div class="col-sm-4"></div>
                                     <div class="col-sm-8">
-                                        <button class="genric-btn primary btn-block bdr-5" type="submit">Simpan Perubahan</button>
+                                        <button class="genric-btn primary btn-block bdr-5" type="submit"><i class="fa fa-save mr-2"></i>Simpan Perubahan</button>
                                     </div>
                                 </div>
                             </div>

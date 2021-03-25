@@ -26,6 +26,14 @@ class WelcomeController extends Controller
 {
     public function index()
     {
+        // title slug
+        // $slugs = Articles::get();
+        // foreach ($slugs as $key => $i) {
+        //     Articles::select('title_slug')->where('id', $i->id)->update([
+        //         'title_slug' => str_slug($i->title)
+        //     ]);
+        // }
+
         /**
          * Title Card
          */

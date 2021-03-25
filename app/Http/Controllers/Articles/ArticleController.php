@@ -1,5 +1,17 @@
 <?php
 
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ * Description of welcome
+ *
+ * @author Asip Hamdi
+ * Github : axxpxmd
+ */
+
 namespace App\Http\Controllers\Articles;
 
 use DB;
@@ -20,17 +32,16 @@ class ArticleController extends Controller
     protected $view  = 'pages.articles.';
     protected $path  = '';
 
-    public function index(Request $request, $n_article)
+    public function index(Request $request, $slug)
     {
         $route  = $this->route;
-        $params = str_replace('-', ' ', $n_article);
 
         // Check ip
         $ip = $request->ip();
-        $this->storeip($params, $ip);
+        $this->storeip($slug, $ip);
 
         // Get data
-        $article = Articles::where('title', $params)->first();
+        $article = Articles::where('title_slug', $slug)->first();
         $editor = AdminDetails::select('id', 'admin_id', 'nama')->where('admin_id', $article->editor_id)->first();
 
         // Get Comment
@@ -51,9 +62,9 @@ class ArticleController extends Controller
         ));
     }
 
-    public function storeip($params, $ip)
+    public function storeip($slug, $ip)
     {
-        $article = Articles::where('title', $params)->first();
+        $article = Articles::where('title_slug', $slug)->first();
         $check = checkIP::select('article_id', 'ip')->where('article_id', $article->id)->where('ip', $ip)->get();
 
         if ($check->count() == 0) {

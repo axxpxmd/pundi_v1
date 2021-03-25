@@ -1,5 +1,5 @@
 @php
-$sideBar = App\Models\Articles::select('id', 'title', 'category_id', 'sub_category_id', 'image', 'author_id', 'created_at')->inRandomOrder()->get()->take(4);
+$sideBar = App\Models\Articles::select('id', 'title', 'title_slug', 'category_id', 'sub_category_id', 'image', 'author_id', 'created_at')->inRandomOrder()->get()->take(4);
 $poster  = App\Models\Poster::select('poster')->get();
 @endphp
 <div class="col-lg-4">
@@ -39,7 +39,7 @@ $poster  = App\Models\Poster::select('poster')->get();
                            <a class="f-orange hover-blk" href="{{ route('sub-category', str_slug($i->sub_category->n_sub_category)) }}">{{ $i->sub_category->n_sub_category }}</a> 
                         </span>
                         <p>
-                            <a class="font-weight-bold text-black judul-hover" href="artikel">{{ $i->title }}</a>
+                            <a class="font-weight-bold text-black judul-hover" href="{{ route('article', str_slug($i->title_slug)) }}">{{ $i->title }}</a>
                         </p>
                         <i class="fas fa-clock fa-sm text-grey"></i>
                         <span class="fs-13 text-grey ml-1">{{ substr($i->created_at, 0, 10) }}</span>

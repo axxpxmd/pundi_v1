@@ -26,7 +26,7 @@
                                     <a class="hover-blk" href="{{ route('sub-category', str_slug($i->article->sub_category->n_sub_category)) }}">{{ $i->article->sub_category->n_sub_category }}</a>
                                 </span>
                                 <h4 class="-mt-10">
-                                    <a href="artikel">
+                                    <a href="{{ route('article', str_slug($i->article->title_slug)) }}">
                                         {{ $i->article->title }}
                                     </a>
                                 </h4>

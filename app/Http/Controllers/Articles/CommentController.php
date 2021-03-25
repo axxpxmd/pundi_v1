@@ -1,5 +1,17 @@
 <?php
 
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ * Description of welcome
+ *
+ * @author Asip Hamdi
+ * Github : axxpxmd
+ */
+
 namespace App\Http\Controllers\Articles;
 
 use Auth;
@@ -29,9 +41,9 @@ class CommentController extends Controller
 
         // get id article
         $article = Articles::select('id', 'title')->where('id', $article_id)->first();
-        $params = str_replace(' ', '-', $article->title);
+        $slug = $article->title_slug;
 
-        return redirect()->route('article', $params);
+        return redirect()->route('article', $slug);
     }
 
     public function saveSubComment(Request $request)
@@ -50,9 +62,9 @@ class CommentController extends Controller
 
         // get id article
         $article = Articles::select('id', 'title')->where('id', $article_id)->first();
-        $params = str_replace(' ', '-', $article->title);
+        $slug = $article->title_slug;
 
-        return redirect()->route('article', $params);
+        return redirect()->route('article', $slug);
     }
 
     public function deleteComment($id)
@@ -66,9 +78,9 @@ class CommentController extends Controller
 
         // get id article
         $article = Articles::select('id', 'title')->where('id', $article_id)->first();
-        $params = str_replace(' ', '-', $article->title);
+        $slug = $article->title_slug;
 
-        return redirect()->route('article', $params);
+        return redirect()->route('article', $slug);
     }
 
     public function deleteSubComment($id)
@@ -82,8 +94,8 @@ class CommentController extends Controller
 
         // get id article
         $article = Articles::select('id', 'title')->where('id', $article_id)->first();
-        $params = str_replace(' ', '-', $article->title);
+        $slug = $article->title_slug;
 
-        return redirect()->route('article', $params);
+        return redirect()->route('article', $slug);
     }
 }

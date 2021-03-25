@@ -43,18 +43,18 @@ Route::get('/ketentuan-tulisan', function () {
 Route::get('profil/{name}', 'Profiles\ProfileOtherUserController@index')->name('other-user');
 
 // Search
-Route::get('search', 'SearchController@index')->name('search');
+Route::get('cari', 'SearchController@index')->name('search');
 
 Route::namespace('Category')->group(function () {
     // Category
-    Route::get('category/{n_category}', 'CategoryController@index')->name('category');
+    Route::get('kategori/{n_category}', 'CategoryController@index')->name('category');
     // Sub Category
-    Route::get('sub-category/{n_sub_category}', 'SubCategoryController@index')->name('sub-category');
+    Route::get('sub-kategori/{n_sub_category}', 'SubCategoryController@index')->name('sub-category');
 });
 
 // Article
 Route::namespace('Articles')->group(function () {
-    Route::get('article/{n_article}', 'ArticleController@index')->name('article');
+    Route::get('artikel/{slug}', 'ArticleController@index')->name('article');
     // Comment 
     Route::prefix('comment')->name('comment.')->group(function () {
         Route::post('save-comment', 'CommentController@saveComment')->name('saveComment');

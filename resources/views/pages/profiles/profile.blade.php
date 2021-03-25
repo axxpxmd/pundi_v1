@@ -68,7 +68,7 @@
                                                 @foreach ($article as $index => $i)
                                                 <tr>
                                                     <td scope="row">{{ $article->firstItem() + $index }}</td>
-                                                    <td><a href="artikel" class="text-black text-decoration-none judul-hover">{{ $i->title }}</a></td>
+                                                    <td><a href="{{ route('article', str_slug($i->title_slug)) }}" class="text-black text-decoration-none judul-hover">{{ $i->title }}</a></td>
                                                     <td>{{ $i->views }}</td>
                                                 </tr>
                                                 @endforeach
