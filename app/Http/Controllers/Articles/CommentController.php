@@ -40,7 +40,7 @@ class CommentController extends Controller
         $commentStore->save();
 
         // get id article
-        $article = Articles::select('id', 'title')->where('id', $article_id)->first();
+        $article = Articles::select('id', 'title', 'title_slug')->where('id', $article_id)->first();
         $slug = $article->title_slug;
 
         return redirect()->route('article', $slug);
@@ -61,7 +61,7 @@ class CommentController extends Controller
         $subCommentStore->save();
 
         // get id article
-        $article = Articles::select('id', 'title')->where('id', $article_id)->first();
+        $article = Articles::select('id', 'title', 'title_slug')->where('id', $article_id)->first();
         $slug = $article->title_slug;
 
         return redirect()->route('article', $slug);
@@ -77,7 +77,7 @@ class CommentController extends Controller
         ]);
 
         // get id article
-        $article = Articles::select('id', 'title')->where('id', $article_id)->first();
+        $article = Articles::select('id', 'title', 'title_slug')->where('id', $article_id)->first();
         $slug = $article->title_slug;
 
         return redirect()->route('article', $slug);
@@ -93,7 +93,7 @@ class CommentController extends Controller
         ]);
 
         // get id article
-        $article = Articles::select('id', 'title')->where('id', $article_id)->first();
+        $article = Articles::select('id', 'title', 'title_slug')->where('id', $article_id)->first();
         $slug = $article->title_slug;
 
         return redirect()->route('article', $slug);

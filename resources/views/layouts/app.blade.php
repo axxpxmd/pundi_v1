@@ -15,11 +15,19 @@
     <title>{{ config('app.name') }} @yield('title')</title>
 
     <!-- Link Share -->
+    @if (isset($article) != null)
+    <meta property="og:title" content="{{ $article->title }}"/>
+    <meta property="og:image" content="{{ config('app.ftp_src').'images/artikel/'.$article->image }}" />
+    <meta property="og:url" content="http://pundi-dev.pundi.or.id/public/artikel/{{ $article->title_slug }}"/>
+    <meta property="og:site_name" content="PUNDI"/>
+    <meta property="og:type" content="article"/>
+    @else
     <meta property="og:title" content="PUNDI.OR.ID - Kanal Pendidikan Tajam dan Mencerahkan"/>
     <meta property="og:image" content="{{ config('app.ftp_src').'images/logo/'.$logo->share }}" />
     <meta property="og:url" content="http://pundi-dev.pundi.or.id"/>
     <meta property="og:site_name" content="PUNDI"/>
     <meta property="og:type" content="article"/>
+    @endif
 
     <!-- CSS -->
     @yield('css')
