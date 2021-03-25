@@ -28,13 +28,11 @@ use App\Models\SubComment;
 
 class ArticleController extends Controller
 {
-    protected $route = '';
     protected $view  = 'pages.articles.';
-    protected $path  = '';
 
     public function index(Request $request, $slug)
     {
-        $route  = $this->route;
+        $articlePage = 'true';
 
         // Check ip
         $ip = $request->ip();
@@ -53,7 +51,7 @@ class ArticleController extends Controller
         $relateds = Articles::where('sub_category_id', $article->sub_category_id)->where('status', 1)->whereNotIn('id', [$article->id])->inRandomOrder()->get()->take(5);
 
         return view($this->view . 'article', compact(
-            'route',
+            'articlePage',
             'article',
             'comment',
             'editor',
