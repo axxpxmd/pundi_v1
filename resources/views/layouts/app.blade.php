@@ -16,7 +16,7 @@
 
     <!-- Link Share -->
     @if (isset($article) != null)
-    <meta property="og:title" content="{{ $article->title }}"/>
+    <meta property="og:title" content="{{ isset($article->title) }}"/>
     <meta property="og:image" content="{{ config('app.ftp_src').'images/artikel/'.$article->image }}" />
     <meta property="og:url" content="http://pundi-dev.pundi.or.id/public/artikel/{{ $article->title_slug }}"/>
     <meta property="og:site_name" content="PUNDI"/>
