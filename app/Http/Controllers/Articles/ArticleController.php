@@ -32,8 +32,6 @@ class ArticleController extends Controller
 
     public function index(Request $request, $slug)
     {
-        $articlePage = 'true';
-
         // Check ip
         $ip = $request->ip();
         $this->storeip($slug, $ip);
@@ -51,7 +49,6 @@ class ArticleController extends Controller
         $relateds = Articles::where('sub_category_id', $article->sub_category_id)->where('status', 1)->whereNotIn('id', [$article->id])->inRandomOrder()->get()->take(5);
 
         return view($this->view . 'article', compact(
-            'articlePage',
             'article',
             'comment',
             'editor',

@@ -54,8 +54,9 @@
                                     </li>
                                 </ul>
                                 <div class="tab-content" id="myTabContent">
+                                    <!-- Article -->
                                     <div class="tab-pane fade show active" id="home" role="tabpanel">
-                                        @if ($article->count() != 0)
+                                        @if ($articleUser->count() != 0)
                                         <table class="table mt-2 table-striped">
                                             <thead>
                                                 <tr>
@@ -65,9 +66,9 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach ($article as $index => $i)
+                                                @foreach ($articleUser as $index => $i)
                                                 <tr>
-                                                    <td scope="row">{{ $article->firstItem() + $index }}</td>
+                                                    <td scope="row">{{ $articleUser->firstItem() + $index }}</td>
                                                     <td><a href="{{ route('article', str_slug($i->title_slug)) }}" class="text-black text-decoration-none judul-hover">{{ $i->title }}</a></td>
                                                     <td>{{ $i->views }}</td>
                                                 </tr>
@@ -75,7 +76,7 @@
                                             </tbody>
                                         </table>
                                         <div>
-                                            {{ $article->links() }}
+                                            {{ $articleUser->links() }}
                                         </div>
                                         @else
                                         <div class="mt-2">
@@ -84,6 +85,7 @@
                                         </div>
                                         @endif
                                     </div>
+                                    <!-- Data Profile -->
                                     <div class="tab-pane fade" id="profile" role="tabpanel">
                                         <div class="col-md-12 mt-2">
                                             <div class="row">
@@ -112,6 +114,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <!-- Comment -->
                                     <div class="tab-pane fade" id="komentar" role="tabpanel">
                                         @if ($comment->count() != 0)
                                             @foreach ($comment as $i)
