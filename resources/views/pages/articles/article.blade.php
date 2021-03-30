@@ -133,7 +133,7 @@
                                     <a class="text-black font-weight-bold judul-hover" href="{{ route('article', str_slug($i->title_slug)) }}">{{ $i->title }}</a>
                                     <br>
                                     <i class="fas fa-user fa-xs text-grey mr-1"></i>
-                                    <a class="judul-hover" href="{{ route('other-user', str_slug($i->user->name)) }}">
+                                    <a class="judul-hover" href="{{ route('other-user', str_slug($i->user->name_slug)) }}">
                                         <span class="judul-hover" style="color: grey">{{ $i->user->name }}</span>
                                     </a>
                                 </div>

@@ -15,6 +15,7 @@
 namespace App\Http\Controllers;
 
 // Models
+use App\User;
 use App\Models\Poster;
 use App\Models\Articles;
 use App\Models\Category;
@@ -33,6 +34,14 @@ class WelcomeController extends Controller
         //         'title_slug' => str_slug($i->title)
         //     ]);
         // }
+
+        // name slug
+        $nameSlug = User::get();
+        foreach ($nameSlug as $key => $i) {
+            User::select('name_slug')->where('id', $i->id)->update([
+                'name_slug' => str_slug($i->name)
+            ]);
+        }
 
         /**
          * Title Card

@@ -25,12 +25,9 @@ class ProfileOtherUserController extends Controller
 {
     protected $view = 'pages.profiles.otherUser.';
 
-    public function index($name)
+    public function index($name_slug)
     {
-        // convert parameter to string ( remove - )
-        $params  = str_replace('-', ' ', $name);
-
-        $user    = User::where('name', $params)->first();
+        $user    = User::where('name_slug', $name_slug)->first();
         $articleUser = Articles::where('author_id', $user->id)->with('user')->orderBy('views', 'DESC')->paginate(10);
         $comment = Comment::where('user_id', $user->id)->with('article')->get();
         $countArticle = Articles::where('author_id', $user->id)->count();

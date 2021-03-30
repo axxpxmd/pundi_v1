@@ -48,7 +48,7 @@
                                                     <br>
                                                     <div style="margin-top: -10px">
                                                         <i class="fas fa-user fa-xs text-grey"></i>
-                                                        <a class="judul-hover" href="{{ route('other-user', str_slug($i->user->name)) }}">
+                                                        <a class="judul-hover" href="{{ route('other-user', str_slug($i->user->name_slug)) }}">
                                                             <span class="judul-hover" style="color: grey;margin-left: -10px">{{ $i->user->name }}</span>
                                                         </a>
                                                     </div>
@@ -80,7 +80,7 @@
                                                     <br>
                                                     <div style="margin-top: -10px">
                                                         <i class="fas fa-user fa-xs text-grey"></i>
-                                                        <a class="judul-hover" href="{{ route('other-user', str_slug($i->user->name)) }}">
+                                                        <a class="judul-hover" href="{{ route('other-user', str_slug($i->user->name_slug)) }}">
                                                             <span class="judul-hover" style="color: grey;margin-left: -10px">{{ $i->user->name }}</span>
                                                         </a>
                                                     </div>
@@ -112,7 +112,7 @@
                                                     <br>
                                                     <div style="margin-top: -10px">
                                                         <i class="fas fa-user fa-xs text-grey"></i>
-                                                        <a class="judul-hover" href="{{ route('other-user', str_slug($i->user->name)) }}">
+                                                        <a class="judul-hover" href="{{ route('other-user', str_slug($i->user->name_slug)) }}">
                                                             <span class="judul-hover" style="color: grey;margin-left: -10px">{{ $i->user->name }}</span>
                                                         </a>
                                                     </div>
@@ -144,7 +144,7 @@
                                                     <br>
                                                     <div style="margin-top: -10px">
                                                         <i class="fas fa-user fa-xs text-grey"></i>
-                                                        <a class="judul-hover" href="{{ route('other-user', str_slug($i->user->name)) }}">
+                                                        <a class="judul-hover" href="{{ route('other-user', str_slug($i->user->name_slug)) }}">
                                                             <span class="judul-hover" style="color: grey;margin-left: -10px">{{ $i->user->name }}</span>
                                                         </a>
                                                     </div>
@@ -176,7 +176,7 @@
                                                     <br>
                                                     <div style="margin-top: -10px">
                                                         <i class="fas fa-user fa-xs text-grey"></i>
-                                                        <a class="judul-hover" href="{{ route('other-user', str_slug($i->user->name)) }}">
+                                                        <a class="judul-hover" href="{{ route('other-user', str_slug($i->user->name_slug)) }}">
                                                             <span class="judul-hover" style="color: grey;margin-left: -10px">{{ $i->user->name }}</span>
                                                         </a>
                                                     </div>

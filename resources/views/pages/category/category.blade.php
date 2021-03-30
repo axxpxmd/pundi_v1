@@ -51,7 +51,7 @@
                             </p>
                             <div class="-mt-10 text-grey">
                                 <i class="fa fa-user mr-1"></i>
-                                <a href="{{ route('other-user', str_slug($i->user->name)) }}" class="judul-hover text-grey fs-13">
+                                <a href="{{ route('other-user', str_slug($i->user->name_slug)) }}" class="judul-hover text-grey fs-13">
                                     {{ $i->user->name }}
                                 </a>
                                 <i class="fas fa-clock mr-1 ml-3"></i>
