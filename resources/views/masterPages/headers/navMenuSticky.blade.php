@@ -33,7 +33,7 @@
             </ul>
         </li>
         <li>
-            <a href="konsultasi" style="font-size: 13px !important" class="text-uppercase">{{ $category5->n_category }}</a>
+            <a href="{{ route('consultation') }}" style="font-size: 13px !important" class="text-uppercase">{{ $category5->n_category }}</a>
         </li>
         @if (Auth::user() != null)
         <li>

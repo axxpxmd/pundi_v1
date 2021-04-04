@@ -45,6 +45,10 @@ Route::get('profil/{name}', 'Profiles\ProfileOtherUserController@index')->name('
 // Search
 Route::get('cari', 'SearchController@index')->name('search');
 
+Route::get('konsultasi', 'ConsultationController@index')->name('consultation');
+Route::post('konsultasi/send', 'ConsultationController@consultation')->name('consultation.send');
+Route::post('pertanyaan/send', 'ConsultationController@question')->name('question.send');
+
 Route::namespace('Category')->group(function () {
     // Category
     Route::get('kategori/{n_category}', 'CategoryController@index')->name('category');
