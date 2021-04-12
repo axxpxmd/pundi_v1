@@ -39,23 +39,15 @@
                         </div>
                         <div class="mt-3">
                             @if (Storage::disk('ftp')->exists('images/artikel/' . $article->image) == true)
-                            <img class="img-fluid bdr-5" width="800" src="{{ config('app.ftp_src').'images/artikel/'.$article->image }}" alt="photo">
+                            <img class="img-fluid bdr-5" width="800" src="{{ config('app.ftp_src').$path.$article->image }}" alt="photo">
                             @else
                             <img class="img-fluid bdr-5" width="800" src="{{ asset('images/404.png') }}" alt="photo">
                             @endif
                             <p class="text-grey fs-12">Foto: {{ $article->source_image == null ? '-' : $article->source_image }}</p>
                         </div>
                         <div class="mt-3">
-                            <article>{!! substr($article->content, 0, 500) !!}</article>
-                            <div id="less1" class="blur-text"></div>
-                            <article id="more" style="display: none">{!! $article->content !!}</article>
-                        </div>
-                    </div>
-                    <div class="mt-1">
-                        <div class="text-center">
-                            <button class="genric-btn warning bdr-5 m-r-5" id="tombol_show">Lebih Sedikit</button>
-                            <button class="genric-btn primary bdr-5" id="tombol_hide">Baca Selengkapnya</button><br>
-                        </div>
+                            {!! $article->content !!}
+                        </div> 
                     </div>
                     <div class="mt-3">
                         <div>
@@ -184,9 +176,9 @@
                                             </div>
                                             <div class="mt-n2">
                                                 @if (Auth::user() == null)
-                                                <button type="button" class="genric-btn primary bdr-5 medium pl-2 pr-2" onclick="mustLogin()">kirim <i class="fa fa-send ml-1"></i></button>
+                                                <button type="button" class="genric-btn primary bdr-5 medium pl-2 pr-2" onclick="mustLogin()">kirim <i class="fa fa-paper-plane ml-1"></i></button>
                                                 @else
-                                                <button type="submit" class="genric-btn primary bdr-5 medium pl-2 pr-2">kirim <i class="fa fa-send ml-1"></i></button>
+                                                <button type="submit" class="genric-btn primary bdr-5 medium pl-2 pr-2">kirim <i class="fa fa-paper-plane ml-1"></i></button>
                                                 @endif
                                             </div>
                                         </form>
@@ -225,6 +217,7 @@
                         </div>
                     </div>
                     <hr>
+                    <!-- Send Comment -->
                     <div class="">
                         <p class="fs-20 f-b f-blk" style="margin-top: -20px">Tinggalkan Balasan</p>
                         {{-- <i>Ruas yang wajib ditandai *</i> --}}
@@ -240,9 +233,9 @@
                             </div>
                             <div class="mt-n2 mb-4">
                                 @if (Auth::user() == null)
-                                <button type="button" class="genric-btn primary bdr-5 medium pl-2 pr-2" onclick="mustLogin()">kirim <i class="fa fa-send ml-1"></i></button>
+                                <button type="button" class="genric-btn primary bdr-5 medium pl-2 pr-2" onclick="mustLogin()">kirim <i class="fa fa-paper-plane ml-1"></i></button>
                                 @else
-                                <button type="submit" class="genric-btn primary bdr-5 medium pl-2 pr-2">kirim <i class="fa fa-send ml-1"></i></button>
+                                <button type="submit" class="genric-btn primary bdr-5 medium pl-2 pr-2">kirim <i class="fa fa-paper-plane ml-1"></i></button>
                                 @endif
                             </div>
                         </form>

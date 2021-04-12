@@ -65,7 +65,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-sm-12">
-                                                <button class="genric-btn primary btn-block bdr-5" type="submit"><i class="fa fa-send mr-2"></i>Kirim Konsultasi</button>
+                                                <button class="genric-btn primary btn-block bdr-5" type="submit"><i class="fa fa-paper-plane mr-2"></i>Kirim Konsultasi</button>
                                             </div>
                                         </div>
                                     </div>
@@ -103,7 +103,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-sm-12">
-                                                <button class="genric-btn primary btn-block bdr-5" type="submit"><i class="fa fa-send mr-2"></i>Kirim Pertanyaan</button>
+                                                <button class="genric-btn primary btn-block bdr-5" type="submit"><i class="fa fa-paper-plane mr-2"></i>Kirim Pertanyaan</button>
                                             </div>
                                         </div>
                                     </div>

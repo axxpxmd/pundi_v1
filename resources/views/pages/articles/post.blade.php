@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 @include('masterPages.headers.header')
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote-lite.min.css" rel="stylesheet">
 <section class="blog_area section-padding">
     <div class="container">
         <div class="row">
@@ -8,7 +9,7 @@
                 <div class="blog_left_sidebar">
                     @include('masterPages.alerts')
                     <div>
-                        <form action="{{ route($route.'store') }}" method="POST" enctype="multipart/form-data" >
+                        <form class="needs-validation" novalidate action="{{ route($route.'store') }}" method="POST" enctype="multipart/form-data" >
                             {{ csrf_field() }}
                             {{ method_field('POST') }}
                             <p class="fs-30 f-b f-blk mb-n3">Kirim Tulisan</p>
@@ -16,12 +17,15 @@
                             <p class="mt-n4 fs-13">Baca ketentuan tulisan <a class="f-orange hover-blk" href="{{ config('app.url'). '/ketentuan-tulisan' }}">disini</a></p>
                             <div class="m-t-20">
                                 <label class="f-b col-form-label">JUDUL ARTIKEL<span class="text-danger ml-1">*</span></label>
-                                <input type="text" class="input single-input-primary border bdr-5 col-md-12" name="title" id="title" value="{{ old('title') }}" required="" oninvalid="this.setCustomValidity('Judul artikel tidak boleh kosong')" oninput="setCustomValidity('')"/>
+                                <input type="text" class="form-control input single-input-primary border bdr-5 col-md-12" name="title" id="title" value="{{ old('title') }}" required>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>Judul Artikel tidak boleh kosong!</strong>
+                                </span>
                             </div>
                             <div class="mt-3">
                                 <label class="f-b col-form-label">KATEGORI <span class="text-danger ml-1">*</span></label><br>
                                 <div class="row">
-                                    <select name="category_id" id="category_id" value="{{ old('category_id') }}" class="kategori input single-input-primary border select" required="" oninvalid="this.setCustomValidity('Kategori tidak boleh kosong')" oninput="setCustomValidity('')">
+                                    <select name="category_id" id="category_id" value="{{ old('category_id') }}" class="kategori input single-input-primary border select" required>
                                         <option value="99">Pilih Kategori</option>
                                         @foreach ($category as $i)
                                             <option value="{{ $i->id }}" @if ($category_id == $i->id) selected="selected"@endif>
@@ -47,16 +51,22 @@
                             </div>
                             <div class="mt-n3">
                                 <label class="f-b col-form-label">SUMBER GAMBAR <span class="text-danger ml-1">*</span></label>
-                                <input type="text" class="input single-input-primary border bdr-5 col-md-12" name="source_image" id="source_image" value="{{ old('source_image') }}" required="" oninvalid="this.setCustomValidity('Sumber gambar tidak boleh kosong')" oninput="setCustomValidity('')"/>
+                                <input type="text" class="form-control input single-input-primary border bdr-5 col-md-12" name="source_image" id="source_image" value="{{ old('source_image') }}" required>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>Sumber Gambar tidak boleh kosong!</strong>
+                                </span>
                             </div>
                             <div class="mt-3">
                                 <label class="f-b col-form-label">ARTIKEL <span class="text-danger ml-1">*</span></label>
                                 <textarea name="content" id="editor">{{ old('content') }}</textarea>
                             </div>
                             <div class="mt-3">
-                                <label class="f-b col-form-label">TAGS <span class="text-danger ml-1">*</span></label>
-                                <input type="text" class="input single-input-primary border bdr-5 col-md-12" value="{{ old('tag') }}" name="tag" id="tag" required="" oninvalid="this.setCustomValidity('Tag tidak boleh kosong')" oninput="setCustomValidity('')"/>
-                                <i class="fs-12 f-red">Pisahkan dengan koma ( , )</i>
+                                <label class="f-b col-form-label">TAG <span class="text-danger ml-1">*</span></label>
+                                <input type="text" class="input single-input-primary border bdr-5 col-md-12" value="{{ old('tag') }}" name="tag" id="tag" required>
+                                <i class="fs-12 f-orange">Pisahkan dengan koma ( , )</i>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>Tag tidak boleh kosong!</strong>
+                                </span>
                             </div>
                             <hr>
                             <button class="genric-btn primary bdr-5 btn-block mt-n4 " type="submit"  value="Log in">KirimTulisan<i class="fa fa-share-square ml-2"></i></button>
@@ -72,8 +82,6 @@
 @endsection
 @section('script')
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote-lite.min.js"></script>
 <script type="text/javascript">
     $('#editor').summernote({

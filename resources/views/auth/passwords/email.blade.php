@@ -19,7 +19,7 @@
                     <form class="needs-validation" action="{{ route('password.email') }}" method="POST" novalidate>
                         @csrf
                         <p class="text-center fs-30 f-b f-blk">Lupa Password</p>
-                        <p class="text-center m-t-20 f-blk m-b-30">Masukan E-mail untuk mengganti password</p>
+                        <p class="text-center f-blk mt-n1">Masukan E-mail untuk mengganti password</p>
                         <div class="mt-10 form-group row">
                             <label class="col-sm-2 f-b col-form-label" for="email">EMAIL</label>
                             <div class="col-sm-10">
@@ -34,7 +34,7 @@
                         <div class="row">
                             <div class="col-sm-2"></div>
                             <div class="col-sm-10">
-                                <button class="genric-btn primary bdr-5">Kirim</button>
+                                <button class="genric-btn primary bdr-5"><i class="fa fa-paper-plane mr-2"></i>Kirim</button>
                             </div>
                         </div>
                         <hr>

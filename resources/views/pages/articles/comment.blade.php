@@ -33,9 +33,9 @@
                         </div>
                         <div class="mt-n2">
                             @if (Auth::user() == null)
-                            <button type="button" class="genric-btn primary bdr-5 medium pl-2 pr-2" onclick="mustLogin()">kirim <i class="fa fa-send ml-1"></i></button>
+                            <button type="button" class="genric-btn primary bdr-5 medium pl-2 pr-2" onclick="mustLogin()">kirim <i class="fa fa-paper-plane ml-1"></i></button>
                             @else
-                            <button type="submit" class="genric-btn primary bdr-5 medium pl-2 pr-2">kirim <i class="fa fa-send ml-1"></i></button>
+                            <button type="submit" class="genric-btn primary bdr-5 medium pl-2 pr-2">kirim <i class="fa fa-paper-plane ml-1"></i></button>
                             @endif
                         </div>
                     </form>

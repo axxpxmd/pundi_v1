@@ -28,7 +28,7 @@ class PostArticleController extends Controller
 {
     protected $view  = 'pages.articles.';
     protected $route = 'article.post.';
-    protected $path  = '/images/article/';
+    protected $path  = '/images/artikel/';
 
     public function index(Request $request)
     {
@@ -61,7 +61,7 @@ class PostArticleController extends Controller
             'source_image'    => 'required'
         ]);
 
-        // get data 
+        // Get Param
         $title   = $request->title;
         $content = $request->content;
         $tag     = $request->tag;
@@ -70,6 +70,7 @@ class PostArticleController extends Controller
         $sub_category_id = $request->sub_category_id;
         $source_image    = $request->source_image;
 
+        // Saved Photo to Storage
         $file     = $request->file('image');
         $fileName = time() . "." . $file->getClientOriginalName();
         $request->file('image')->storeAs($this->path, $fileName, 'ftp', 'public');

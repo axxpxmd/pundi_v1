@@ -39,7 +39,7 @@
         <li>
             <a href="" style="font-size: 13px !important"">AKUN <span class="fa fa-angle-down "></a>
             <ul class="submenu">
-                <li><a href="{{ route('profil') }}"><i class="fa fa-user-edit mr-2"></i>Edit Profil</a></li>
+                <li><a href="{{ route('profil') }}"><i class="fa fa-user mr-2"></i>Edit Profil</a></li>
                 <li><a href="{{ route('article.post.index') }}"><i class="fa fa-file-alt mr-2"></i>Kirim Tulisan</a></li>
                 <li><a href="{{ config('app.url'). '/ketentuan-tulisan' }}"><i class="fa fa-file-alt mr-2"></i>Ketentuan Tulisan</a></li>
                 <li><a href="" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="fa fa-sign-out-alt mr-2"></i>Log Out</a></li>

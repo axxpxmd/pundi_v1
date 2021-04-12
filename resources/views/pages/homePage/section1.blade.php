@@ -17,7 +17,11 @@
                                     <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
                                         <div class="zoom-effect">
                                             <div class="kotak">
+                                                @if (Storage::disk('ftp')->exists('images/artikel/' . $i->image) == true)
                                                 <img class="bdr-5" style="width: 730px; height: 530px; object-fit: cover; object-position: center;-o-object-fit: cover" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}">
+                                                @else
+                                                <img style="width: 730px; height: 530px; object-fit: cover; object-position: center;-o-object-fit: cover" class="img-fluid bdr-5" width="800" src="{{ asset('images/404.png') }}" alt="photo">
+                                                @endif
                                             </div>
                                             <div class="carousel-caption">
                                                 <div class="">

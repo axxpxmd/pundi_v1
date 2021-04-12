@@ -23,15 +23,18 @@ use App\Http\Controllers\Controller;
 use App\Models\Comment;
 use App\Models\checkIP;
 use App\Models\Articles;
-use App\Models\AdminDetails;
 use App\Models\SubComment;
+use App\Models\AdminDetails;
 
 class ArticleController extends Controller
 {
     protected $view  = 'pages.articles.';
+    protected $path  = '/images/artikel/';
 
     public function index(Request $request, $slug)
     {
+        $path = $this->path;
+
         // Check ip
         $ip = $request->ip();
         $this->storeip($slug, $ip);
@@ -49,6 +52,7 @@ class ArticleController extends Controller
         $relateds = Articles::where('sub_category_id', $article->sub_category_id)->where('status', 1)->whereNotIn('id', [$article->id])->inRandomOrder()->get()->take(5);
 
         return view($this->view . 'article', compact(
+            'path',
             'article',
             'comment',
             'editor',
