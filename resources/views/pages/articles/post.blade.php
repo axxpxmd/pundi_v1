@@ -9,7 +9,7 @@
                 <div class="blog_left_sidebar">
                     @include('masterPages.alerts')
                     <div>
-                        <form class="needs-validation" novalidate action="{{ route($route.'store') }}" method="POST" enctype="multipart/form-data" >
+                        <form id="form" class="needs-validation" novalidate action="{{ route($route.'store') }}" method="POST" enctype="multipart/form-data" >
                             {{ csrf_field() }}
                             {{ method_field('POST') }}
                             <p class="fs-30 f-b f-blk mb-n3">Kirim Tulisan</p>
@@ -61,15 +61,15 @@
                                 <textarea name="content" id="editor">{{ old('content') }}</textarea>
                             </div>
                             <div class="mt-3">
-                                <label class="f-b col-form-label">TAG <span class="text-danger ml-1">*</span></label>
-                                <input type="text" class="input single-input-primary border bdr-5 col-md-12" value="{{ old('tag') }}" name="tag" id="tag" required>
-                                <i class="fs-12 f-orange">Pisahkan dengan koma ( , )</i>
+                                <label class="f-b col-form-label">TAGAR <span class="text-danger ml-1">*</span></label>
+                                <input type="text" class="form-control input single-input-primary border bdr-5 col-md-12" value="{{ old('tag') }}" name="tag" id="tag" required>
+                                <i class="fs-12 text-danger">Pisahkan dengan koma ( , )</i>
                                 <span class="invalid-feedback" role="alert">
                                     <strong>Tag tidak boleh kosong!</strong>
                                 </span>
                             </div>
                             <hr>
-                            <button class="genric-btn primary bdr-5 btn-block mt-n4 " type="submit"  value="Log in">KirimTulisan<i class="fa fa-share-square ml-2"></i></button>
+                            <button id="button" class="genric-btn primary bdr-5 btn-block mt-n4 " type="submit"  value="Log in">KirimTulisan<i class="fa fa-share-square ml-2"></i></button>
                         </form>
                     </div>
                 </div>
@@ -98,6 +98,16 @@
             ['paragraph', ['ul', 'ol', 'paragraph', 'height']],
             ['view', ['fullscreen', 'codeview']]
         ]
+    });
+
+    $('#form').on('submit', function (e) {
+        if ($(this)[0].checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+        }else{
+            $('#button').attr('disabled', 'disabled');
+        }
+        $(this).addClass('was-validated');
     });
 
     // Sub Category
