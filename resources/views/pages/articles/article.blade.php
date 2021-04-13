@@ -31,7 +31,7 @@
                                 <span class="fs-14 f-b m-l-10">{{ $article->user->name }}</span>
                             </a>
                             <i class="fas fa-clock m-l-15 text-grey"></i>
-                            <span class="fs-14">{{ substr($article->created_at, 0, 40) }}</span>
+                            <span class="fs-14">{{ $article->release_date != null ? $article->release_date : $article->created_at }}</span>
                             <i class="fa fa-comments m-l-15 text-grey"></i>
                             <span class="fs-14">{{ $countComment }} Komentar</span>
                             <i class="fa fa-eye m-l-15 f-orange"></i>
@@ -43,7 +43,7 @@
                             @else
                             <img class="img-fluid bdr-5" width="800" src="{{ asset('images/404.png') }}" alt="photo">
                             @endif
-                            <p class="text-grey fs-12">Foto: {{ $article->source_image == null ? '-' : $article->source_image }}</p>
+                            <p class="text-grey fs-12">Sumber: {{ $article->source_image == null ? '-' : $article->source_image }}</p>
                         </div>
                         <div class="mt-3">
                             {!! $article->content !!}
