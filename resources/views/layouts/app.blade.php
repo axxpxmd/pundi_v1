@@ -17,6 +17,7 @@
     <!-- Link Share -->
     @if (isset($article) != null)
     <meta property="og:title" content="{{ $article->title }}"/>
+    <meta property="og:description" content="{{ strip_tags($article->content) }}" />
     <meta property="og:image" content="{{ config('app.ftp_src').'images/artikel/'.$article->image }}" />
     <meta property="og:url" content="http://pundi-dev.pundi.or.id/public/artikel/{{ $article->title_slug }}"/>
     <meta property="og:site_name" content="PUNDI"/>
@@ -48,6 +49,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/nice-select.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
+    <!-- CDN icon -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/v4-shims.css">
 

@@ -58,7 +58,7 @@
                                 {{  substr(strip_tags(str_replace(["&nbsp;", "&mdash;", "&rdquo;", "&ldquo;", "&rsquo;", "&hellip;"],' ',$i->content)),0,400) }} […]
                             </div>
                             <a href="{{ route('article', str_slug($i->title_slug)) }}" class="f-blk fs-13 f-b m-t-5 judul-hover">
-                                <span>READ MORE</span>
+                                <span>BACA SELENGKAPNYA</span>
                                 <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
