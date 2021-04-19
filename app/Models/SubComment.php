@@ -9,7 +9,7 @@ use App\User;
 
 class SubComment extends Model
 {
-    protected $table = 'sub_comments1';
+    protected $table = 'sub_comments';
     protected $fillable = ['id', 'article_id', 'user_id', 'comment_id', 'content', 'status', 'created_at', 'updated_at'];
 
     public function user()

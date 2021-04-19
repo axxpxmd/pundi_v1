@@ -57,7 +57,7 @@ class ProfileController extends Controller
     public function update(Request $request)
     {
         $request->validate([
-            'name' => 'required|max:50|unique:users1,name,' . $request->id,
+            'name' => 'required|max:50|unique:users,name,' . $request->id,
             'first_name' => 'required|max:50',
             'last_name' => 'required|max:50'
         ]);

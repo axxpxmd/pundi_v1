@@ -193,7 +193,7 @@
                                         <div class="media-body ml-3">
                                             <span class="font-weight-bolder"><a href="{{ route('other-user', str_slug($c->user->name)) }}" class="judul-hover text-black">{{ $c->user->name }}</a></span>
                                             <br>
-                                            @if ($k->status == 1)
+                                            @if ($c->status == 1)
                                             <span class="text-grey"><i>Komentar dihapus</i></span>
                                             @else
                                             <span class="text-black">{{ $c->content }}</span>
