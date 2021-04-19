@@ -30,9 +30,9 @@
                                             <input class="mr-2" type="checkbox" onclick="myFunction()">Tampilkan
                                         </div>
                                         <div class="col-6 text-right">
-                                            <a class="f-blk" href="{{ route('password.request') }}">
+                                            {{-- <a class="f-blk" href="{{ route('password.request') }}">
                                                 Lupa password ?
-                                            </a>
+                                            </a> --}}
                                         </div>
                                     </div>
                                 </div>

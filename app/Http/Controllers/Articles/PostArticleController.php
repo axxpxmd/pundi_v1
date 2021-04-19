@@ -54,7 +54,7 @@ class PostArticleController extends Controller
         $request->validate([
             'title'   => 'required|unique:articles,title',
             'image'   => 'required|image|mimes:png,jpg,jpeg|max:1024',
-            'content' => 'required|min:700',
+            'content' => 'required|min:500',
             'tag'     => 'required',
             'category_id'     => 'required',
             'sub_category_id' => 'required',

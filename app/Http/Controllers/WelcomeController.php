@@ -36,12 +36,12 @@ class WelcomeController extends Controller
         // }
 
         // name slug
-        $nameSlug = User::get();
-        foreach ($nameSlug as $key => $i) {
-            User::select('name_slug')->where('id', $i->id)->update([
-                'name_slug' => str_slug($i->name)
-            ]);
-        }
+        // $nameSlug = User::get();
+        // foreach ($nameSlug as $key => $i) {
+        //     User::select('name_slug')->where('id', $i->id)->update([
+        //         'name_slug' => str_slug($i->name)
+        //     ]);
+        // }
 
         /**
          * Title Card
