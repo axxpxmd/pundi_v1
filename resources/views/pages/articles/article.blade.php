@@ -76,13 +76,13 @@
                         <div class="container mt-4">
                             <div class="row">
                                 <div class="col-6 pl-0">
-                                    <a class="mr-1" href="http://www.facebook.com/sharer.php?u=http://pundi.or.id/public/artikel/{{$article->title_slug}}" target="_blank">
+                                    <a class="mr-1" href="http://www.facebook.com/sharer.php?u=http://pundi.or.id/pundi/artikel/{{$article->title_slug}}" target="_blank">
                                         <img src="{{ asset('images/facebook.png') }}" width="40" alt="Facebook" />
                                     </a>
-                                    <a class="mr-1" href="https://twitter.com/share?url=http://pundi.or.id/public/artikel/{{$article->title_slug}}&text={{$article->title}}" target="_blank">
+                                    <a class="mr-1" href="https://twitter.com/share?url=http://pundi.or.id/pundi/artikel/{{$article->title_slug}}&text={{$article->title}}" target="_blank">
                                         <img src="{{ asset('images/twitter.png') }}" width="40" alt="Twitter" />
                                     </a>
-                                    <a class="mr-1" href="whatsapp://send?text={{$article->title}}%0Ahttp://pundi.or.id/public/artikel/{{$article->title_slug}}" target="blank" data-action="share/whatsapp/share">
+                                    <a class="mr-1" href="whatsapp://send?text={{$article->title}}%0Ahttp://pundi.or.id/pundi/artikel/{{$article->title_slug}}" target="blank" data-action="share/whatsapp/share">
                                         <img src="{{ asset('images/whatsapp.png') }}" width="40" alt="Whatsapp" />
                                     </a>
                                     {{-- <a href="#">
