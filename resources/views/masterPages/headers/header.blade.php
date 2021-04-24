@@ -1,6 +1,6 @@
 @php
     $logo = App\Models\Logo::select('header')->first();
-    $headerNews   = App\Models\Articles::select('id', 'title', 'title_slug', 'status')->wherestatus(1)->orderBy('created_at', 'desc')->take(5)->get();
+    $headerNews   = App\Models\Articles::select('id', 'title', 'title_slug', 'status')->wherestatus(1)->inRandomOrder()->take(5)->get();
     $subCategory1 = App\Store\index::subHeadline();
     $subCategory2 = App\Store\index::subIndepth();
     $subCategory3 = App\Store\index::subKebijakan();

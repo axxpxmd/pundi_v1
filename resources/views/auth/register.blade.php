@@ -25,7 +25,7 @@
                             <div class="form-group row">
                                 <label for="password" class="col-sm-4 f-b col-form-label">PASSWORD<span class="text-danger ml-1">*</span></label>
                                 <div class="col-sm-8">
-                                    <input type="password" name="password" id="password" class="form-control input single-input-primary @error('password') is-invalid @enderror" required>
+                                    <input type="password" name="password" id="password" class="form-control input single-input-primary @error('password') is-invalid @enderror" autocomplete="off" required>
                                     @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>Konfirmasi password tidak cocok!</strong>
@@ -36,7 +36,7 @@
                             <div class="form-group row">
                                 <label for="password_confirmation" class="col-sm-4 f-b col-form-label">KONFIRMASI PASSWORD<span class="text-danger ml-1">*</span></label>
                                 <div class="col-sm-8">
-                                    <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input single-input-primary" required>
+                                    <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input single-input-primary" autocomplete="off" required>
                                     <span class="invalid-feedback" role="alert">
                                         <strong>Konfirmasi Password tidak boleh kosong!</strong>
                                     </span>
@@ -136,7 +136,7 @@
                         <div class="row">
                             <div class="col-sm-4"></div>
                             <div class="col-sm-8">
-                                <button class="genric-btn primary bdr-5" type="submit">Register</button>
+                                <button class="genric-btn primary bdr-5" type="submit">Register <i class="fa fa-arrow-right ml-1"></i></button>
                             </div>
                         </div>
                         <hr>

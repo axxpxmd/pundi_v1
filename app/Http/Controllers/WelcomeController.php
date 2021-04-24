@@ -65,13 +65,13 @@ class WelcomeController extends Controller
         /**
          * Section 2
          */
-        $card2 = HomePageCard2::with('article')->take(5)->get();
+        $card2 = Articles::whereNotIn('id', $data)->where('category_id', 4)->inRandomOrder()->wherestatus(1)->take(5)->get();
 
         /**
          * Section 3 
          */
         // Article By Category
-        $all = Articles::orderBy('created_at', 'desc')->wherestatus(1)->take(6)->get();
+        $all = Articles::inRandomOrder()->orderBy('created_at', 'desc')->wherestatus(1)->take(6)->get();
         $n_category1 = Articles::where('category_id', 1)->wherestatus(1)->orderBy('created_at', 'desc')->take(4)->get();
         $n_category2 = Articles::where('category_id', 2)->wherestatus(1)->orderBy('created_at', 'desc')->take(4)->get();
         $n_category3 = Articles::where('category_id', 3)->wherestatus(1)->orderBy('created_at', 'desc')->take(4)->get();
@@ -88,7 +88,7 @@ class WelcomeController extends Controller
         /**
          * Section 4
          */
-        $card3 = HomePageCard3::with('article')->take(6)->get();
+        $card3 = Articles::whereNotIn('id', $data)->where('category_id', 1)->inRandomOrder()->wherestatus(1)->take(6)->get();
 
         /**
          * Section 5

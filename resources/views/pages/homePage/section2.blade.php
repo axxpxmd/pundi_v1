@@ -19,25 +19,25 @@
                         @foreach ($card2 as $i)
                         <div class="weekly-single">
                             <div class="weekly-img">
-                                <img style="height: 300px; object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->article->image }}" height="300" alt="photo">
+                                <img style="height: 300px; object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" height="300" alt="photo">
                             </div>
                             <div class="weekly-caption">
                                 <span class="bdr-5" style="background-color: #FEBD01 !important; color: white !important">
-                                    <a class="hover-blk" href="{{ route('sub-category', str_slug($i->article->sub_category->n_sub_category)) }}">{{ $i->article->sub_category->n_sub_category }}</a>
+                                    <a class="hover-blk" href="{{ route('sub-category', str_slug($i->sub_category->n_sub_category)) }}">{{ $i->sub_category->n_sub_category }}</a>
                                 </span>
                                 <h4 class="-mt-10">
-                                    <a href="{{ route('article', str_slug($i->article->title_slug)) }}">
-                                        {{ $i->article->title }}
+                                    <a href="{{ route('article', str_slug($i->title_slug)) }}">
+                                        {{ $i->title }}
                                     </a>
                                 </h4>
                                 <div>
                                     <i class="fa fa-user text-grey"></i>
-                                    <a href="{{ route('other-user', str_slug($i->article->user->name)) }}" class="fs-13 m-l-5 text-grey judul-hover">
-                                        {{ $i->article->user->name }}
+                                    <a href="{{ route('other-user', str_slug($i->user->name)) }}" class="fs-13 m-l-5 text-grey judul-hover">
+                                        {{ $i->user->name }}
                                     </a>
                                     <i class="fas fa-clock m-l-10 text-grey"></i>
                                     <a class="fs-13 m-l-5 text-grey">
-                                        {{ substr($i->article->created_at, 0, 10) }}
+                                        {{ substr($i->created_at, 0, 10) }}
                                     </a>
                                 </div>
                             </div>

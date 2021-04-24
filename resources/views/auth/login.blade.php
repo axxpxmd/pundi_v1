@@ -24,7 +24,7 @@
                             <div class="form-group row">
                                 <label class="col-sm-2 f-b col-form-label" for="password">PASSWORD</label>
                                 <div class="col-sm-10">
-                                    <input type="password" name="password" id="password" class="input single-input-primary @error('password') is-invalid @enderror" placeholder="Password"/>
+                                    <input type="password" name="password" id="password" class="input single-input-primary @error('password') is-invalid @enderror" placeholder="Password" autocomplete="off"/>
                                     <div class="form-group row mt-3">
                                         <div class="col-6">
                                             <input class="mr-2" type="checkbox" onclick="myFunction()">Tampilkan
