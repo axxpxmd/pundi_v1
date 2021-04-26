@@ -26,7 +26,7 @@
                             <span class="bdr-5 fs-12 f-b sub-kategori-card">
                                 <a class="hover-blk" href="{{ route('sub-category',str_slug($article->sub_category->n_sub_category)) }}">{{ $article->sub_category->n_sub_category }}</a>
                             </span>
-                            <img src="{{ config('app.ftp_src').'images/ava/'.$article->user->photo }}" class="rounded-circle img-circular m-l-30" height="45" width="45" alt="photo">
+                            <img src="{{ config('app.ftp_src').'images/ava/'.$article->user->photo }}" class="rounded-circle img-circular m-l-30" height="45" width="45" alt="{{ $article->user->name }}">
                             <a class="text-black judul-hover" href="{{ route('other-user', str_slug($article->user->name)) }}">
                                 <span class="fs-14 f-b m-l-10">{{ $article->user->name }}</span>
                             </a>
@@ -39,7 +39,7 @@
                         </div>
                         <div class="mt-3">
                             @if (Storage::disk('ftp')->exists('images/artikel/' . $article->image) == true)
-                            <img class="img-fluid bdr-5" width="800" src="{{ config('app.ftp_src').$path.$article->image }}" alt="photo">
+                            <img class="img-fluid bdr-5" width="800" src="{{ config('app.ftp_src').$path.$article->image }}" alt="{{ $article->title }}">
                             @else
                             <img class="img-fluid bdr-5" width="800" src="{{ asset('images/404.png') }}" alt="photo">
                             @endif
@@ -90,7 +90,7 @@
                                     </a> --}}
                                 </div>
                                 <div class="col-6 text-right">
-                                    <img src="{{ asset('images/comment.png') }}" width="50" alt="">
+                                    <img src="{{ asset('images/comment.png') }}" width="50" alt="icon comment">
                                     <span class="fs-17">{{ $countComment }}</span>
                                 </div>
                             </div>
@@ -100,7 +100,7 @@
                     <!-- Author -->
                     <div class="blog-author mb-1 mt-1">
                         <div class="media align-items-center">
-                            <img class="rounded-circle img-circular" src="{{ config('app.ftp_src').'images/ava/'.$article->user->photo }}" height="70" width="70" alt="photo">
+                            <img class="rounded-circle img-circular" src="{{ config('app.ftp_src').'images/ava/'.$article->user->photo }}" height="70" width="70" alt="{{ $article->user->name }}">
                             <div class="media-body m-l-40 m-t-20">
                                 <a href="{{ route('other-user', str_slug($article->user->name)) }}">
                                     <span class="fs-15 f-b non-hover f-blk">{{ $article->user->name }}</span>
@@ -117,7 +117,7 @@
                             @foreach ($relateds as $i)
                             <div class="media post_item mt-2">
                                 @if (Storage::disk('ftp')->exists('images/artikel/' . $i->image) == true)
-                                <img class="bdr-5 img-circular" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" width="100" height="70" alt="artikel">
+                                <img class="bdr-5 img-circular" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" width="100" height="70" alt="{{ $i->title }}">
                                 @else
                                 <img class="bdr-5 img-circular" src="{{ asset('images/404.png') }}" width="100" height="70" alt="artikel">
                                 @endif
@@ -141,7 +141,7 @@
                         <div class="container p-0">
                             @foreach ($comment as $index => $k)
                             <div class="media post_item mt-4">
-                                <img src="{{ config('app.ftp_src').'images/ava/'.$k->user->photo }}" width="35" height="35" class="img-circular rounded-circle" alt="">
+                                <img src="{{ config('app.ftp_src').'images/ava/'.$k->user->photo }}" width="35" height="35" class="img-circular rounded-circle" alt="{{ $k->user->name }}">
                                 <div class="media-body ml-3">
                                     <span class="font-weight-bolder"><a href="{{ route('other-user', str_slug($k->user->name)) }}" class="judul-hover text-black">{{ $k->user->name }}</a></span>
                                     <br>
@@ -189,7 +189,7 @@
                                     @endphp
                                     @foreach ($subComment as $c)
                                     <div class="media post_item mt-4">
-                                        <img src="{{ config('app.ftp_src').'images/ava/'.$c->user->photo }}" width="35" height="35" class="img-circular rounded-circle" alt="">
+                                        <img src="{{ config('app.ftp_src').'images/ava/'.$c->user->photo }}" width="35" height="35" class="img-circular rounded-circle" alt="{{ $c->user->name }}">
                                         <div class="media-body ml-3">
                                             <span class="font-weight-bolder"><a href="{{ route('other-user', str_slug($c->user->name)) }}" class="judul-hover text-black">{{ $c->user->name }}</a></span>
                                             <br>

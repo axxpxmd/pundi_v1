@@ -25,7 +25,7 @@
                     @forelse ($articles as $i)
                     <div class="row m-b-30">
                         <div class="col-sm-6">
-                            <img class="bdr-5 m-b-10 img-circular" src="{{ config('app.ftp_src').$path.$i->image }}" width="350" height="350" alt="photo">
+                            <img class="bdr-5 m-b-10 img-circular" src="{{ config('app.ftp_src').$path.$i->image }}" width="350" height="350" alt="{{ $i->title }}">
                         </div>
                         <div class="col-sm-6">
                             <span class="bdr-5 fs-11 f-b sub-kategori-card">

@@ -25,7 +25,7 @@
             <aside class="single_sidebar_widget popular_post_widget bg-transparent">
                 @foreach ($sideBar as $i)
                 <div class="media post_item m-t-20">
-                    <img style="object-fit: cover; object-position: center" class="bdr-5" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" width="120" height="90" alt="artikel">
+                    <img style="object-fit: cover; object-position: center" class="bdr-5" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" width="120" height="90" alt="{{ $i->title }}">
                     <div class="media-body">
                         <span class="fs-13 text-uppercase">
                            <a class="f-orange hover-blk" href="{{ route('sub-category', str_slug($i->sub_category->n_sub_category)) }}">{{ $i->sub_category->n_sub_category }}</a> 

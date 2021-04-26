@@ -9,7 +9,7 @@
                     <div class="card no-b">
                         <div class="card-body">
                             <div class="text-center">
-                                <img class="rounded-circle img-circular" src="{{ config('app.ftp_src').'images/ava/'.$user->photo }}" height="100" width="100"  alt="Photo profile">
+                                <img class="rounded-circle img-circular" src="{{ config('app.ftp_src').'images/ava/'.$user->photo }}" height="100" width="100"  alt="{{ $user->name }}">
                                 <p class="fs-22 font-weight-bold text-black mt-3">{{ $user->name }}
                                     @if ($countArticle < 5)
                                     <i style="color: #945d41" title="Artikel < 5" class="fa fa-medal ml-1"></i>

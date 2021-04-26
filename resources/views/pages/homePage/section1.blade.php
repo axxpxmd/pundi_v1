@@ -18,7 +18,7 @@
                                         <div class="zoom-effect">
                                             <div class="kotak">
                                                 @if (Storage::disk('ftp')->exists('images/artikel/' . $i->image) == true)
-                                                <img class="bdr-5" style="width: 730px; height: 530px; object-fit: cover; object-position: center;-o-object-fit: cover" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}">
+                                                <img class="bdr-5" style="width: 730px; height: 530px; object-fit: cover; object-position: center;-o-object-fit: cover" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" alt="{{ $i->title }}">
                                                 @else
                                                 <img style="width: 730px; height: 530px; object-fit: cover; object-position: center;-o-object-fit: cover" class="img-fluid bdr-5" width="800" src="{{ asset('images/404.png') }}" alt="photo">
                                                 @endif
@@ -64,7 +64,7 @@
                             <div class="col-lg-4">
                                 <div class="single-bottom mb-30">
                                     <div class="trend-bottom-img mb-10 ">
-                                        <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" width="223" height="159" alt="photo">
+                                        <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" width="223" height="159" alt="{{ $i->title }}">
                                     </div>
                                     <div class="trend-bottom-cap">
                                         <p class="fs-13 capital">
@@ -92,7 +92,7 @@
                     @foreach ($trendingRight as $i)
                     <div class="trand-right-single d-flex">
                         <div class="trand-right-img">
-                            <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" width="150" height="100" alt="photo">
+                            <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" width="150" height="100" alt="{{ $i->title }}">
                         </div>
                         <div class="trand-right-cap -mt-7">
                             <p class="fs-13 capital">

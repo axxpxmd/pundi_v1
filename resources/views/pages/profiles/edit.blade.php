@@ -15,7 +15,7 @@
                             <div class="card-body">
                                 <a class="text-black font-weight-bold fs-14 judul-hover" href="{{ route('profil') }}"><i class="fa fa-arrow-left mr-1"></i>Kembali</a>
                                 <div class="text-center">
-                                    <img class="rounded-circle img-circular" id="preview" src="{{ config('app.ftp_src').'images/ava/'.$user->photo }}" height="100" width="100" >
+                                    <img class="rounded-circle img-circular" id="preview" src="{{ config('app.ftp_src').'images/ava/'.$user->photo }}" height="100" width="100" alt="{{ $user->name }}">
                                     <div class="container col-md-4 mt-2">
                                         <input type="file" name="photo" id="file" class="input-file" value="{{ $user->photo }} " onchange="tampilkanPreview(this,'preview')"/>
                                         <label for="file" class="form-control input single-input-primary bdr-5 js-labelFile col-md-12">

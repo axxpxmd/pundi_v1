@@ -19,7 +19,7 @@
                         @foreach ($card3 as $i)
                             <div class="weekly2-single">
                                 <div class="weekly2-img">
-                                    <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" height="200" alt="photo">
+                                    <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" height="200" alt="{{ $i->title }}">
                                 </div>
                                 <div class="weekly2-caption">
                                     <span class="bdr-5" style="background-color: #FEBD01; color: white">

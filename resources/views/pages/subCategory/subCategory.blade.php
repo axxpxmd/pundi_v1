@@ -34,7 +34,7 @@
                     <div class="row m-b-30">
                         <div class="col-sm-6">
                             @if (Storage::disk('ftp')->exists('images/artikel/' . $i->image) == true)
-                            <img class="bdr-5 m-b-10 img-circular" title="{{ $i->image }}" src="{{ config('app.ftp_src').$path.$i->image }}" width="350" height="350" alt="photo">
+                            <img class="bdr-5 m-b-10 img-circular" title="{{ $i->image }}" src="{{ config('app.ftp_src').$path.$i->image }}" width="350" height="350" alt="{{ $i->title }}">
                             @else
                             <img class="bdr-5 m-b-10 mx-auto d-block" title="Gambar tidak ditemukan" src="{{ asset('images/404.png') }}" width="350" height="250" alt="photo">
                             @endif

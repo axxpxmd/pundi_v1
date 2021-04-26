@@ -19,7 +19,7 @@
                         @foreach ($card4 as $i)
                         <div class="single-recent mb-100">
                             <div class="what-img">
-                                <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" height="300" alt="photo"">
+                                <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" height="300" alt="{{ $i->title }}">
                             </div>
                             <div class="what-cap">
                                 <span class="bdr-5 m-r-10" style="background-color: #FEBD01; color: white">

@@ -37,7 +37,7 @@
                                         <div class="col-lg-6 col-md-6">
                                             <div class="single-what-news m-b-30">
                                                 <div class="what-img">
-                                                    <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" height="300" alt="photo"">
+                                                    <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" height="300" alt="{{ $i->title }}">
                                                 </div>
                                                 <div class="what-cap">
                                                     <span class="bdr-5" style="background-color: #FEBD01; color: white">
@@ -69,7 +69,7 @@
                                         <div class="col-lg-6 col-md-6">
                                             <div class="single-what-news mb-100">
                                                 <div class="what-img">
-                                                    <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" height="300" alt="photo"">
+                                                    <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" height="300" alt="{{ $i->title }}">
                                                 </div>
                                                 <div class="what-cap">
                                                     <span class="bdr-5" style="background-color: #FEBD01; color: white">
@@ -101,7 +101,7 @@
                                         <div class="col-lg-6 col-md-6">
                                             <div class="single-what-news mb-100">
                                                 <div class="what-img">
-                                                    <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" height="300" alt="photo"">
+                                                    <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" height="300" alt="{{ $i->title }}">
                                                 </div>
                                                 <div class="what-cap">
                                                     <span class="bdr-5" style="background-color: #FEBD01; color: white">
@@ -133,7 +133,7 @@
                                         <div class="col-lg-6 col-md-6">
                                             <div class="single-what-news mb-100">
                                                 <div class="what-img">
-                                                    <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" height="300" alt="photo"">
+                                                    <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" height="300" alt="{{ $i->title }}">
                                                 </div>
                                                 <div class="what-cap">
                                                     <span class="bdr-5" style="background-color: #FEBD01; color: white">
@@ -165,7 +165,7 @@
                                         <div class="col-lg-6 col-md-6">
                                             <div class="single-what-news mb-100">
                                                 <div class="what-img">
-                                                    <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" height="300" alt="photo"">
+                                                    <img style="object-fit: cover; object-position: center" src="{{ config('app.ftp_src').'images/artikel/'.$i->image }}" height="300" alt="{{ $i->title }}">
                                                 </div>
                                                 <div class="what-cap">
                                                     <span class="bdr-5" style="background-color: #FEBD01; color: white">
