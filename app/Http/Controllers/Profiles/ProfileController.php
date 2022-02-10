@@ -33,9 +33,9 @@ class ProfileController extends Controller
     public function index()
     {
         $user    = User::where('id', Auth::user()->id)->first();
-        $articleUser = Articles::where('author_id', Auth::user()->id)->with('user')->orderBy('views', 'DESC')->paginate(10);
+        $articleUser = Articles::with(['category', 'sub_category', 'user'])->where('author_id', Auth::user()->id)->with('user')->orderBy('views', 'DESC')->paginate(10);
         $comment = Comment::where('user_id', Auth::user()->id)->with('article')->get();
-        $countArticle = Articles::where('author_id', Auth::user()->id)->count();
+        $countArticle = Articles::with(['category', 'sub_category', 'user'])->where('author_id', Auth::user()->id)->count();
 
         return view($this->view . 'profile', compact(
             'articleUser',
@@ -93,6 +93,7 @@ class ProfileController extends Controller
 
             $user->update([
                 'name' => $name,
+                'name_slug' => str_slug($name),
                 'first_name' => $first_name,
                 'last_name'  => $last_name,
                 'photo'      => $fileName,
@@ -106,6 +107,7 @@ class ProfileController extends Controller
         } else {
             $user->update([
                 'name' => $name,
+                'name_slug' => str_slug($name),
                 'first_name' => $first_name,
                 'last_name'  => $last_name,
                 'facebook'   => $facebook,

@@ -31,9 +31,9 @@ class SubCategoryController extends Controller
         $path   = $this->path;
         $params = str_replace('-', ' ', $n_sub_category);
 
-        $subCategory = SubCategory::where('n_sub_category', $params)->first();
+        $subCategory = SubCategory::with('category')->where('n_sub_category', $params)->first();
 
-        $articles = Articles::where('sub_category_id', $subCategory->id)
+        $articles = Articles::with(['category', 'sub_category', 'user'])->where('sub_category_id', $subCategory->id)
             ->where('status', 1)
             ->orderBy('created_at', 'DESC')
             ->paginate(10);
