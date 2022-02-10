@@ -40,7 +40,7 @@ class ArticleController extends Controller
         $this->storeip($slug, $ip);
 
         // Get data
-        $article = Articles::where('title_slug', $slug)->first();
+        $article = Articles::with(['category', 'sub_category', 'user'])->where('title_slug', $slug)->first();
         $editor = AdminDetails::select('id', 'admin_id', 'nama')->where('admin_id', $article->editor_id)->first();
 
         // Get Comment
@@ -49,7 +49,7 @@ class ArticleController extends Controller
         $countComment = $comment->count() + $subComment->count();
 
         // Related article
-        $relateds = Articles::where('sub_category_id', $article->sub_category_id)->where('status', 1)->whereNotIn('id', [$article->id])->inRandomOrder()->get()->take(5);
+        $relateds = Articles::with(['category', 'sub_category', 'user'])->where('sub_category_id', $article->sub_category_id)->where('status', 1)->whereNotIn('id', [$article->id])->inRandomOrder()->get()->take(5);
 
         return view($this->view . 'article', compact(
             'path',
