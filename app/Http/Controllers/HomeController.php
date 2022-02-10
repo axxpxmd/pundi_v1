@@ -18,8 +18,6 @@ namespace App\Http\Controllers;
 use App\Models\Poster;
 use App\Models\Articles;
 use App\Models\Category;
-use App\Models\HomePageCard2;
-use App\Models\HomePageCard3;
 use App\Models\HomePageTitle;
 
 class HomeController extends Controller
@@ -31,57 +29,46 @@ class HomeController extends Controller
 
     public function index()
     {
-        /**
-         * Title Card
-         */
+        // *Title Card
         $titleCard = HomePageTitle::first();
 
-        /**
-         * Section 1 
-         */
-        $trendingTop    = Articles::wherestatus(1)->orderBy('created_at', 'desc')->take(5)->get();
+        // *Section 1
+        $trendingTop = Articles::with(['category', 'sub_category', 'user'])->wherestatus(1)->orderBy('created_at', 'desc')->take(5)->get();
         foreach ($trendingTop as $i) {
             $notIn[] = $i->id;
         }
-        $trendingBottom = Articles::whereNotIn('id', $notIn)->wherestatus(1)->orderBy('created_at', 'desc')->take(3)->get();
+        $trendingBottom = Articles::with(['category', 'sub_category', 'user'])->whereNotIn('id', $notIn)->wherestatus(1)->orderBy('created_at', 'desc')->take(3)->get();
         foreach ($trendingBottom as $i) {
             $notIn1[] = $i->id;
         }
         $data = array_merge($notIn, $notIn1);
-        $trendingRight  = Articles::whereNotIn('id', $data)->wherestatus(1)->orderBy('created_at', 'desc')->take(5)->get();
+        $trendingRight  = Articles::with(['category', 'sub_category', 'user'])->whereNotIn('id', $data)->wherestatus(1)->orderBy('created_at', 'desc')->take(5)->get();
 
-        /**
-         * Section 2
-         */
-        $card2 = Articles::whereNotIn('id', $data)->where('category_id', 4)->inRandomOrder()->wherestatus(1)->take(5)->get();
+        // *Section 2
+        $card2 = Articles::with(['category', 'sub_category', 'user'])->whereNotIn('id', $data)->where('category_id', 4)->inRandomOrder()->wherestatus(1)->take(5)->get();
 
-        /**
-         * Section 3 
-         */
+        // *Section 3
+
         // Article By Category
-        $all = Articles::inRandomOrder()->orderBy('created_at', 'desc')->wherestatus(1)->take(6)->get();
-        $n_category1 = Articles::where('category_id', 1)->wherestatus(1)->orderBy('created_at', 'desc')->take(4)->get();
-        $n_category2 = Articles::where('category_id', 2)->wherestatus(1)->orderBy('created_at', 'desc')->take(4)->get();
-        $n_category3 = Articles::where('category_id', 3)->wherestatus(1)->orderBy('created_at', 'desc')->take(4)->get();
-        $n_category4 = Articles::where('category_id', 4)->wherestatus(1)->orderBy('created_at', 'desc')->take(4)->get();
+        $all = Articles::with(['category', 'sub_category', 'user'])->inRandomOrder()->orderBy('created_at', 'desc')->wherestatus(1)->take(6)->get();
+        $n_category1 = Articles::with(['category', 'sub_category', 'user'])->where('category_id', 1)->wherestatus(1)->orderBy('created_at', 'desc')->take(4)->get();
+        $n_category2 = Articles::with(['category', 'sub_category', 'user'])->where('category_id', 2)->wherestatus(1)->orderBy('created_at', 'desc')->take(4)->get();
+        $n_category3 = Articles::with(['category', 'sub_category', 'user'])->where('category_id', 3)->wherestatus(1)->orderBy('created_at', 'desc')->take(4)->get();
+        $n_category4 = Articles::with(['category', 'sub_category', 'user'])->where('category_id', 4)->wherestatus(1)->orderBy('created_at', 'desc')->take(4)->get();
         // Category
         $category1 = Category::whereid(1)->first();
         $category2 = Category::whereid(2)->first();
         $category3 = Category::whereid(3)->first();
         $category4 = Category::whereid(4)->first();
         // SideBar
-        $sideBar = Articles::wherestatus(1)->inRandomOrder()->get()->take(4);
+        $sideBar = Articles::with(['category', 'sub_category', 'user'])->wherestatus(1)->inRandomOrder()->get()->take(4);
         $poster  = Poster::select('poster')->get();
 
-        /**
-         * Section 4
-         */
-        $card3 = Articles::whereNotIn('id', $data)->where('category_id', 1)->inRandomOrder()->wherestatus(1)->take(6)->get();
+        // *Section 4
+        $card3 = Articles::with(['category', 'sub_category', 'user'])->whereNotIn('id', $data)->where('category_id', 1)->inRandomOrder()->wherestatus(1)->take(6)->get();
 
-        /**
-         * Section 5
-         */
-        $card4 = Articles::wherestatus(1)->orderBy('views', 'DESC')->take(5)->get();
+        // *Section 5
+        $card4 = Articles::with(['category', 'sub_category', 'user'])->wherestatus(1)->orderBy('views', 'DESC')->take(5)->get();
 
         return view('home', compact(
             'trendingTop',
