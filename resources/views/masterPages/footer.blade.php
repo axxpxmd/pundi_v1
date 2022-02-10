@@ -25,7 +25,7 @@
                                 <li><a href="{{ config('app.url'). '/tentang-kami' }}">Tentang Kami</a></li>
                                 <li><a href="{{ config('app.url'). '/disclaimer' }}">Disclaimer</a></li>
                                 <li><a href="{{ config('app.url'). '/redaksi' }}">Redaksi</a></li>
-                                <li><a href="{{ config('app.url'). '/mediaSaber' }}">Media Siber</a></li>
+                                <li><a href="{{ config('app.url'). '/media-siber' }}">Media Siber</a></li>
                             </ul>
                         </div>
                     </div>

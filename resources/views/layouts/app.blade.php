@@ -61,7 +61,7 @@
             <div class="preloader-inner position-relative">
                 <div class="preloader-circle"></div>
                 <div class="preloader-img pere-text">
-                    <img src="{{ config('app.ftp_src').'images/logo/'.$logo->preloader }}" width="120px" alt="photo" style="margin-bottom: 18%">
+                    <img src="{{ config('app.ftp_src').'images/logo/'.$logo->preloader }}" width="120px" style="margin-bottom: 18%">
                 </div>
             </div>
         </div>
@@ -94,5 +94,4 @@
     <script src="{{ asset('./assets/js/main.js') }}"></script>
     <script src="{{ asset('./js/myScript.js') }}"></script>
     <script src="{{ asset('./js/jquery-confirm.min.js') }}"></script>
-
 </html>

@@ -1,16 +1,20 @@
 @php
-    $logo = App\Models\Logo::select('header')->first();
-    $headerNews   = App\Models\Articles::select('id', 'title', 'title_slug', 'status')->wherestatus(1)->inRandomOrder()->take(5)->get();
-    $subCategory1 = App\Store\index::subHeadline();
-    $subCategory2 = App\Store\index::subIndepth();
-    $subCategory3 = App\Store\index::subKebijakan();
-    $subCategory4 = App\Store\index::subSerbaSerbi();
-    // Category Name
-    $category1 = App\Models\Category::whereid(1)->first();
-    $category2 = App\Models\Category::whereid(2)->first();
-    $category3 = App\Models\Category::whereid(3)->first();
-    $category4 = App\Models\Category::whereid(4)->first();
-    $category5 = App\Models\Category::whereid(5)->first();
+    $headerNews= App\Models\Articles::select('id', 'title', 'title_slug', 'status')->wherestatus(1)->inRandomOrder()->take(5)->get();
+    $categorys = App\Models\Category::select('id', 'n_category')->get();
+    // Category
+    $category1 = $categorys[0];
+    $category2 = $categorys[1];
+    $category3 = $categorys[2];
+    $category4 = $categorys[3];
+    $category5 = $categorys[4];
+    foreach ($categorys as $key => $i) {
+        $subCategorys[$key] = App\Models\SubCategory::select('id', 'category_id', 'n_sub_category')->wherecategory_id($i->id)->get();
+    }
+    // Sub Category
+    $subCategory1 = $subCategorys[0];
+    $subCategory2 = $subCategorys[1];
+    $subCategory3 = $subCategorys[2];
+    $subCategory4 = $subCategorys[3];
 @endphp
 <header>
     <div class="header-area">
@@ -64,7 +68,7 @@
                         <div class="col-xl-2 col-lg-2 col-md-2">
                             <div class="logo -mt-10">
                                 <a href="{{ url('/') }}">
-                                    <img src="{{ config('app.ftp_src').'images/logo/'.$logo->header }}" width="150px" alt="header">
+                                    <img src="{{ config('app.ftp_src').'images/logo/header.png' }}" width="150px" alt="header">
                                 </a>
                             </div>
                         </div>
@@ -85,7 +89,7 @@
                         <div class="col-xl-2 col-lg-2 col-md-2">
                             <div class="sticky-logo">
                                 <a href="{{ url('/') }}">
-                                    <img src="{{ config('app.ftp_src').'images/logo/'.$logo->header }}" width="150px" alt="header">
+                                    <img src="{{ config('app.ftp_src').'images/logo/header.png' }}" width="150px" alt="header">
                                 </a>
                             </div>
                         </div>
