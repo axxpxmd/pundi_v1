@@ -1,11 +1,8 @@
-@php
-    $logo = App\Models\Logo::select('footer')->first();
-@endphp
 <footer>
     <div class="footer-area footer-padding fix">
         <div class="container">
             <div class="text-center">
-                <img class="m-b-15" src="{{ config('app.ftp_src').'images/logo/'.$logo->footer }}" width="100" alt="footer">
+                <img class="m-b-15" src="{{ config('app.ftp_src').'images/logo/footer.png' }}" width="100" alt="footer">
                 <p class="f-wht">Tajam dan Mencerahkan</p>
             </div>
         </div>

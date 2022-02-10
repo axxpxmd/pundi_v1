@@ -1,6 +1,3 @@
-@php
-    $logo = App\Models\Logo::select('preloader', 'share', 'title')->first();
-@endphp
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -11,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Title -->
-    <link rel="icon" href="{{ config('app.ftp_src').'images/logo/'.$logo->title }}" type="image/x-icon">
+    <link rel="icon" href="{{ config('app.ftp_src').'images/logo/logo_title.png' }}" type="image/x-icon">
     <title>{{ config('app.name') }} @yield('title')</title>
 
     <!-- Link Share -->
@@ -24,7 +21,7 @@
     <meta property="og:type" content="article"/>
     @else
     <meta property="og:title" content="PUNDI.OR.ID - Kanal Pendidikan Tajam dan Mencerahkan"/>
-    <meta property="og:image" content="{{ config('app.ftp_src').'images/logo/'.$logo->share }}" />
+    <meta property="og:image" content="{{ config('app.ftp_src').'images/logo/logo_share.png' }}" />
     <meta property="og:url" content="http://pundi.or.id"/>
     <meta property="og:site_name" content="PUNDI"/>
     <meta property="og:type" content="article"/>
@@ -61,7 +58,7 @@
             <div class="preloader-inner position-relative">
                 <div class="preloader-circle"></div>
                 <div class="preloader-img pere-text">
-                    <img src="{{ config('app.ftp_src').'images/logo/'.$logo->preloader }}" width="120px" style="margin-bottom: 18%">
+                    <img src="{{ config('app.ftp_src').'images/logo/preloader.png' }}" width="120px" style="margin-bottom: 18%">
                 </div>
             </div>
         </div>

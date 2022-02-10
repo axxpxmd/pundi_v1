@@ -1,5 +1,5 @@
 @php
-$sideBar = App\Models\Articles::select('id', 'title', 'title_slug', 'category_id', 'sub_category_id', 'image', 'author_id', 'created_at')->inRandomOrder()->get()->take(4);
+$sideBar = App\Models\Articles::select('id', 'title', 'title_slug', 'category_id', 'sub_category_id', 'image', 'author_id', 'created_at')->with(['sub_category'])->inRandomOrder()->get()->take(4);
 $poster  = App\Models\Poster::select('poster')->get();
 @endphp
 <div class="col-lg-4">
@@ -52,7 +52,7 @@ $poster  = App\Models\Poster::select('poster')->get();
                     <i class="fas fa-angle-up fa-lg arrow"></i>
                 </div>
                 <span class="f-b m-l-15 widget_title f-orange"> 
-                    PUNDI.OR.ID – TAJAM DAN MENCERAHKAN
+                    PUNDI.OR.ID - TAJAM DAN MENCERAHKAN
                 </span>
                 <div class="mt-2 ml-3">
                     <p class="text-black">PUNDI.OR.ID - Tajam dan Mencerahkan</p>

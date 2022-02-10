@@ -32,10 +32,12 @@ class CategoryController extends Controller
         $path   = $this->path;
         $params = str_replace('-', ' ', $n_category);
 
-        $category    = Category::where('n_category', $params)->first();
-        $subCategory = SubCategory::where('category_id', $category->id)->get();
+        $category    = Category::select('id', 'n_category')->where('n_category', $params)->first();
+        $subCategory = SubCategory::select('id', 'category_id', 'n_sub_category')->where('category_id', $category->id)->get();
 
-        $articles = Articles::where('category_id', $category->id)
+        $articles = Articles::select('id', 'category_id', 'sub_category_id', 'author_id', 'image', 'title', 'title_slug', 'content', 'created_at')
+            ->with(['category', 'sub_category', 'user'])
+            ->where('category_id', $category->id)
             ->where('status', 1)
             ->orderBy('created_at', 'DESC')
             ->paginate(10);

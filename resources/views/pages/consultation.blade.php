@@ -9,7 +9,7 @@
                     @include('masterPages.alerts')
                     <p class="f-blk fs-30 f-b">Konsultasi</p>
                     <div class="mt-3">
-                        <img class="d-block m-auto img-fluid" src="{{ config('app.ftp_src').'images/logo/'.$logo->tentang_kami }}" width="300" alt="photo">
+                        <img class="d-block m-auto img-fluid" src="{{ config('app.ftp_src').'images/logo/tentang_kami.png' }}" width="300" alt="photo">
                     </div>
                     <div class="mt-3">
                         <div class="m-b-5">
