@@ -66,6 +66,8 @@ Route::namespace('Articles')->group(function () {
         Route::get('delete-comment/{id}', 'CommentController@deleteComment')->name('deleteComment');
         Route::get('delete-sub-comment/{id}', 'CommentController@deleteSubComment')->name('deleteSubComment');
     });
+    // Tag
+    Route::get('artikel/tag/{tag}', 'TagController@index')->name('tag.index');
 });
 
 Route::group(['middleware' => ['auth']], function () {

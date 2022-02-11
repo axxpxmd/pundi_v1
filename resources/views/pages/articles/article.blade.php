@@ -64,7 +64,7 @@
                                 <div class="media-body">
                                     @if ($article->tag != null)
                                         @foreach (explode(',', $article->tag) as $tags)
-                                        <button class="genric-btn warning-border circle medium mt-1">{{ $tags }}</button>
+                                        <a class="genric-btn warning-border circle medium mt-1" href="{{ route('tag.index', str_replace(' ', '',$tags)) }}">{{ $tags }}</a>
                                         @endforeach
                                     @else 
                                     <span class="ml-2">-</span>
