@@ -14,9 +14,6 @@
 
 namespace App\Store;
 
-// Models
-use App\Models\SubCategory;
-
 class index
 {
     // 

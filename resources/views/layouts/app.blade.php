@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Kanal Pendidikan Tajam dan Mencerahkan">
-    <meta name="author" content="">
+    <meta name="author" content="PUNDI">
+    <meta name="keywords" content="PUNDI, Pendidikan, Tajam, Mencerahkan, Artikel Pendidikan, Kanal Pendidikan">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Title -->
@@ -15,6 +16,7 @@
     @if (isset($article) != null)
     <meta property="og:title" content="{{ $article->title }}"/>
     <meta property="og:description" content="{{ strip_tags($article->content) }}" />
+    <meta property="og:keywords" content="{{ str_replace(" ",", ", $article->content) }}">
     <meta property="og:image" content="{{ config('app.ftp_src').'images/artikel/'.$article->image }}" />
     <meta property="og:url" content="http://pundi.or.id/pundi/artikel/{{ $article->title_slug }}"/>
     <meta property="og:site_name" content="PUNDI"/>
@@ -25,6 +27,8 @@
     <meta property="og:url" content="http://pundi.or.id"/>
     <meta property="og:site_name" content="PUNDI"/>
     <meta property="og:type" content="article"/>
+    <meta property="og:description" content="Kanal Pendidikan Tajam dan Mencerahkan" />
+    <meta property="og:keywords" content="PUNDI, Pendidikan, Tajam, Mencerahkan, Artikel Pendidikan, Kanal Pendidikan">
     @endif
 
     <!-- CSS -->
