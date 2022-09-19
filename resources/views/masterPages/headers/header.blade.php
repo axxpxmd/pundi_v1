@@ -120,6 +120,29 @@
         </div>
     </div>
 </header>
+<div class="modal fade" style="z-index: 999999" id="exampleModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+            <div class="mb-2">
+                <span class="fs-16 font-weight-bold">Pencarian Artikel</span>
+                <button type="button" class="close text-right" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>   
+            </div> 
+            <form action="{{ route('search') }}" method="GET">
+                <div class="form-group row">
+                    <div class="col-sm-12">
+                        <input type="text" name="n_article" class="form-control input single-input-primary" placeholder="Masukan kata kunci"/>
+                        <button type="submit" class="genric-btn primary bdr-5 btn-block mt-2"><i class="fa fa-search mr-2"></i>Cari</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+      </div>
+    </div>
+</div>
+{{-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> --}}
 <script>
     // Jam
     window.setTimeout("waktu()", 1000);

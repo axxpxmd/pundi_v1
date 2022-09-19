@@ -57,7 +57,7 @@
                                 </span>
                             </div>
                             <div class="mt-3">
-                                <label class="f-b col-form-label">ARTIKEL <span class="text-danger ml-1">*</span></label>
+                                <label class="f-b col-form-label">ARTIKEL <span class="text-danger ml-1">*</span></label>   
                                 <textarea name="content" id="editor">{{ old('content') }}</textarea>
                             </div>
                             <div class="mt-3">
@@ -81,7 +81,6 @@
 @include('masterPages.footer')
 @endsection
 @section('script')
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote-lite.min.js"></script>
 <script type="text/javascript">
     $('#editor').summernote({
@@ -96,7 +95,7 @@
             ['color', ['color']],
             ['insert', ['picture']],
             ['paragraph', ['ul', 'ol', 'paragraph', 'height']],
-            ['view', ['fullscreen', 'codeview']]
+            ['view', ['fullscreen']]
         ]
     });
 

@@ -35,9 +35,12 @@
         <li>
             <a href="{{ route('consultation') }}" style="font-size: 13px !important" class="text-uppercase">{{ $category5->n_category }}</a>
         </li>
+        {{-- <li>
+            <a href="#" style="font-size: 13px !important" class="text-uppercase">Dokumen</a>
+        </li> --}}
         @if (Auth::user() != null)
         <li>
-            <a href="" style="font-size: 13px !important"">AKUN <span class="fa fa-angle-down "></a>
+            <a href="" style="font-size: 13px !important">AKUN <span class="fa fa-angle-down "></a>
             <ul class="submenu">
                 <li><a href="{{ route('profil') }}"><i class="fa fa-user mr-2"></i>Edit Profil</a></li>
                 <li><a href="{{ route('article.post.index') }}"><i class="fa fa-file-alt mr-2"></i>Kirim Tulisan</a></li>
@@ -58,15 +61,8 @@
             </ul>
         </li>
         @endif
-        <li style="margin-left: -40px">
-            <form class="form-row d-flex justify-content-center md-form form-sm mt-0" action="{{ route('search') }}" method="GET">
-                <input type="text" class="row bdr-5 single-input-primary2 ml-5 w-75" name="n_article" style="margin-top: -8px; height: 30px;" placeholder="Search">
-                <div class="input-group-prepend">
-                    <button type="submit" style="border: none; background: black; height: 30px; margin-top: -8px; border-radius: 0px 5px 5px 0px">
-                        <i class="fa fa-search" style="color: white"></i> 
-                    </button>
-                </div>
-            </form>
+        <li>
+            <a href="#" style="font-size: 13px !important" class="text-uppercase"  data-toggle="modal" data-target="#exampleModal"><i class="fa fa-search"></i></a>
         </li>
     </ul>
 </nav>

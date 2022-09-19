@@ -54,7 +54,7 @@
                             <span class="f-b f-blk">
                                 <label>Editor : </label>
                                 <label class="f-orange">
-                                    <a class="f-orange text-uppercase">{{ $editor->nama }}</a>
+                                    <a class="f-orange text-uppercase">{{ $editor != null ? $editor->nama : '-' }}</a>
                                 </label>    
                             </span>
                         </div>
